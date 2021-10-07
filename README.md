@@ -7,6 +7,9 @@ La página apunta a un público con conocimientos de manejo de tencologías para
 Quienes somos?:
 Nosotros somos un grupo de 4 estudiantes llevando a cabo nuestro primer emprendimiento digital enfocado en el la venta y distribución de productos alimenticios.
 
+Estudiantes:
+Isabella Maltoni - Pedro Puga - Germán Sanz - Gian Franco Rossi
+
 Listado de referentes:
 1 - https://www.susushi.es/
 2 - https://nemuri.com.ar/
