@@ -9,13 +9,13 @@
 */
 
 header {
-  height: 140px;
   background-color: var(--main-black);
   display: flex;
 }
 
 header .logo {
   height: 100%;
+  display: none; 
 }
 
 header .header-container {
@@ -46,15 +46,16 @@ header .header-container h1, header .header-container h3 {
 }
 
 header .header-container h1 {
-  font-size: 32px;
+  font-size: 26px;
 }
 
 header .header-container h3 {
-  font-size: 18px;
+  font-size: 12px;
 }
 
 header nav {
   width: 80%;
+  display: none;
 }
 
 header nav ul {
@@ -66,16 +67,68 @@ header nav ul a {
   text-decoration: none;
   text-transform: uppercase;
   color: #FFF;
+  font-size: 13px;
+  text-align: center;
 }
 
-header .fa-user {
+header .fa-bars {
+  color: #FFF;
+  font-size: 25px;
+  padding: 28px 25px;
+}
+
+header .fa-user{
   color: #FFF;
   font-size: 35px;
   padding: 30px;
 }
 
-@media (min-width: 361px) {
-  
+header .fa-user{
+  display: none;
 }
 
-@media (min-width: 769px) {}
+@media (min-width: 481px) {
+  header .logo {
+    display: block;
+    height: 95px; 
+  }
+}
+
+@media (min-width: 810px) {
+  header {
+    height: 140px;
+  }
+  header .logo{
+    height: 100%;
+  }
+  header .header-container h1 {
+    font-size: 32px;
+  }
+  header .header-container h3 {
+    font-size: 18px;
+  }
+  header nav {
+    display: block;
+    width: 85%;
+    max-width: 900px;
+  }
+  header nav ul a{
+    font-size: 15px;
+  }
+  header .fa-bars {
+    display: none;
+  }
+  header .fa-user{
+    display: block;
+  }
+}
+
+/* 
+___  ___  ___  _____ _   _ 
+|  \/  | / _ \|_   _| \ | |
+| .  . |/ /_\ \ | | |  \| |
+| |\/| ||  _  | | | | . ` |
+| |  | || | | |_| |_| |\  |
+\_|  |_/\_| |_/\___/\_| \_/
+
+*/
