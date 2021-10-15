@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/gianfrancorossi/grupo-2-capitalsushi/issues"
   },
-  "homepage": "https://github.com/gianfrancorossi/grupo-2-capitalsushi#readme"
+  "homepage": "https://github.com/gianfrancorossi/grupo-2-capitalsushi#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
