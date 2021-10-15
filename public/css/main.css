@@ -1,4 +1,12 @@
 /* Estilos comunes a todos los HTML */
+:root{
+  --main-black: #141313;
+  --orange: #E1612A;
+}
+
 *{
   font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
