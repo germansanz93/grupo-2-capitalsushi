@@ -1,0 +1,62 @@
+main{
+  background-color: var(--main-black);
+  color: #FFF;
+}
+
+main .main-img {
+  width: 100%;
+  object-fit: cover;
+  content: "";
+}
+
+main .img-container{
+  position: relative;
+  z-index: 10;
+}
+
+main .img-container::before {
+  content: "CONTACTO";
+  position: absolute;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  text-align: center;
+  transform: translateY(-50%);
+  top: 50%;
+  font-size: 3rem;
+  color: var(--main-black);
+  background-color: rgba(220,220,220,200);
+  opacity: 80%;
+  font-weight: 400;
+}
+
+main article,
+main form{
+  display: flex;
+  margin: 40px 10px 10px 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+main article h3,
+form h3{
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+main article p {
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+}
+
+main article i {
+  margin: 3px 10px;
+}
+
+@media (min-width: 481px) {}
+
+@media (min-width: 810px) {}
