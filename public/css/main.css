@@ -10,3 +10,138 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* 
+ _   _   ___  _   _______  ___  ______ 
+| \ | | / _ \| | | | ___ \/ _ \ | ___ \
+|  \| |/ /_\ \ | | | |_/ / /_\ \| |_/ /
+| . ` ||  _  | | | | ___ \  _  ||    / 
+| |\  || | | \ \_/ / |_/ / | | || |\ \ 
+\_| \_/\_| |_/\___/\____/\_| |_/\_| \_|
+
+*/
+
+header {
+  background-color: var(--main-black);
+  display: flex;
+}
+
+header .logo {
+  height: 100%;
+  display: none; 
+}
+
+header .header-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+header .top-header {
+  display: flex;
+  width: 100%;
+}
+
+header .header-titles {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 95px;
+  width: 92%;
+}
+
+header .header-container h1, header .header-container h3 {
+  font-weight: 500;
+  color: #FFF;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+header .header-container h1 {
+  font-size: 26px;
+}
+
+header .header-container h3 {
+  font-size: 12px;
+}
+
+header nav {
+  width: 80%;
+  display: none;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+header nav ul a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #FFF;
+  font-size: 13px;
+  text-align: center;
+}
+
+header .fa-bars {
+  color: #FFF;
+  font-size: 25px;
+  padding: 28px 25px;
+}
+
+header .fa-user{
+  color: #FFF;
+  font-size: 35px;
+  padding: 30px;
+}
+
+header .fa-user{
+  display: none;
+}
+
+@media (min-width: 481px) {
+  header .logo {
+    display: block;
+    height: 95px; 
+  }
+}
+
+@media (min-width: 810px) {
+  header {
+    height: 140px;
+  }
+  header .logo{
+    height: 100%;
+  }
+  header .header-container h1 {
+    font-size: 32px;
+  }
+  header .header-container h3 {
+    font-size: 18px;
+  }
+  header nav {
+    display: block;
+    width: 85%;
+    max-width: 900px;
+  }
+  header nav ul a{
+    font-size: 15px;
+  }
+  header .fa-bars {
+    display: none;
+  }
+  header .fa-user{
+    display: block;
+  }
+}
+
+/* 
+___  ___  ___  _____ _   _ 
+|  \/  | / _ \|_   _| \ | |
+| .  . |/ /_\ \ | | |  \| |
+| |\/| ||  _  | | | | . ` |
+| |  | || | | |_| |_| |\  |
+\_|  |_/\_| |_/\___/\_| \_/
+
+*/
