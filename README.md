@@ -16,3 +16,5 @@ Listado de referentes:
 3 - https://fabricsushi.com.ar/
 4 - https://www.sushiclub.com.ar/
 5 - https://www.sakurasushiresto.com/
+
+Link al tablero de trabajo: https://github.com/gianfrancorossi/grupo-2-capitalsushi/projects/1
