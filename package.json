@@ -1,0 +1,23 @@
+{
+  "name": "grupo-2-capitalsushi",
+  "version": "1.0.0",
+  "description": "Descripción del emprendimiento: Es una página que se encarga de la venta y delivery de sushi.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gianfrancorossi/grupo-2-capitalsushi.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gianfrancorossi/grupo-2-capitalsushi/issues"
+  },
+  "homepage": "https://github.com/gianfrancorossi/grupo-2-capitalsushi#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
