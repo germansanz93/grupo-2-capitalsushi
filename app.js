@@ -21,6 +21,10 @@ app.get('/', (req, res) => {
 app.get('/contacto', (req, res) => {
   res.sendFile(path.join(__dirname, '/views/contacto.html'));
 })
+//carrito
+app.get('/carrito', (req, res) => {
+  res.sendFile(path.join(__dirname, '/views/carrito.html'));
+})
 
 //server escuchando
 app.listen(PORT, () => {
