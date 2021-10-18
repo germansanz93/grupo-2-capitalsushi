@@ -22,6 +22,11 @@ app.get('/contacto', (req, res) => {
   res.sendFile(path.join(__dirname, '/views/contacto.html'));
 })
 
+//menu
+app.get('/menu', (req,res) => {
+  res.sendFile(path.join(__dirname,'/views/menu.html'));
+})
+
 //server escuchando
 app.listen(PORT, () => {
   console.log(`Server running at port ${PORT}`)
