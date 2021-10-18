@@ -4,6 +4,7 @@ body {
 
 main .main-img {
   width: 100%;
+  object-fit: cover;
 }
 
 main .img-container {
@@ -25,6 +26,10 @@ main .img-container::before {
   background-color: rgba(220, 220, 220, 200);
   opacity: 80%;
   font-weight: 400;
+}
+
+main .forms-container{
+  margin-top: 20px;
 }
 
 main .forms-nav {
@@ -127,4 +132,64 @@ main form label {
 main form .password-recover {
   text-decoration: none;
   color: #FFF;
+}
+
+
+@media (min-width: 481px) {
+  main .main-img{
+    height: 200px;
+  }
+
+  main .forms-container{
+    width: 80%;
+    margin: 20px auto;
+    max-width: 410px;
+  }
+}
+
+@media (min-width: 810px) {
+  main .main-img{
+    height: 300px;
+  }
+
+  main .img-container::before {
+    font-size: 3.5rem;
+  }
+
+  main .forms-nav{
+    display: none;
+  }
+
+  main .forms-container{
+    max-width: none;
+  }
+
+  main .forms-carousel {
+    display: flex;
+    align-items: flex-start;
+    padding-bottom: 4rem;
+    overflow-x: unset;
+    overscroll-behavior-x: unset;
+    scroll-snap-type: unset;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  main form{
+    min-width: unset;
+    scroll-snap-align: unset;
+    width: 45%;
+    max-width: 381px;
+  }
+}
+
+@media (min-width:1294px) {
+  main .main-img{
+    height: 400px;
+  }
+
+  main .forms-container{
+    width: 70%;
+    max-width: 1185px;
+  }
 }
