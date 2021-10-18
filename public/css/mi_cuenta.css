@@ -2,7 +2,7 @@ body {
   background-color: var(--main-black);
 }
 
-main .main-img{
+main .main-img {
   width: 100%;
 }
 
@@ -27,17 +27,16 @@ main .img-container::before {
   font-weight: 400;
 }
 
-main .forms-nav{
+main .forms-nav {
   display: flex;
   justify-content: space-around;
-
 }
 
-main .forms-nav a{
+main .forms-nav a {
   border: none;
   margin-top: 10px;
   padding: 8px 20px;
-  background-color: var(--orange);
+  background-color: #FFF;
   color: var(--main-black);
   text-transform: uppercase;
   font-weight: 500;
@@ -48,8 +47,19 @@ main .forms-nav a{
   text-align: center;
 }
 
-main .forms-nav .sign-up{
-  background-color: #FFF;
+main .forms-nav a.active-btn {
+  background-color: var(--orange);
+}
+
+main .forms-carousel {
+  align-self: center;
+  display: flex;
+  align-items: center;
+  padding-bottom: 4rem;
+  overflow-x: scroll;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  width: 100%;
 }
 
 main form {
@@ -59,6 +69,9 @@ main form {
   justify-content: center;
   flex-direction: column;
   padding-bottom: 30px;
+  min-width: 100%;
+  border-radius: 1rem;
+  scroll-snap-align: center;
 }
 
 main form h3 {
@@ -96,22 +109,22 @@ main form .submit-btn {
   border: none;
   margin-top: 10px;
   padding: 8px 20px;
-  background-color: var(--orange);
   text-transform: uppercase;
   font-weight: 500;
   border-radius: 4px;
+  background-color: var(--orange);
 }
 
-main form .remember-check{
+main form .remember-check {
   color: #FFF;
   padding: 10px;
 }
 
-main form label{
+main form label {
   cursor: pointer;
 }
 
-main form .password-recover{
+main form .password-recover {
   text-decoration: none;
   color: #FFF;
 }

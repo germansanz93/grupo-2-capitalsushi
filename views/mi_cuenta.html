@@ -47,47 +47,77 @@
     </div>
     <div class="forms-container">
       <div class="forms-nav">
-        <a class="sign-in" href="">Acceder</a>
-        <a class="sign-up" href="">Registrarse</a>
+        <a class="sign-in-btn active-btn" href="#">Acceder</a>
+        <a class="sign-up-btn" href="#">Registrarse</a>
         </ul>
       </div>
-      <form class="sign-in-form" action="">
-        <h3>Acceder</h3>
-        <div class="input-container">
-          <i class="fas fa-user"></i>
-          <label for="name"></label>
-          <input type="text" name="name" id="name" placeholder="Nombre de usuario o email" required>
-        </div>
-        <div class="input-container">
-          <i class="fas fa-lock"></i>
-          <label for="password"></label>
-          <input type="password" name="password" id="password" placeholder="password" required>
-        </div>
-        <a class="password-recover" href="#">Olvidaste tu contraseña?</a>
-        <div class="remember-check">
-          <input type="checkbox" name="remember" id="remember">
-          <label for="remember">Recuerdame</label>
-        </div>
-        <input class="submit-btn" type="submit" value="Acceder">
-      </form>
-      <form class="sign-up-form" action="">
-        <h3>Registrarse</h3>
-        <div class="input-container">
-          <i class="fas fa-user"></i>
-          <label for="name"></label>
-          <input type="text" name="name" id="name" placeholder="Nombre de usuario o email" required>
-        </div>
-        <div class="input-container">
-          <i class="fas fa-lock"></i>
-          <label for="password"></label>
-          <input type="password" name="password" id="password" placeholder="password" required>
-        </div>
-        <input class="submit-btn" type="submit" value="Registrarse">
-      </form>
+      <div class="forms-carousel">
+        <form class="sign-in-form" action="">
+          <h3>Acceder</h3>
+          <div class="input-container">
+            <i class="fas fa-user"></i>
+            <label for="name"></label>
+            <input type="text" name="name" id="name" placeholder="Nombre de usuario o email" required>
+          </div>
+          <div class="input-container">
+            <i class="fas fa-lock"></i>
+            <label for="password"></label>
+            <input type="password" name="password" id="password" placeholder="password" required>
+          </div>
+          <a class="password-recover" href="#">Olvidaste tu contraseña?</a>
+          <div class="remember-check">
+            <input type="checkbox" name="remember" id="remember">
+            <label for="remember">Recuerdame</label>
+          </div>
+          <input class="submit-btn" type="submit" value="Acceder">
+        </form>
+        <form class="sign-up-form" action="">
+          <h3>Registrarse</h3>
+          <div class="input-container">
+            <i class="fas fa-user"></i>
+            <label for="name"></label>
+            <input type="text" name="name" id="name" placeholder="Nombre de usuario o email" required>
+          </div>
+          <div class="input-container">
+            <i class="fas fa-lock"></i>
+            <label for="password"></label>
+            <input type="password" name="password" id="password" placeholder="password" required>
+          </div>
+          <input class="submit-btn" type="submit" value="Registrarse">
+        </form>
+      </div>
     </div>
   </main>
   <footer>
   </footer>
+  <script>
+    const signInForm = document.querySelector('.sign-in-form');
+    const signInBtn = document.querySelector('.sign-in-btn');
+    const signUpForm = document.querySelector('.sign-up-form');
+    const signUpBtn = document.querySelector('.sign-up-btn');
+    const formsCarousel = document.querySelector('.forms-carousel');
+
+    signInBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      signInForm.classList.add('active-form');
+      signUpForm.classList.remove('active-form');
+      signInBtn.classList.add('active-btn');
+      signUpBtn.classList.remove('active-btn');
+
+      formsCarousel.scrollBy({top: 0, left: -formsCarousel.offsetWidth, behavior: 'smooth'});
+    });
+
+    signUpBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      signUpForm.classList.add('active-form');
+      signInForm.classList.remove('active-form');
+      signUpBtn.classList.add('active-btn');
+      signInBtn.classList.remove('active-btn');
+
+      formsCarousel.scrollBy({top: 0, left: formsCarousel.offsetWidth, behavior: 'smooth'});
+    });
+
+  </script>
 </body>
 
 </html>
