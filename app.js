@@ -21,9 +21,15 @@ app.get('/', (req, res) => {
 app.get('/contacto', (req, res) => {
   res.sendFile(path.join(__dirname, '/views/contacto.html'));
 })
+
 //carrito
 app.get('/carrito', (req, res) => {
   res.sendFile(path.join(__dirname, '/views/carrito.html'));
+})
+
+//mi_cuenta
+app.get('/mi_cuenta', (req, res) => {
+  res.sendFile(path.join(__dirname, '/views/mi_cuenta.html'));
 })
 
 //server escuchando
