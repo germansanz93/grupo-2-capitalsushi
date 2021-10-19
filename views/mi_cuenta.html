@@ -69,7 +69,10 @@
             <input type="checkbox" name="remember" id="remember">
             <label for="remember">Recuerdame</label>
           </div>
-          <input class="submit-btn" type="submit" value="Acceder">
+          <div class="btns">
+            <a class="sign-up-btn" href="/registrarse">Crear cuenta</a>
+            <input class="submit-btn" type="submit" value="Acceder">
+          </div>
         </form>
         <!-- <form class="sign-up-form" action="">
           <h3>Registrarse</h3>
@@ -90,34 +93,6 @@
   </main>
   <footer>
   </footer>
-  <!-- <script>
-    const signInForm = document.querySelector('.sign-in-form');
-    const signInBtn = document.querySelector('.sign-in-btn');
-    const signUpForm = document.querySelector('.sign-up-form');
-    const signUpBtn = document.querySelector('.sign-up-btn');
-    const formsCarousel = document.querySelector('.forms-carousel');
-
-    signInBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      signInForm.classList.add('active-form');
-      signUpForm.classList.remove('active-form');
-      signInBtn.classList.add('active-btn');
-      signUpBtn.classList.remove('active-btn');
-
-      formsCarousel.scrollBy({top: 0, left: -formsCarousel.offsetWidth, behavior: 'smooth'});
-    });
-
-    signUpBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      signUpForm.classList.add('active-form');
-      signInForm.classList.remove('active-form');
-      signUpBtn.classList.add('active-btn');
-      signInBtn.classList.remove('active-btn');
-
-      formsCarousel.scrollBy({top: 0, left: formsCarousel.offsetWidth, behavior: 'smooth'});
-    });
-
-  </script> -->
 </body>
 
 </html>

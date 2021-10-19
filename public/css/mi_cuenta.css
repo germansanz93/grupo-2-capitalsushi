@@ -2,6 +2,10 @@ body {
   background-color: var(--main-black);
 }
 
+main{
+  position: relative;
+}
+
 main .main-img {
   width: 100%;
   object-fit: cover;
@@ -32,12 +36,14 @@ main .forms-container{
   margin-top: 20px;
 }
 
+
 /* main .forms-nav {
   display: flex;
   justify-content: space-around;
 }
+*/
 
-main .forms-nav a {
+main .sign-up-btn {
   border: none;
   margin-top: 10px;
   padding: 8px 20px;
@@ -47,11 +53,12 @@ main .forms-nav a {
   font-weight: 500;
   border-radius: 4px;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 12px;
   width: 45%;
   text-align: center;
 }
 
+/*
 main .forms-nav a.active-btn {
   background-color: var(--orange);
 } */
@@ -95,7 +102,7 @@ main form .input-container {
   border-radius: 4px;
   margin: 6px 0;
   display: flex;
-  width: 90%;
+  width: 95%;
 }
 
 main form .input-container i {
@@ -118,6 +125,22 @@ main form .submit-btn {
   font-weight: 500;
   border-radius: 4px;
   background-color: var(--orange);
+  font-size: 12px;
+}
+
+main form .submit-btn:hover {
+  cursor: pointer;
+}
+
+main form .btns{
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+}
+
+main form .btns > *{
+  display: inline-block;
+  width: 48%;
 }
 
 main form .remember-check {
@@ -149,7 +172,7 @@ main form .password-recover {
 
 @media (min-width: 810px) {
   main .main-img{
-    height: 300px;
+    height: 70vh;
   }
 
   main .img-container::before {
@@ -162,34 +185,41 @@ main form .password-recover {
 
   main .forms-container{
     max-width: none;
+    width: 60%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #141313BA;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    margin: 0 auto;
+    border-radius: 10px;
+    max-width: 585px;
   }
 
   main .forms-carousel {
     display: flex;
-    align-items: flex-start;
-    padding-bottom: 4rem;
+    align-items: center;
     overflow-x: unset;
     overscroll-behavior-x: unset;
     scroll-snap-type: unset;
     width: 100%;
     justify-content: space-around;
+    padding: 0;
   }
 
   main form{
     min-width: unset;
     scroll-snap-align: unset;
-    width: 45%;
+    width: 80%;
     max-width: 381px;
+    padding-bottom: 0;
+    margin: 30px;
+  }
+
+  main form .btns{
+    width: 90%;
   }
 }
 
-@media (min-width:1294px) {
-  main .main-img{
-    height: 400px;
-  }
-
-  main .forms-container{
-    width: 70%;
-    max-width: 1185px;
-  }
-}
+@media (min-width:1294px) {}
