@@ -16,32 +16,11 @@ main .img-container {
   z-index: 10;
 }
 
-/* main .img-container::before {
-  content: "MI CUENTA";
-  position: absolute;
-  z-index: 1;
-  display: block;
-  width: 100%;
-  text-align: center;
-  transform: translateY(-50%);
-  top: 50%;
-  font-size: 3rem;
-  color: var(--main-black);
-  background-color: rgba(220, 220, 220, 200);
-  opacity: 80%;
-  font-weight: 400;
-} */
-
 main .forms-container{
   margin-top: 20px;
+  width: 96%;
+  margin: 0 auto;
 }
-
-
-/* main .forms-nav {
-  display: flex;
-  justify-content: space-around;
-}
-*/
 
 main .sign-up-btn {
   border: none;
@@ -58,32 +37,22 @@ main .sign-up-btn {
   text-align: center;
 }
 
-/*
-main .forms-nav a.active-btn {
-  background-color: var(--orange);
-} */
-
 main .forms-carousel {
   align-self: center;
   display: flex;
   align-items: center;
   padding-bottom: 4rem;
-  /* overflow-x: scroll;
-  overscroll-behavior-x: contain;
-  scroll-snap-type: x proximity; */
   width: 100%;
 }
 
 main form {
   display: flex;
-  /* margin: 40px 10px 10px 10px; */
   align-items: center;
   justify-content: center;
   flex-direction: column;
   padding-bottom: 30px;
   min-width: 100%;
   border-radius: 1rem;
-  /* scroll-snap-align: center; */
 }
 
 main form h3 {
@@ -218,8 +187,6 @@ main form .password-recover {
   }
 
   main form .btns{
-    width: 90%;
+    width: 95%;
   }
 }
-
-@media (min-width:1294px) {}

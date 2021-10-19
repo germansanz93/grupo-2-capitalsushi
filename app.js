@@ -37,6 +37,11 @@ app.get('/mi_cuenta', (req, res) => {
   res.sendFile(path.join(__dirname, '/views/mi_cuenta.html'));
 })
 
+//registro
+app.get('/registrarse', (req, res) => {
+  res.sendFile(path.join(__dirname, '/views/registrarse.html'));
+})
+
 //server escuchando
 app.listen(PORT, () => {
   console.log(`Server running at port ${PORT}`)
