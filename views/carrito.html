@@ -2,52 +2,85 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carrito</title>
-  <!-- Montserrat 100, 300, 400, 500 y 700 -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&display=swap"
-    rel="stylesheet">
-  <!-- estilos -->
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/carrito.css">
-  <!-- Iconos Fontawesome -->
-  <script src="https://kit.fontawesome.com/e785f1ab1e.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito</title>
+    <!-- Montserrat 100, 300, 400, 500 y 700 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&display=swap"
+        rel="stylesheet">
+    <!-- estilos -->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/carrito.css">
+    <!-- Iconos Fontawesome -->
+    <script src="https://kit.fontawesome.com/e785f1ab1e.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <header>
-    <img class="logo" src="/images/index.jpeg" alt="">
-    <div class="header-container">
-      <div class="top-header">
-        <div class="header-titles">
-          <h1>Capital Sushi</h1>
-          <h3>Sushi bar</h3>
+    <header>
+        <img class="logo" src="/images/index.jpeg" alt="">
+        <div class="header-container">
+            <div class="top-header">
+                <div class="header-titles">
+                    <h1>Capital Sushi</h1>
+                    <h3>Sushi bar</h3>
+                </div>
+                <a class="header-user" href="#"> <i class="fas fa-user"></i> </a>
+                <a class="header-user" href="#"> <i class="fas fa-bars"></i> </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">Carrito</a></li>
+                    <li><a href="#">Mi cuenta</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
         </div>
-        <a class="header-user" href="#"> <i class="fas fa-user"></i> </a>
-        <a class="header-user" href="#"> <i class="fas fa-bars"></i> </a>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">Menu</a></li>
-          <li><a href="#">Carrito</a></li>
-          <li><a href="#">Mi cuenta</a></li>
-          <li><a href="#">Contacto</a></li>
-        </ul>
-      </nav>
-    </div>
-    
-  </header>
-  <main> 
-      <div class="container"><h3>DETALLE DEL PEDIDO</h3></div>
-    
-  </main>
-  <footer>
-  </footer>
+
+    </header>
+    <main>
+        <div class="container">
+            <h3>DETALLE DEL PEDIDO</h3>
+            <div class="cajita blanca">
+                <p>Producto</p>
+                <div class="derecha"></div>
+                <p>Cantidad</p>
+                <p>Subtotal</p>
+            </div>
+            <div class="cajita negra">
+                <p>sushi roll 1</p>
+                <div class="derecha"></div>
+                <p>- 1 +</p>
+                <p>$800</p>
+            </div>
+            <div class="cajita negra">
+                <p>sushi roll 2</p>
+                <div class="derecha"></div>
+                <p>- 2 +</p>
+                <p>$950</p>
+            </div>
+            <div class="cajita blanca">
+                <p>Subtotal</p>
+                <div class="derecha"></div>
+                <p>$1500</p>
+            </div>
+            <div class="cajita blanca">
+                <p>Total</p>
+                <div class="derecha"></div>
+                <p>$1900</p>
+            </div>
+        </div>
+        
+
+
+
+    </main>
+    <footer>
+    </footer>
 </body>
 
 </html>
