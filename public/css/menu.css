@@ -1,0 +1,112 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+}
+
+.top-main {
+    width: 100%;
+}
+
+.banner img {
+    width: 100%;
+    object-fit: cover;
+    height: 105px;
+}
+
+.product-img{
+    width: 150px;
+    object-fit: cover;
+    height: 100px;
+}
+
+article:hover {
+    box-shadow: 0px 0px 10px rgb(100,100,100);
+    position: relative;
+    transition: all 400ms;
+}
+
+
+main h3 {
+    font-size: 10px;
+    display: flex;
+    text-align: center;
+    background-color: black;
+    color:white;
+}
+
+
+main div.menus {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: black;
+}
+
+article h3 {
+    border-top: 1px solid #ebebeb;
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    position: relative;
+}
+
+
+
+@media (min-width: 768px) {
+    main div article {
+        width: 45%;
+    }
+    main div.menus {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        background-color: black;
+        padding-left: 70px;
+        padding-right: 70px;
+    }
+    .banner img {
+        width: 100%;
+        height: 40vh;
+        padding-bottom: 20px;
+    }
+    main div.menus img {
+        width: 100%;
+        height: 60%;
+    }
+    article:hover {
+        box-shadow: 0px 0px 10px rgb(100,100,100);
+        position: relative;
+        transition: all 400ms;
+    }
+}
+
+@media (min-width: 1024px) {
+    main div.menus {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        background-color: black;
+        padding: 10px;
+    }
+    article:hover {
+        box-shadow: 0px 0px 10px rgb(100,100,100);
+        position: relative;
+        transition: all 400ms;
+    }
+    main div article {
+        width: 30%;
+    }
+    main div.menus img {
+        width: 100%;
+        height: 60%;
+    }
+    main h3 {
+        font-size: 20px;
+        justify-content: center;
+    }
+    .banner img {
+        padding-bottom: 20px;
+    }
+
+}
