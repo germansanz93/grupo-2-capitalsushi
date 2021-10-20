@@ -1,0 +1,24 @@
+body {
+    height: 100vh;
+    background-image: url("../images/60b8359cace20b124907467f.jpeg");
+  background-size: cover;
+    background-repeat:no-repeat;
+    background-position: center center;
+  }
+  main .forms-container{
+    margin-top: 20px;
+  }
+main {
+    position: relative;
+}
+  main .container{
+    position: absolute;
+    background-color: var(--main-black);
+    width: 60%;
+    height: 50%;
+    top: 50%; 
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 100;
+}
+  
