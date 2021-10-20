@@ -26,6 +26,7 @@ app.get('/contacto', (req, res) => {
 app.get('/menu', (req,res) => {
   res.sendFile(path.join(__dirname,'/views/menu.html'));
 })
+
 //carrito
 app.get('/carrito', (req, res) => {
   res.sendFile(path.join(__dirname, '/views/carrito.html'));
@@ -34,6 +35,11 @@ app.get('/carrito', (req, res) => {
 //mi_cuenta
 app.get('/mi_cuenta', (req, res) => {
   res.sendFile(path.join(__dirname, '/views/mi_cuenta.html'));
+})
+
+//registro
+app.get('/registrarse', (req, res) => {
+  res.sendFile(path.join(__dirname, '/views/registrarse.html'));
 })
 
 //server escuchando
