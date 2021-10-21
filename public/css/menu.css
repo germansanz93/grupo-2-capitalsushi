@@ -90,16 +90,18 @@ main div.menus article.postre::before {
     content: "POSTRES";
     position: absolute;
     z-index: 1;
-    display: block;
+    display: flex;
     background-color: #fffa;
     width: 100%;
     text-align: center;
+    justify-content: center;
     transform: translateY(-50%);
     top: 50%;
     font-size: 20px;
     color: white;
     opacity: 80%;
     font-weight: 400;
+    height: 100%;
 }
 
 main div.menus article.entradas::before {
