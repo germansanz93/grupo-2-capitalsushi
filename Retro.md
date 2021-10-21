@@ -1,4 +1,4 @@
-Retrospectiva 1:
+SPRINT 1:
 
 Hacer más: Organización, reuniones, comunicación, utilizar el tablero de trabajo(GitHub Projects), hacer dailys.
 
@@ -10,7 +10,7 @@ Dejar de hacer: Quitarle prioridad al proyecto por sobre otras cosas.
 
 Comenzar a hacer: Tener fecha y horario concreto para facilitar la organización del trabajo.
 
-Restrospectiva 2:
+SPRINT 2:
 
 Hacer más: Implementar código mas complejo y elaborado para el mejor desempeño posible de la página, investigar para implementar nuevas herramientas al proyecto.
 
