@@ -22,32 +22,38 @@ main div.menus article.tabla::before {
     content: "TABLAS";
     position: absolute;
     z-index: 1;
-    display: block;
     background-color: #fffa;
     width: 100%;
-    text-align: center;
     transform: translateY(-50%);
     top: 50%;
     font-size: 20px;
     color: white;
     opacity: 80%;
     font-weight: 400;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 main div.menus article.principales::before {
     content: "PRINCIPALES";
     position: absolute;
     z-index: 1;
-    display: block;
     background-color: #fffa;
     width: 100%;
-    text-align: center;
     transform: translateY(-50%);
     top: 50%;
     font-size: 20px;
     color: white;
     opacity: 80%;
     font-weight: 400;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 main div.menus article:hover {
@@ -58,43 +64,46 @@ main div.menus article.woks::before {
     content: "WOKS";
     position: absolute;
     z-index: 1;
-    display: block;
     background-color: #fffa;
     width: 100%;
-    text-align: center;
     transform: translateY(-50%);
     top: 50%;
     font-size: 20px;
     color: white;
     opacity: 80%;
     font-weight: 400;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 main div.menus article.ensalada::before {
     content: "ENSALADA";
     position: absolute;
     z-index: 1;
-    display: block;
     background-color: #fffa;
     width: 100%;
-    text-align: center;
     transform: translateY(-50%);
     top: 50%;
     font-size: 20px;
     color: white;
     opacity: 80%;
     font-weight: 400;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 main div.menus article.postre::before {
     content: "POSTRES";
     position: absolute;
     z-index: 1;
-    display: flex;
     background-color: #fffa;
     width: 100%;
-    text-align: center;
-    justify-content: center;
     transform: translateY(-50%);
     top: 50%;
     font-size: 20px;
@@ -102,22 +111,30 @@ main div.menus article.postre::before {
     opacity: 80%;
     font-weight: 400;
     height: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 main div.menus article.entradas::before {
     content: "ENTRADAS";
     position: absolute;
     z-index: 1;
-    display: block;
     background-color: #fffa;
     width: 100%;
-    text-align: center;
     transform: translateY(-50%);
     top: 50%;
     font-size: 20px;
     color: white;
     opacity: 80%;
     font-weight: 400;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 main div.menus article:hover::before {
@@ -195,90 +212,108 @@ article h3 {
         content: "TABLAS";
         position: absolute;
         z-index: 1;
-        display: block;
         width: 100%;
-        text-align: center;
         transform: translateY(-50%);
         top: 50%;
         font-size: 30px;
         color: white;
         opacity: 80%;
         font-weight: 400;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
     }
     
     main div.menus article.principales::before {
         content: "PRINCIPALES";
         position: absolute;
         z-index: 1;
-        display: block;
         width: 100%;
-        text-align: center;
         transform: translateY(-50%);
         top: 50%;
         font-size: 30px;
         color: white;
         opacity: 80%;
         font-weight: 400;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
     }
     
     main div.menus article.woks::before {
         content: "WOKS";
         position: absolute;
         z-index: 1;
-        display: block;
         width: 100%;
-        text-align: center;
         transform: translateY(-50%);
         top: 50%;
         font-size: 30px;
         color: white;
         opacity: 80%;
         font-weight: 400;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
     }
     
     main div.menus article.ensalada::before {
         content: "ENSALADA";
         position: absolute;
         z-index: 1;
-        display: block;
         width: 100%;
-        text-align: center;
         transform: translateY(-50%);
         top: 50%;
         font-size: 30px;
         color: white;
         opacity: 80%;
         font-weight: 400;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
     }
     
     main div.menus article.postre::before {
         content: "POSTRES";
         position: absolute;
         z-index: 1;
-        display: block;
         width: 100%;
-        text-align: center;
         transform: translateY(-50%);
         top: 50%;
         font-size: 30px;
         color: white;
         opacity: 80%;
         font-weight: 400;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
     }
     
     main div.menus article.entradas::before {
         content: "ENTRADAS";
         position: absolute;
         z-index: 1;
-        display: block;
         width: 100%;
-        text-align: center;
         transform: translateY(-50%);
         top: 50%;
         font-size: 30px;
         color: white;
         opacity: 80%;
         font-weight: 400;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
     }
 }
 
@@ -309,6 +344,113 @@ article h3 {
     }
     .banner img {
         padding-bottom: 20px;
+    }
+    main div.menus article.tabla::before {
+        content: "TABLAS";
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        transform: translateY(-50%);
+        top: 50%;
+        font-size: 30px;
+        color: white;
+        opacity: 80%;
+        font-weight: 400;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    
+    main div.menus article.principales::before {
+        content: "PRINCIPALES";
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        transform: translateY(-50%);
+        top: 50%;
+        font-size: 30px;
+        color: white;
+        opacity: 80%;
+        font-weight: 400;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    
+    main div.menus article.woks::before {
+        content: "WOKS";
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        transform: translateY(-50%);
+        top: 50%;
+        font-size: 30px;
+        color: white;
+        opacity: 80%;
+        font-weight: 400;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    
+    main div.menus article.ensalada::before {
+        content: "ENSALADA";
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        transform: translateY(-50%);
+        top: 50%;
+        font-size: 30px;
+        color: white;
+        opacity: 80%;
+        font-weight: 400;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    
+    main div.menus article.postre::before {
+        content: "POSTRES";
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        transform: translateY(-50%);
+        top: 50%;
+        font-size: 30px;
+        color: white;
+        opacity: 80%;
+        font-weight: 400;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    
+    main div.menus article.entradas::before {
+        content: "ENTRADAS";
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        transform: translateY(-50%);
+        top: 50%;
+        font-size: 30px;
+        color: white;
+        opacity: 80%;
+        font-weight: 400;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
     }
 
 }
