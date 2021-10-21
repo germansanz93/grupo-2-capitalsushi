@@ -22,7 +22,7 @@ main div.menus article.tabla::before {
     content: "TABLAS";
     position: absolute;
     z-index: 1;
-    background-color: #fffa;
+    background-color: rgba(200, 200, 200, 0.5);
     width: 100%;
     transform: translateY(-50%);
     top: 50%;
@@ -41,7 +41,7 @@ main div.menus article.principales::before {
     content: "PRINCIPALES";
     position: absolute;
     z-index: 1;
-    background-color: #fffa;
+    background-color: rgba(200, 200, 200, 0.5);
     width: 100%;
     transform: translateY(-50%);
     top: 50%;
@@ -64,7 +64,7 @@ main div.menus article.woks::before {
     content: "WOKS";
     position: absolute;
     z-index: 1;
-    background-color: #fffa;
+    background-color: rgba(200, 200, 200, 0.5);
     width: 100%;
     transform: translateY(-50%);
     top: 50%;
@@ -83,7 +83,7 @@ main div.menus article.ensalada::before {
     content: "ENSALADA";
     position: absolute;
     z-index: 1;
-    background-color: #fffa;
+    background-color: rgba(200, 200, 200, 0.5);
     width: 100%;
     transform: translateY(-50%);
     top: 50%;
@@ -102,7 +102,7 @@ main div.menus article.postre::before {
     content: "POSTRES";
     position: absolute;
     z-index: 1;
-    background-color: #fffa;
+    background-color: rgba(200, 200, 200, 0.5);
     width: 100%;
     transform: translateY(-50%);
     top: 50%;
@@ -122,7 +122,7 @@ main div.menus article.entradas::before {
     content: "ENTRADAS";
     position: absolute;
     z-index: 1;
-    background-color: #fffa;
+    background-color: rgba(200, 200, 200, 0.5);
     width: 100%;
     transform: translateY(-50%);
     top: 50%;
@@ -144,7 +144,7 @@ main div.menus article:hover::before {
     width: 140px;
     object-fit: cover;
     height: 100px;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
 }
 
 article:hover {
@@ -213,6 +213,7 @@ article h3 {
         position: absolute;
         z-index: 1;
         width: 100%;
+        background-color: rgba(200, 200, 200, 0.5);
         transform: translateY(-50%);
         top: 50%;
         font-size: 30px;
@@ -231,6 +232,7 @@ article h3 {
         position: absolute;
         z-index: 1;
         width: 100%;
+        background-color: rgba(200, 200, 200, 0.5);
         transform: translateY(-50%);
         top: 50%;
         font-size: 30px;
@@ -249,6 +251,7 @@ article h3 {
         position: absolute;
         z-index: 1;
         width: 100%;
+        background-color: rgba(200, 200, 200, 0.5);
         transform: translateY(-50%);
         top: 50%;
         font-size: 30px;
@@ -267,6 +270,7 @@ article h3 {
         position: absolute;
         z-index: 1;
         width: 100%;
+        background-color: rgba(200, 200, 200, 0.5);
         transform: translateY(-50%);
         top: 50%;
         font-size: 30px;
@@ -285,6 +289,7 @@ article h3 {
         position: absolute;
         z-index: 1;
         width: 100%;
+        background-color: rgba(200, 200, 200, 0.5);
         transform: translateY(-50%);
         top: 50%;
         font-size: 30px;
@@ -305,6 +310,7 @@ article h3 {
         width: 100%;
         transform: translateY(-50%);
         top: 50%;
+        background-color: rgba(200, 200, 200, 0.5);
         font-size: 30px;
         color: white;
         opacity: 80%;
@@ -350,6 +356,7 @@ article h3 {
         position: absolute;
         z-index: 1;
         width: 100%;
+        background-color: rgba(200, 200, 200, 0.5);
         transform: translateY(-50%);
         top: 50%;
         font-size: 30px;
@@ -368,6 +375,7 @@ article h3 {
         position: absolute;
         z-index: 1;
         width: 100%;
+        background-color: rgba(200, 200, 200, 0.5);
         transform: translateY(-50%);
         top: 50%;
         font-size: 30px;
@@ -386,6 +394,7 @@ article h3 {
         position: absolute;
         z-index: 1;
         width: 100%;
+        background-color: rgba(200, 200, 200, 0.5);
         transform: translateY(-50%);
         top: 50%;
         font-size: 30px;
@@ -404,6 +413,7 @@ article h3 {
         position: absolute;
         z-index: 1;
         width: 100%;
+        background-color: rgba(200, 200, 200, 0.5);
         transform: translateY(-50%);
         top: 50%;
         font-size: 30px;
@@ -422,6 +432,7 @@ article h3 {
         position: absolute;
         z-index: 1;
         width: 100%;
+        background-color: rgba(200, 200, 200, 0.5);
         transform: translateY(-50%);
         top: 50%;
         font-size: 30px;
@@ -440,6 +451,7 @@ article h3 {
         position: absolute;
         z-index: 1;
         width: 100%;
+        background-color: rgba(200, 200, 200, 0.5);
         transform: translateY(-50%);
         top: 50%;
         font-size: 30px;
