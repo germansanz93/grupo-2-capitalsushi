@@ -147,7 +147,7 @@ main div.menus article:hover::before {
     margin-bottom: 0px;
 }
 
-article:hover {
+main article:hover {
     box-shadow: 0px 0px 10px rgb(100,100,100);
     position: relative;
     transition: all 400ms;
@@ -203,7 +203,7 @@ article h3 {
         width: 100%;
         height: 200px;
     }
-    article:hover {
+    main article:hover {
         box-shadow: 0px 0px 10px rgb(100,100,100);
         position: relative;
         transition: all 400ms;
@@ -331,7 +331,7 @@ article h3 {
         background-color: black;
         padding: 10px;
     }
-    article:hover {
+    main article:hover {
         box-shadow: 0px 0px 10px rgb(100,100,100);
         position: relative;
         transition: all 400ms;
