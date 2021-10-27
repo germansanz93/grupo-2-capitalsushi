@@ -145,7 +145,7 @@ main div.menus article.entradas::before {
 
 main div.menus article:hover::before {
     /* visibility: hidden; */
-    opacity: 0 !important;
+    opacity: 0;
 }
 .product-img{
     width: 140px;
@@ -225,7 +225,7 @@ article h3 {
         top: 50%;
         font-size: 30px;
         color: white;
-        opacity: 80%;
+        /* opacity: 80%; */
         font-weight: 400;
         display: flex;
         text-align: center;
@@ -245,7 +245,7 @@ article h3 {
         top: 50%;
         font-size: 30px;
         color: white;
-        opacity: 80%;
+        /* opacity: 80%; */
         font-weight: 400;
         display: flex;
         text-align: center;
@@ -265,7 +265,7 @@ article h3 {
         top: 50%;
         font-size: 30px;
         color: white;
-        opacity: 80%;
+        /* opacity: 80%; */
         font-weight: 400;
         display: flex;
         text-align: center;
@@ -285,7 +285,7 @@ article h3 {
         top: 50%;
         font-size: 30px;
         color: white;
-        opacity: 80%;
+        /* opacity: 80%; */
         font-weight: 400;
         display: flex;
         text-align: center;
@@ -305,7 +305,7 @@ article h3 {
         top: 50%;
         font-size: 30px;
         color: white;
-        opacity: 80%;
+        /* opacity: 80%; */
         font-weight: 400;
         display: flex;
         text-align: center;
@@ -325,7 +325,7 @@ article h3 {
         background-color: #000000;
         font-size: 30px;
         color: white;
-        opacity: 80%;
+        /* opacity: 80%; */
         font-weight: 400;
         display: flex;
         text-align: center;
@@ -374,7 +374,7 @@ article h3 {
         top: 50%;
         font-size: 30px;
         color: white;
-        opacity: 80%;
+        /* opacity: 80%; */
         font-weight: 400;
         display: flex;
         text-align: center;
@@ -394,7 +394,7 @@ article h3 {
         top: 50%;
         font-size: 30px;
         color: white;
-        opacity: 80%;
+        /* opacity: 80%; */
         font-weight: 400;
         display: flex;
         text-align: center;
@@ -414,7 +414,7 @@ article h3 {
         top: 50%;
         font-size: 30px;
         color: white;
-        opacity: 80%;
+        /* opacity: 80%; */
         font-weight: 400;
         display: flex;
         text-align: center;
@@ -434,7 +434,7 @@ article h3 {
         top: 50%;
         font-size: 30px;
         color: white;
-        opacity: 80%;
+        /* opacity: 80%; */
         font-weight: 400;
         display: flex;
         text-align: center;
@@ -454,7 +454,7 @@ article h3 {
         top: 50%;
         font-size: 30px;
         color: white;
-        opacity: 80%;
+        /* opacity: 80%; */
         font-weight: 400;
         display: flex;
         text-align: center;
@@ -474,7 +474,7 @@ article h3 {
         top: 50%;
         font-size: 30px;
         color: white;
-        opacity: 80%;
+        /* opacity: 80%; */
         font-weight: 400;
         display: flex;
         text-align: center;
