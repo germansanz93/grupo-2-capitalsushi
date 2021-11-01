@@ -11,35 +11,29 @@ const PORT = 3000;
 const publicPath = path.join(__dirname, '/public');
 app.use(express.static(publicPath));
 
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
 //rutas
 
 //home
-app.get('/', () => mainController.index)
+app.get('/', mainController.index)
 
 //contacto
-app.get('/contacto', (req, res) => {
-  res.sendFile(path.join(__dirname, '/views/contacto.html'));
-})
+app.get('/contacto', mainController.contacto)
 
 //menu
-app.get('/menu', (req,res) => {
-  res.sendFile(path.join(__dirname,'/views/menu.html'));
-})
+app.get('/menu', mainController.menu)
 
 //carrito
-app.get('/carrito', (req, res) => {
-  res.sendFile(path.join(__dirname, '/views/carrito.html'));
-})
+app.get('/carrito', mainController.carrito)
 
 //mi_cuenta
-app.get('/mi_cuenta', (req, res) => {
-  res.sendFile(path.join(__dirname, '/views/mi_cuenta.html'));
-})
+app.get('/mi_cuenta', mainController.miCuenta)
 
 //registro
-app.get('/registrarse', (req, res) => {
-  res.sendFile(path.join(__dirname, '/views/registrarse.html'));
-})
+app.get('/registrarse', mainController.registrarse)
 
 //server escuchando
 app.listen(PORT, () => {
