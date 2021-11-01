@@ -17,30 +17,8 @@
   <!-- Iconos Fontawesome -->
   <script src="https://kit.fontawesome.com/e785f1ab1e.js" crossorigin="anonymous"></script>
 </head>
-
 <body>
-  <header>
-    <img class="logo" src="/images/index.jpeg" alt="">
-    <div class="header-container">
-      <div class="top-header">
-        <div class="header-titles">
-          <h1>Capital Sushi</h1>
-          <h3>Sushi bar</h3>
-        </div>
-        <a class="header-user" href="#"> <i class="fas fa-user"></i> </a>
-        <a class="header-user" href="#"> <i class="fas fa-bars"></i> </a>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="#">Inicio</a></li>
-          <li><a href="/menu">Menu</a></li>
-          <li><a href="#">Carrito</a></li>
-          <li><a href="/mi_cuenta">Mi cuenta</a></li>
-          <li><a href="/contacto">Contacto</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <%- include('./partials/header') %> 
   <main>
     <img src="/images/sushiNigris.jpg" alt="">
     <div class="info-container">
