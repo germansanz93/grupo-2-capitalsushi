@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 
 //modulos propios
+const mainController = require('./controllers/mainController');
 
 //configs
 const app = express();
@@ -13,9 +14,7 @@ app.use(express.static(publicPath));
 //rutas
 
 //home
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '/views/home.html'));
-})
+app.get('/', () => mainController.index)
 
 //contacto
 app.get('/contacto', (req, res) => {
