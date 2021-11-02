@@ -7,22 +7,22 @@ const path = require('path');
 const mainController ={
 
   index : (req, res) => {
-    res.sendFile(path.join(__dirname, './views/home.html'));
+    res.render(path.join(__dirname, '../views/home.ejs'));
   },
-  contact : (req, res) => {
-    res.sendFile(path.join(__dirname, '/views/contacto.html'));
+  contacto : (req, res) => {
+    res.render(path.join(__dirname, '../views/contacto.ejs'));
   },
   menu: (req,res) => {
-    res.sendFile(path.join(__dirname,'./views/menu.html'));
+    res.render(path.join(__dirname,'../views/menu.ejs'));
   },
   carrito: (req, res) => {
-    res.sendFile(path.join(__dirname, './views/carrito.html'));
+    res.render(path.join(__dirname, '../views/carrito.ejs'));
   },
   miCuenta: (req, res) => {
-    res.sendFile(path.join(__dirname, './views/mi_cuenta.html'));
+    res.render(path.join(__dirname, '../views/mi_cuenta.ejs'));
   },
   registrarse: (req, res) => {
-    res.sendFile(path.join(__dirname, './views/registrarse.html'));
+    res.render(path.join(__dirname, '../views/registrarse.ejs'));
   }
 }
 

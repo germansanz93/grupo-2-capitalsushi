@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito</title>
+    <!-- Montserrat 100, 300, 400, 500 y 700 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&display=swap"
+        rel="stylesheet">
+    <!-- estilos -->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/carrito.css">
+    <!-- Iconos Fontawesome -->
+    <script src="https://kit.fontawesome.com/e785f1ab1e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <%- include('./partials/header') %> 
+    <main>
+        <div class="container">
+            <h3>DETALLE DEL PEDIDO</h3>
+            <div class="cajita blanca">
+                <p>Producto</p>
+                <div class="derecha"></div>
+                <p>Cantidad</p>
+                <p>Subtotal</p>
+            </div>
+            <div class="cajita negra">
+                <p>sushi roll 1</p>
+                <div class="derecha"></div>
+                <p>- 1 +</p>
+                <p>$800</p>
+            </div>
+            <div class="cajita negra">
+                <p>sushi roll 2</p>
+                <div class="derecha"></div>
+                <p>- 2 +</p>
+                <p>$950</p>
+            </div>
+            <div class="cajita blanca">
+                <p>Subtotal</p>
+                <div class="derecha"></div>
+                <p>$1500</p>
+            </div>
+            <div class="cajita blanca">
+                <p>Total</p>
+                <div class="derecha"></div>
+                <p>$1900</p>
+            </div>
+        </div>
+
+
+
+
+    </main>
+    <%- include('./partials/footer') %> 
+</body>
+
+</html>

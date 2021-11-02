@@ -21,3 +21,15 @@ Hacer menos: Dedicarle más tiempo a trabajos externos al proyecto
 Dejar de hacer: Trabajar tan individualmente.
 
 Comenzar a hacer: Fijar parámetros de trabajo.
+
+SPRINT 3:
+
+Hacer más: Atomizar las tareas, dar mas uso al ttablero de trabajo.
+
+Seguir haciendo: daylis
+
+Hacer menos: 
+
+Dejar de hacer: No trabajar con tiempo.
+
+Comenzar a hacer: Pair programming
