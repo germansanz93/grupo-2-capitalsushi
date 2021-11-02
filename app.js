@@ -35,6 +35,9 @@ app.get('/mi_cuenta', mainController.miCuenta)
 //registro
 app.get('/registrarse', mainController.registrarse)
 
+//formularioProducto
+app.get('/formulario_producto', mainController.formularioProducto)
+
 //server escuchando
 app.listen(PORT, () => {
   console.log(`Server running at port ${PORT}`)
