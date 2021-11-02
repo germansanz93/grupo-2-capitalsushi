@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/gianfrancorossi/grupo-2-capitalsushi#readme",
   "dependencies": {
+    "ejs": "^3.1.6",
     "express": "^4.17.1"
   }
 }

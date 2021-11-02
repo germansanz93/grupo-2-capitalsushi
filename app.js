@@ -7,7 +7,7 @@ const mainController = require('./controllers/mainController');
 
 //configs
 const app = express();
-const PORT = 3000;
+const PORT = 5000;
 const publicPath = path.join(__dirname, '/public');
 app.use(express.static(publicPath));
 
