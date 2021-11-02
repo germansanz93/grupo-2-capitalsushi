@@ -13,12 +13,47 @@
         rel="stylesheet">
     <!-- estilos -->
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/formularioProducto.css">
     <!-- Iconos Fontawesome -->
     <script src="https://kit.fontawesome.com/e785f1ab1e.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <!-- Header-->
     <%- include('./partials/header') %> 
+    <main>
+
+        <div class="form-container">
+            <h2>Producto</h2>
+
+        <form action="/formularioProducto" method="POST" class='validated-form' novalidate enctype="multipart/form-data">
+            <div>
+                <label class="form-label" for="title">Título del plato</label>
+                <input class="form-control" type=" text" id="title" name="title" required>
+            </div>
+            <div>
+                <div class="input-group">
+                    <label class="form-label" for="price">Precio</label>
+                    <span class="input-group-text" id="price-label">$</span>
+                    <input type="number" class="form-control" placeholder="0.00" id="price" aria-label="price"
+                        name="price" aria-describedby="place-label" required>
+                </div>
+            </div>
+            <div>
+                <label class="form-label" for="description">Descripción</label>
+                <textarea cols = "1000" class="form-control" id="description" name="description" required></textarea>
+            </div>
+            <div>
+                <input type="file" class="form-control" id="image" name="image" multiple>
+                <label class="input-group-text" for="image">Adjunte una imagen..</label>
+            </div>
+            <div>
+                <button>Agregar plato</button>
+            </div>
+        </form>
+        </div>
+    </main>
     
+    <!-- Footer-->
     <%- include('./partials/footer') %> 
 </body>
 </html>
