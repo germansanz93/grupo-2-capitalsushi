@@ -1,3 +1,10 @@
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 main {
     display: flex;
     justify-content: center;
@@ -12,11 +19,13 @@ main .form-container {
     justify-content: center;
     flex-direction: column;
     width: 96%;
+    margin-bottom: 3rem;
 }
 
 main .form-title {
     font-family: 'Montserrat';
     font-weight: 500;
+    font-size: calc(1.375rem + 1.5vw);
 }
 
 form .input-group {
@@ -82,6 +91,19 @@ form .form-button{
     color: #e9ecef;
 }
 
+form .form-button:hover{
+    color: var(--orange);
+    cursor: pointer;
+}
+
 form .btn-container{
     display: flex;
+    margin-top: 0.2rem;
+}
+
+
+@media (min-width: 481px) {
+    main .form-container{
+        max-width: 516px;
+    }
 }
