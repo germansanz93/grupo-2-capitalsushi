@@ -25,7 +25,7 @@ const mainController ={
     res.render(path.join(__dirname, '../views/registrarse.ejs'));
   },
   formularioProducto: (req,res) => {
-    res.render(path.join(__dirname, '../views/formularioProducto.ejs'))
+    res.render(path.join(__dirname, '../views/formulario_producto.ejs'))
   }
 }
 
