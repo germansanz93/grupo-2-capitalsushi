@@ -27,12 +27,12 @@ form .input-group {
     text-align: start;
     flex-wrap: nowrap;
     position: relative;
+    padding-top: 0.75rem;
 }
 
 form .form-label {
     font-size: 1rem;
     font-weight: 500;
-    padding-bottom: 0.75rem;
     padding-top: 1rem;
 }
 
@@ -45,6 +45,10 @@ form .form-control {
     font-weight: 500;
     line-height: 1.5;
     font-size: 1rem;
+}
+
+form .form-image{
+    padding-left: 60px;
 }
 
 form .input-group-text {
@@ -65,6 +69,19 @@ form .input-group-text {
     z-index: 10;
 }
 
-.form-control {
-    width: 30%;
+
+form .form-button{
+    border: none;
+    margin-top: 10px;
+    padding: 8px 20px;
+    text-transform: capitalize;
+    font-weight: 500;
+    border-radius: 4px;
+    background-color: var(--main-black);
+    font-size: 1rem;    
+    color: #e9ecef;
+}
+
+form .btn-container{
+    display: flex;
 }
