@@ -1,52 +1,68 @@
-body {
-    height: 100vh;
-    background-image: url("../images/60b8359cace20b124907467f.jpeg");
-  background-size: cover;
-    background-repeat:no-repeat;
-    background-position: center center;
-  }
-  main .forms-container{
-    margin-top: 20px;
-  }
-main {
-    position: relative;
-    height: 100vh;
-}
-  main .container{
-    position: absolute;
-    background-color: var(--main-black);
-    width: 60%;
-    height: 50%;
-    top: 40%; 
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    z-index: 100;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-}
-main .container h3 {
-    color:var(--orange);
-    padding: 15px;
-    
-}
-main .cajita {
-    display:flex;
-    justify-content: space-between;
-    width: 90%;
-    border-radius: 5px;
-    margin-bottom: 15px;
-}
-main .cajita.blanca {
-    background-color: #fff;
-}
-main .cajita.negra {
-    background-color: #2f2f2f;
-    
+main .forms-container {
+  margin-top: 20px;
 }
 
-main .cajita p{
-    padding: 4px;
+main .background{
+  display: none;
+}
+
+main .container {
+  /* position: absolute; */
+  background-color: var(--main-black);
+  width: 100%;
+  /* height: 50%; */
+  /* top: 40%; */
+  /* left: 50%; */
+  /* transform: translateX(-50%) translateY(-50%); */
+  /* z-index: 100; */
+  /* border-radius: 10px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main .container h3 {
+  color: var(--orange);
+  padding: 15px;
+}
+
+main .row {
+  width: 96%;
+  margin: 0.5rem 0 0.5rem 0;
+  display: flex;
+  height: 2rem;
+  border-radius: 0.25rem;
+  justify-content: space-between;
+  align-content: center;
+}
+
+main .header {
+  background-color: #FFF;
+}
+
+main .product {
+  background-color: #2f2f2f;
+}
+
+main .row p {
+  text-align: center;
+  margin: auto;
+  font-size: 1.1rem;
+}
+
+main .product p {
+  color: var(--orange);
+}
+
+main .right, main .left {
+  display: flex;
+}
+
+main .right{
+  width: 65%;
+}
+
+main .product .left {
+  text-transform: uppercase;
+  font-weight: 700;
 }

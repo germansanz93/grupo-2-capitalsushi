@@ -13,7 +13,7 @@
         rel="stylesheet">
     <!-- estilos -->
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/formularioProducto.css">
+    <link rel="stylesheet" href="/css/formulario_producto.css">
     <!-- Iconos Fontawesome -->
     <script src="https://kit.fontawesome.com/e785f1ab1e.js" crossorigin="anonymous"></script>
 </head>
@@ -23,10 +23,9 @@
     <main>
 
         <div class="form-container">
-            <h2>Producto</h2>
-
-        <form action="/formularioProducto" method="POST" class='validated-form' novalidate enctype="multipart/form-data">
-            <div>
+            <h2 class="form-title">Cargar producto</h2>
+        <form class="product-form" action="/formularioProducto" method="POST" class='validated-form' novalidate enctype="multipart/form-data">
+            <div class="input-group" >
                 <label class="form-label" for="title">Título del plato</label>
                 <input class="form-control" type=" text" id="title" name="title" required>
             </div>
@@ -38,16 +37,16 @@
                         name="price" aria-describedby="place-label" required>
                 </div>
             </div>
-            <div>
+            <div class="input-group">
                 <label class="form-label" for="description">Descripción</label>
                 <textarea cols = "1000" class="form-control" id="description" name="description" required></textarea>
             </div>
-            <div>
-                <input type="file" class="form-control" id="image" name="image" multiple>
-                <label class="input-group-text" for="image">Adjunte una imagen..</label>
+            <div class="input-group">
+                <input type="file" class="form-control form-image" id="image" name="image" multiple>
+                <label class="input-group-text" for="image">Cargar Imagen</label>
             </div>
-            <div>
-                <button>Agregar plato</button>
+            <div class="btn-container">
+                <button class="form-button">Agregar plato</button>
             </div>
         </form>
         </div>
