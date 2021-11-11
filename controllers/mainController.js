@@ -26,6 +26,9 @@ const mainController ={
   },
   formularioProducto: (req,res) => {
     res.render(path.join(__dirname, '../views/formularioProducto.ejs'))
+  },
+  cartilla: (req,res) => {
+    res.render(path.join(__dirname, '../views/cartilla.ejs'))
   }
 }
 
