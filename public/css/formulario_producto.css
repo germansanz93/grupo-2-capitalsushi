@@ -101,6 +101,10 @@ form .btn-container{
     margin-top: 0.2rem;
 }
 
+form #price{
+    padding-left: 45px;
+}
+
 
 @media (min-width: 481px) {
     main .form-container{
