@@ -29,6 +29,11 @@ const mainController ={
   },
   cartilla: (req,res) => {
     res.render(path.join(__dirname, '../views/cartilla.ejs'))
+  },
+  crearProducto: (req, res) => {
+    const {title, price, description} = req.body;
+    const {filename} = req.file;
+    res.send(`${title} ${price} ${description} ${filename}`);
   }
 }
 
