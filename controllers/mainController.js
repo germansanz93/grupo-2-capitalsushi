@@ -1,9 +1,12 @@
 //modulos de terceros
+const { readFileSync, writeFileSync} = require('fs');
 const path = require('path');
+const { v4: uuidv4 } = require('uuid');
 
+
+const productsFilePath = path.join(__dirname, '../data/ProductsCapitalSushi.json');
 
 //rutas
-
 const mainController ={
 
   index : (req, res) => {
@@ -32,8 +35,13 @@ const mainController ={
   },
   crearProducto: (req, res) => {
     const {title, price, description} = req.body;
+    const id = uuidv4();
     const {filename} = req.file;
-    res.send(`${title} ${price} ${description} ${filename}`);
+    const product={id, title, description, filename, price}
+    const stored = JSON.parse(readFileSync(productsFilePath))
+    stored.push(product);
+    writeFileSync(productsFilePath, JSON.stringify(stored, null, 2))
+    res.send(product);
   }
 }
 
