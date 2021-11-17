@@ -3,7 +3,7 @@ const express = require('express');
 const path = require('path');
 
 //modulos propios
-const mainController = require('./controllers/mainController');
+const mainRouter =require('./routes/mainRouter');
 
 //configs
 const app = express();
@@ -16,30 +16,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 //rutas
-
-//home
-app.get('/', mainController.index)
-
-//contacto
-app.get('/contacto', mainController.contacto)
-
-//menu
-app.get('/menu', mainController.menu)
-
-//carrito
-app.get('/carrito', mainController.carrito)
-
-//mi_cuenta
-app.get('/mi_cuenta', mainController.miCuenta)
-
-//registro
-app.get('/registrarse', mainController.registrarse)
-
-//formularioProducto
-app.get('/formulario_producto', mainController.formularioProducto)
-
-//cartilla
-app.get('/cartilla', mainController.cartilla)
+app.use('/', mainRouter)
 
 //server escuchando
 app.listen(PORT, () => {
