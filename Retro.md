@@ -1,4 +1,4 @@
-SPRINT 1:
+## SPRINT 1: ##
 
 Hacer más: Organización, reuniones, comunicación, utilizar el tablero de trabajo(GitHub Projects), hacer dailys.
 
@@ -10,7 +10,8 @@ Dejar de hacer: Quitarle prioridad al proyecto por sobre otras cosas.
 
 Comenzar a hacer: Tener fecha y horario concreto para facilitar la organización del trabajo.
 
-SPRINT 2:
+
+## SPRINT 2: ##
 
 Hacer más: Implementar código mas complejo y elaborado para el mejor desempeño posible de la página, investigar para implementar nuevas herramientas al proyecto.
 
@@ -22,7 +23,8 @@ Dejar de hacer: Trabajar tan individualmente.
 
 Comenzar a hacer: Fijar parámetros de trabajo.
 
-SPRINT 3:
+
+## SPRINT 3: ##
 
 Hacer más: Atomizar las tareas, dar mas uso al ttablero de trabajo.
 
@@ -33,3 +35,17 @@ Hacer menos:
 Dejar de hacer: No trabajar con tiempo.
 
 Comenzar a hacer: Pair programming
+
+
+## SPRINT 4: ##
+
+Hacer más: Daylies mas flexibles.
+
+Seguir haciendo: mejorar y organizar el codigo
+
+Hacer menos: no cumplir con las daylies
+
+Dejar de hacer: No trabajar con tiempo.
+
+Comenzar a hacer: 
+
