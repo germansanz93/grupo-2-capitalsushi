@@ -1,10 +1,10 @@
 /* Estilos comunes a todos los HTML */
-:root{
+:root {
   --main-black: #141313;
   --orange: #E1612A;
 }
 
-*{
+* {
   font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding: 0;
@@ -28,7 +28,7 @@ header {
 
 header .logo {
   height: 100%;
-  display: none; 
+  display: none;
 }
 
 header .header-container {
@@ -49,6 +49,7 @@ header .header-titles {
   flex-direction: column;
   height: 95px;
   width: 92%;
+  z-index: 200;
 }
 
 header .header-container h1, header .header-container h3 {
@@ -71,6 +72,35 @@ header nav {
   display: none;
 }
 
+header nav.show {
+  display: flex;
+  width: 60vw;
+  height: 100vh;
+  background-color: var(--main-black);
+  position: fixed;
+  right: 0;
+  z-index: 199;
+}
+
+header nav.show ul {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+  justify-content: center;
+  width: 100%;
+  height: 70%;
+  font-weight: 500;
+}
+
+header nav.show li {
+  text-align: center;
+  padding-top: 2rem;
+}
+
+header nav.show li a {
+  font-size: 1.1rem;
+}
+
 header nav ul {
   display: flex;
   justify-content: space-around;
@@ -85,23 +115,29 @@ header nav ul a {
   text-align: center;
 }
 
+header nav ul a:hover {
+  color: var(--orange);
+}
+
 header .fa-bars {
   color: #FFF;
   font-size: 25px;
   padding: 28px 25px;
+  position: relative;
+  z-index: 200;
 }
 
-header .fa-user{
+header .fa-user {
   color: #FFF;
   font-size: 35px;
   padding: 30px;
 }
 
-header .fa-user{
+header .fa-user {
   display: none;
 }
 
-header nav .active{
+header nav .active {
   color: var(--orange);
   border-bottom: 4px solid var(--orange);
   font-weight: 500;
@@ -110,7 +146,10 @@ header nav .active{
 @media (min-width: 481px) {
   header .logo {
     display: block;
-    height: 95px; 
+    height: 95px;
+  }
+  header nav.show {
+    width: 40vw;
   }
 }
 
@@ -118,27 +157,34 @@ header nav .active{
   header {
     height: 140px;
   }
-  header .logo{
+
+  header .logo {
     height: 100%;
   }
+
   header .header-container h1 {
     font-size: 32px;
   }
+
   header .header-container h3 {
     font-size: 18px;
   }
+
   header nav {
     display: block;
     width: 85%;
     max-width: 900px;
   }
-  header nav ul a{
+
+  header nav ul a {
     font-size: 15px;
   }
+
   header .fa-bars {
     display: none;
   }
-  header .fa-user{
+
+  header .fa-user {
     display: block;
   }
 }
@@ -162,7 +208,7 @@ footer
 
 */
 
-footer{
+footer {
   background-color: var(--main-black);
   display: flex;
   flex-direction: column;
@@ -171,45 +217,46 @@ footer{
   justify-content: space-around;
 }
 
-footer div{
+footer div {
   margin-top: 20px;
 }
 
-footer h3{
+footer h3 {
   color: var(--orange);
   font-size: 20px;
   text-transform: uppercase;
 }
 
-footer ul{
-  list-style:none;
+footer ul {
+  list-style: none;
 }
 
-footer .footer-links a{
+footer .footer-links a {
   color: #FFF;
   font-size: 16px;
   text-decoration: none;
 }
 
-footer .footer-links a:hover{
+footer .footer-links a:hover {
   color: var(--orange);
 }
 
-footer p{
+footer p {
   color: #FFF;
   font-size: 16px;
   margin-bottom: 6px;
 }
 
 @media (min-width: 810px) {
-  footer{
+  footer {
     flex-direction: row;
   }
-  footer div{
+
+  footer div {
     width: 30%;
   }
-  footer div div{
+
+  footer div div {
     width: 100%;
   }
 }
-
