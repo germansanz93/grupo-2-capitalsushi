@@ -10,6 +10,7 @@ const app = express();
 const PORT = 5000;
 const publicPath = path.join(__dirname, '/public');
 app.use(express.static(publicPath));
+app.use(express.json());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

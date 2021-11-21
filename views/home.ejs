@@ -1,57 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Capital sushi</title>
-  <!-- Montserrat 100, 300, 400, 500 y 700 -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&display=swap"
-    rel="stylesheet">
-  <!-- estilos -->
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/home.css">
-  <!-- Iconos Fontawesome -->
-  <script src="https://kit.fontawesome.com/e785f1ab1e.js" crossorigin="anonymous"></script>
-</head>
-<body>
-  <%- include('./partials/header') %> 
-  <main>
-    <img src="/images/sushiNigris.jpg" alt="">
-    <div class="info-container">
-      <article class="delivery">
-        <div class="icon">
-          <i class="fas fa-truck"></i>
+<%- include('./partials/head', {stylesheet: 'home.css' , title: 'Inicio' }) %>
+
+  <body>
+    <%- include('./partials/header', {view: 'home' }) %>
+      <main>
+        <img src="/images/sushiNigris.jpg" alt="">
+        <div class="info-container">
+          <article class="delivery">
+            <div class="icon">
+              <i class="fas fa-truck"></i>
+            </div>
+            <div class="text">
+              <h3>Entrega gratis</h3>
+              <p>A todos los pedidos en el area local</p>
+            </div>
+          </article>
+          <article class="opening-times">
+            <div class="icon">
+              <i class="fas fa-calendar-day"></i>
+            </div>
+            <div class="text">
+              <h3>Abrimos todos los dias</h3>
+              <p>Lunes a domingo de 12 - 16:30 19:30 - 24</p>
+            </div>
+          </article>
+          <article class="pay-methods">
+            <div class="icon">
+              <i class="fas fa-credit-card"></i>
+            </div>
+            <div class="text">
+              <h3>Medios de pago</h3>
+              <p>Paga en efectivo, con tarjetas o mercadopago</p>
+            </div>
+          </article>
         </div>
-        <div class="text">
-          <h3>Entrega gratis</h3>
-          <p>A todos los pedidos en el area local</p>
-        </div>
-      </article>
-      <article class="opening-times">
-        <div class="icon">
-          <i class="fas fa-calendar-day"></i>
-        </div>
-        <div class="text">
-          <h3>Abrimos todos los dias</h3>
-          <p>Lunes a domingo de 12 - 16:30 19:30 - 24</p>
-        </div>
-      </article>
-      <article class="pay-methods">
-        <div class="icon">
-          <i class="fas fa-credit-card"></i>
-        </div>
-        <div class="text">
-          <h3>Medios de pago</h3>
-          <p>Paga en efectivo, con tarjetas o mercadopago</p>
-        </div>
-      </article>
-    </div>
-  </main>
-  <%- include('./partials/footer') %> 
-</body>
+      </main>
+      <%- include('./partials/footer') %>
+  </body>
 
 </html>

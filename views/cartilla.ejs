@@ -1,453 +1,440 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Capital sushi</title>
-        <!-- Montserrat 100, 300, 400, 500 y 700 -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&display=swap"
-          rel="stylesheet">
-        <!-- estilos -->
-        <link rel="stylesheet" href="/css/cartilla.css">
-        <link rel="stylesheet" href="/css/main.css">
-        <!-- Iconos Fontawesome -->
-        <script src="https://kit.fontawesome.com/e785f1ab1e.js" crossorigin="anonymous"></script>
-      </head>
-<body>
-    <%- include('./partials/header') %> 
-    <main>
-        <div class="div-main">
+<%- include('./partials/head', {stylesheet: 'cartilla.css' , title: 'Cartilla' }) %>
 
-            <div class="container">
-                <h2>ENTRADAS</h2>
+    <body>
+        <%- include('./partials/header', {view: 'cartilla' }) %>
+            <main>
+                <div class="div-main">
 
-                <article>
-                    <div class="image-container">
-                        <img class="pr-img" src="/images/entrada-1.jpg" alt="entradas">
-                    </div>
-                    <div class="description">
-                        <h3>Nombre Plato</h3>
-                        <p>Descripción del contenido de la tabla</p>
-                        <p class="price">$1250</p>
-                    </div>
-                </article>
+                    <div class="container">
+                        <h2>ENTRADAS</h2>
 
-                <article>
-                    <div class="image-container">
-                        <img class="pr-img" src="/images/entrada-2.jpg" alt="entradas">
-                    </div>
-                    <div class="description">
-                        <h3>Nombre Plato</h3>
-                        <p>Descripción del contenido de la tabla</p>
-                        <p class="price">$2250</p>
-                    </div>
-                </article>
+                        <article>
+                            <div class="image-container">
+                                <img class="pr-img" src="/images/entrada-1.jpg" alt="entradas">
+                            </div>
+                            <div class="description">
+                                <h3>Nombre Plato</h3>
+                                <p>Descripción del contenido de la tabla</p>
+                                <p class="price">$1250</p>
+                            </div>
+                        </article>
 
-                <article>
-                    <div class="image-container">
-                        <img class="pr-img" src="/images/entrada-3.jpg" alt="entradas">
-                    </div>
-                    <div class="description">
-                        <h3>Nombre Plato</h3>
-                        <p>Descripción del contenido de la tabla</p>
-                        <p class="price">$3000</p>
-                    </div>
-                </article>
+                        <article>
+                            <div class="image-container">
+                                <img class="pr-img" src="/images/entrada-2.jpg" alt="entradas">
+                            </div>
+                            <div class="description">
+                                <h3>Nombre Plato</h3>
+                                <p>Descripción del contenido de la tabla</p>
+                                <p class="price">$2250</p>
+                            </div>
+                        </article>
 
-                <article>
-                    <div class="image-container">
-                        <img class="pr-img" src="/images/entrada-4.jpg" alt="entradas">
-                    </div>
-                    <div class="description">
-                        <h3>Nombre Plato</h3>
-                        <p>Descripción del contenido de la tabla</p>
-                        <p class="price">$3000</p>
-                    </div>
-                </article>
+                        <article>
+                            <div class="image-container">
+                                <img class="pr-img" src="/images/entrada-3.jpg" alt="entradas">
+                            </div>
+                            <div class="description">
+                                <h3>Nombre Plato</h3>
+                                <p>Descripción del contenido de la tabla</p>
+                                <p class="price">$3000</p>
+                            </div>
+                        </article>
 
-                <article>
-                    <div class="image-container">
-                        <img class="pr-img" src="/images/entrada-5.jpg" alt="entradas">
-                    </div>
-                    <div class="description">
-                        <h3>Nombre Plato</h3>
-                        <p>Descripción del contenido de la tabla</p>
-                        <p class="price">$3000</p>
-                    </div>
-                </article>
+                        <article>
+                            <div class="image-container">
+                                <img class="pr-img" src="/images/entrada-4.jpg" alt="entradas">
+                            </div>
+                            <div class="description">
+                                <h3>Nombre Plato</h3>
+                                <p>Descripción del contenido de la tabla</p>
+                                <p class="price">$3000</p>
+                            </div>
+                        </article>
 
-                <article>
-                    <div class="image-container">
-                        <img class="pr-img" src="/images/entrada-6.jpg" alt="entradas">
+                        <article>
+                            <div class="image-container">
+                                <img class="pr-img" src="/images/entrada-5.jpg" alt="entradas">
+                            </div>
+                            <div class="description">
+                                <h3>Nombre Plato</h3>
+                                <p>Descripción del contenido de la tabla</p>
+                                <p class="price">$3000</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <div class="image-container">
+                                <img class="pr-img" src="/images/entrada-6.jpg" alt="entradas">
+                            </div>
+                            <div class="description">
+                                <h3>Nombre Plato</h3>
+                                <p>Descripción del contenido de la tabla</p>
+                                <p class="price">$3000</p>
+                            </div>
+                        </article>
                     </div>
-                    <div class="description">
-                        <h3>Nombre Plato</h3>
-                        <p>Descripción del contenido de la tabla</p>
-                        <p class="price">$3000</p>
-                    </div>  
-                </article>
-            </div>
 
 
-            <div class="container">
-                <h2>TABLAS</h2>
+                    <div class="container">
+                        <h2>TABLAS</h2>
 
-                <article>
-                    <div class="image-container">
-                        <img class="pr-img" src="/images/tabla-1.jpg" alt="tablas">
-                    </div>
-                    <div class="description">
-                        <h3>Nombre Plato</h3>
-                        <p>Descripción del contenido de la tabla</p>
-                        <p class="price">$1250</p>
-                    </div>
-                </article>
+                        <article>
+                            <div class="image-container">
+                                <img class="pr-img" src="/images/tabla-1.jpg" alt="tablas">
+                            </div>
+                            <div class="description">
+                                <h3>Nombre Plato</h3>
+                                <p>Descripción del contenido de la tabla</p>
+                                <p class="price">$1250</p>
+                            </div>
+                        </article>
 
-                <article>
-                    <div class="image-container">
-                        <img class="pr-img" src="/images/tabla-2.png" alt="tablas">
-                    </div>
-                    <div class="description">
-                        <h3>Nombre Plato</h3>
-                        <p>Descripción del contenido de la tabla</p>
-                        <p class="price">$2250</p>
-                    </div>
-                </article>
+                        <article>
+                            <div class="image-container">
+                                <img class="pr-img" src="/images/tabla-2.png" alt="tablas">
+                            </div>
+                            <div class="description">
+                                <h3>Nombre Plato</h3>
+                                <p>Descripción del contenido de la tabla</p>
+                                <p class="price">$2250</p>
+                            </div>
+                        </article>
 
-                <article>
-                    <div class="image-container">
-                        <img class="pr-img" src="/images/tabla-3.png" alt="tablas">
-                    </div>
-                    <div class="description">
-                        <h3>Nombre Plato</h3>
-                        <p>Descripción del contenido de la tabla</p>
-                        <p class="price">$3000</p>
-                    </div>
-                </article>
+                        <article>
+                            <div class="image-container">
+                                <img class="pr-img" src="/images/tabla-3.png" alt="tablas">
+                            </div>
+                            <div class="description">
+                                <h3>Nombre Plato</h3>
+                                <p>Descripción del contenido de la tabla</p>
+                                <p class="price">$3000</p>
+                            </div>
+                        </article>
 
-                <article>
-                    <div class="image-container">
-                        <img class="pr-img" src="/images/tabla-4.jpg" alt="tablas">
-                    </div>
-                    <div class="description">
-                        <h3>Nombre Plato</h3>
-                        <p>Descripción del contenido de la tabla</p>
-                        <p class="price">$1250</p>
-                    </div>
-                </article>
+                        <article>
+                            <div class="image-container">
+                                <img class="pr-img" src="/images/tabla-4.jpg" alt="tablas">
+                            </div>
+                            <div class="description">
+                                <h3>Nombre Plato</h3>
+                                <p>Descripción del contenido de la tabla</p>
+                                <p class="price">$1250</p>
+                            </div>
+                        </article>
 
-                <article>
-                    <div class="image-container">
-                        <img class="pr-img" src="/images/tabla-5.jpg" alt="tablas">
-                    </div>
-                    <div class="description">
-                        <h3>Nombre Plato</h3>
-                        <p>Descripción del contenido de la tabla</p>
-                        <p class="price">$2250</p>
-                    </div>
-                </article>
+                        <article>
+                            <div class="image-container">
+                                <img class="pr-img" src="/images/tabla-5.jpg" alt="tablas">
+                            </div>
+                            <div class="description">
+                                <h3>Nombre Plato</h3>
+                                <p>Descripción del contenido de la tabla</p>
+                                <p class="price">$2250</p>
+                            </div>
+                        </article>
 
-                <article>
-                    <div class="image-container">
-                        <img class="pr-img" src="/images/tabla-6.jpg" alt="tablas">
+                        <article>
+                            <div class="image-container">
+                                <img class="pr-img" src="/images/tabla-6.jpg" alt="tablas">
+                            </div>
+                            <div class="description">
+                                <h3>Nombre Plato</h3>
+                                <p>Descripción del contenido de la tabla</p>
+                                <p class="price">$3000</p>
+                            </div>
+                        </article>
                     </div>
-                    <div class="description">
-                        <h3>Nombre Plato</h3>
-                        <p>Descripción del contenido de la tabla</p>
-                        <p class="price">$3000</p>
-                    </div>
-                </article>
-            </div>
-
-
-            <div class="container">
-                <h2>ROLLS</h2>
-
-                <article>
-                    <div class="image-container">
-                        <img class="pr-img" src="/images/roll-1.png" alt="rolls">
-                    </div>
-                    <div class="description">
-                        <h3>Nombre Plato</h3>
-                        <p>Descripción del contenido de la tabla</p>
-                        <p class="price">$1250</p>
-                    </div>
-                </article>
-
-                <article>
-                    <div class="image-container">
-                        <img class="pr-img " src="/images/roll-2.jpg" alt="rolls">
-                    </div>
-                    <div class="description">
-                        <h3>Nombre Plato</h3>
-                        <p>Descripción del contenido de la tabla</p>
-                        <p class="price">$2250</p>
-                    </div>
-                </article>
-
-                <article>
-                    <div class="image-container">
-                        <img class="pr-img" src="/images/roll-3.png" alt="rolls">
-                    </div>
-                    <div class="description">
-                        <h3>Nombre Plato</h3>
-                        <p>Descripción del contenido de la tabla</p>
-                        <p class="price">$3000</p>
-                    </div>
-                </article>
-
-                <article>
-                    <div class="image-container">
-                        <img class="pr-img" src="/images/roll-4.png" alt="rolls">
-                    </div>
-                    <div class="description">
-                        <h3>Nombre Plato</h3>
-                        <p>Descripción del contenido de la tabla</p>
-                        <p class="price">$3000</p>
-                    </div>
-                </article>
-
-                <article>
-                    <div class="image-container">
-                        <img class="pr-img" src="/images/roll-5.png" alt="rolls">
-                    </div>    
-                    <div class="description">
-                        <h3>Nombre Plato</h3>
-                        <p>Descripción del contenido de la tabla</p>
-                        <p class="price">$3000</p>
-                    </div>
-                </article>
-
-                <article>
-                    <div class="image-container">
-                        <img class="pr-img" src="/images/roll-6.jpg" alt="rolls">
-                    </div>
-                    <div class="description">
-                        <h3>Nombre Plato</h3>
-                        <p>Descripción del contenido de la tabla</p>
-                        <p class="price">$3000</p>
-                    </div>
-                </article>
-            </div>
 
 
-            <div class="container">
-                <h2>WOKS</h2>
+                    <div class="container">
+                        <h2>ROLLS</h2>
 
-                <article>
-                    <div class="image-container">
-                        <img class="pr-img" src="/images/wok-1.jpg" alt="woks">
-                    </div>
-                    <div class="description">
-                        <h3>Nombre Plato</h3>
-                        <p>Descripción del contenido de la tabla</p>
-                        <p class="price">$1250</p>
-                    </div>
-                </article>
+                        <article>
+                            <div class="image-container">
+                                <img class="pr-img" src="/images/roll-1.png" alt="rolls">
+                            </div>
+                            <div class="description">
+                                <h3>Nombre Plato</h3>
+                                <p>Descripción del contenido de la tabla</p>
+                                <p class="price">$1250</p>
+                            </div>
+                        </article>
 
-                <article>
-                    <div class="image-container">
-                        <img class="pr-img" src="/images/wok-2.jpg" alt="woks">
-                    </div>
-                    <div class="description">
-                        <h3>Nombre Plato</h3>
-                        <p>Descripción del contenido de la tabla</p>
-                        <p class="price">$2250</p>
-                    </div>
-                </article>
+                        <article>
+                            <div class="image-container">
+                                <img class="pr-img " src="/images/roll-2.jpg" alt="rolls">
+                            </div>
+                            <div class="description">
+                                <h3>Nombre Plato</h3>
+                                <p>Descripción del contenido de la tabla</p>
+                                <p class="price">$2250</p>
+                            </div>
+                        </article>
 
-                <article>
-                    <div class="image-container">
-                        <img class="pr-img" src="/images/wok-3.jpg" alt="woks">
-                    </div>
-                    <div class="description">
-                        <h3>Nombre Plato</h3>
-                        <p>Descripción del contenido de la tabla</p>
-                        <p class="price">$3000</p>
-                    </div>
-                </article>
+                        <article>
+                            <div class="image-container">
+                                <img class="pr-img" src="/images/roll-3.png" alt="rolls">
+                            </div>
+                            <div class="description">
+                                <h3>Nombre Plato</h3>
+                                <p>Descripción del contenido de la tabla</p>
+                                <p class="price">$3000</p>
+                            </div>
+                        </article>
 
-                <article>
-                    <div class="image-container">
-                        <img class="pr-img" src="/images/wok-4.jpg" alt="woks">
-                    </div>
-                    <div class="description">
-                        <h3>Nombre Plato</h3>
-                        <p>Descripción del contenido de la tabla</p>
-                        <p class="price">$3000</p>
-                    </div>
-                </article>
+                        <article>
+                            <div class="image-container">
+                                <img class="pr-img" src="/images/roll-4.png" alt="rolls">
+                            </div>
+                            <div class="description">
+                                <h3>Nombre Plato</h3>
+                                <p>Descripción del contenido de la tabla</p>
+                                <p class="price">$3000</p>
+                            </div>
+                        </article>
 
-                <article>
-                    <div class="image-container">
-                        <img class="pr-img" src="/images/wok-5.jpg" alt="woks">
-                    </div>
-                    <div class="description">
-                        <h3>Nombre Plato</h3>
-                        <p>Descripción del contenido de la tabla</p>
-                        <p class="price">$3000</p>
-                    </div>
-                </article>
+                        <article>
+                            <div class="image-container">
+                                <img class="pr-img" src="/images/roll-5.png" alt="rolls">
+                            </div>
+                            <div class="description">
+                                <h3>Nombre Plato</h3>
+                                <p>Descripción del contenido de la tabla</p>
+                                <p class="price">$3000</p>
+                            </div>
+                        </article>
 
-                <article>
-                    <div class="image-container">
-                        <img class="pr-img" src="/images/wok-6.png" alt="woks">
+                        <article>
+                            <div class="image-container">
+                                <img class="pr-img" src="/images/roll-6.jpg" alt="rolls">
+                            </div>
+                            <div class="description">
+                                <h3>Nombre Plato</h3>
+                                <p>Descripción del contenido de la tabla</p>
+                                <p class="price">$3000</p>
+                            </div>
+                        </article>
                     </div>
-                    <div class="description">
-                        <h3>Nombre Plato</h3>
-                        <p>Descripción del contenido de la tabla</p>
-                        <p class="price">$3000</p>
-                    </div>
-                </article>
-            </div>
-
-
-            <div class="container">
-                <h2>ENSALADAS</h2>
-
-                <article>
-                    <div class="image-container">
-                        <img class="pr-img" src="/images/ensalada-1.jpg" alt="ensaladas">
-                    </div>
-                    <div class="description">
-                        <h3>Nombre Plato</h3>
-                        <p>Descripción del contenido de la tabla</p>
-                        <p class="price">$1250</p>
-                    </div>
-                </article>
-
-                <article>
-                    <div class="image-container">
-                        <img class="pr-img" src="/images/ensalada-2.jpg" alt="ensaladas">
-                    </div>  
-                    <div class="description">
-                        <h3>Nombre Plato</h3>
-                        <p>Descripción del contenido de la tabla</p>
-                        <p class="price">$2250</p>
-                    </div>
-                </article>
-
-                <article>
-                    <div class="image-container">
-                        <img class="pr-img" src="/images/ensalada-3.jpg" alt="ensaladas">
-                    </div>
-                    <div class="description">
-                        <h3>Nombre Plato</h3>
-                        <p>Descripción del contenido de la tabla</p>
-                        <p class="price">$3000</p>
-                    </div>
-                </article>
-
-                <article>
-                    <div class="image-container">
-                        <img class="pr-img" src="/images/ensalada-4.jpg" alt="ensaladas">
-                    </div>  
-                    <div class="description">
-                        <h3>Nombre Plato</h3>
-                        <p>Descripción del contenido de la tabla</p>
-                        <p class="price">$3000</p>
-                    </div>
-                </article>
-
-                <article>
-                    <div class="image-container">
-                        <img class="pr-img" src="/images/ensalada-5.jpg" alt="ensaladas">
-                    </div>
-                    <div class="description">
-                        <h3>Nombre Plato</h3>
-                        <p>Descripción del contenido de la tabla</p>
-                        <p class="price">$3000</p>
-                    </div>
-                </article>
-
-                <article>
-                    <div class="image-container">
-                        <img class="pr-img" src="/images/ensalada-6.jpg" alt="ensaladas">
-                    </div>
-                    <div class="description">
-                        <h3>Nombre Plato</h3>
-                        <p>Descripción del contenido de la tabla</p>
-                        <p class="price">$3000</p>
-                    </div>
-                </article>
-            </div>
 
 
-            <div class="container">
-                <h2>POSTRES</h2>
+                    <div class="container">
+                        <h2>WOKS</h2>
 
-                <article>
-                    <div class="image-container">
-                        <img class="pr-img" src="/images/postre-1.png" alt="postres">
-                    </div>
-                    <div class="description">
-                        <h3>Nombre Plato</h3>
-                        <p>Descripción del contenido de la tabla</p>
-                        <p class="price">$1250</p>
-                    </div>
-                </article>
+                        <article>
+                            <div class="image-container">
+                                <img class="pr-img" src="/images/wok-1.jpg" alt="woks">
+                            </div>
+                            <div class="description">
+                                <h3>Nombre Plato</h3>
+                                <p>Descripción del contenido de la tabla</p>
+                                <p class="price">$1250</p>
+                            </div>
+                        </article>
 
-                <article>
-                    <div class="image-container">
-                        <img class="pr-img" src="/images/postre-2.jpg" alt="postres">
-                    </div>
-                    <div class="description">
-                        <h3>Nombre Plato</h3>
-                        <p>Descripción del contenido de la tabla</p>
-                        <p class="price">$2250</p>
-                    </div>
-                </article>
+                        <article>
+                            <div class="image-container">
+                                <img class="pr-img" src="/images/wok-2.jpg" alt="woks">
+                            </div>
+                            <div class="description">
+                                <h3>Nombre Plato</h3>
+                                <p>Descripción del contenido de la tabla</p>
+                                <p class="price">$2250</p>
+                            </div>
+                        </article>
 
-                <article>
-                    <div class="image-container">
-                        <img class="pr-img" src="/images/postre-3.jpg" alt="postres">
-                    </div>
-                    <div class="description">
-                        <h3>Nombre Plato</h3>
-                        <p>Descripción del contenido de la tabla</p>
-                        <p class="price">$3000</p>
-                    </div>
-                </article>
+                        <article>
+                            <div class="image-container">
+                                <img class="pr-img" src="/images/wok-3.jpg" alt="woks">
+                            </div>
+                            <div class="description">
+                                <h3>Nombre Plato</h3>
+                                <p>Descripción del contenido de la tabla</p>
+                                <p class="price">$3000</p>
+                            </div>
+                        </article>
 
-                <article>
-                    <div class="image-container">
-                        <img class="pr-img" src="/imagess/postre-4.jpg" alt="postres">
-                    </div>
-                    <div class="description">
-                        <h3>Nombre Plato</h3>
-                        <p>Descripción del contenido de la tabla</p>
-                        <p class="price">$3000</p>
-                    </div>
-                </article>
+                        <article>
+                            <div class="image-container">
+                                <img class="pr-img" src="/images/wok-4.jpg" alt="woks">
+                            </div>
+                            <div class="description">
+                                <h3>Nombre Plato</h3>
+                                <p>Descripción del contenido de la tabla</p>
+                                <p class="price">$3000</p>
+                            </div>
+                        </article>
 
-                <article>
-                    <div class="image-container">
-                        <img class="pr-img" src="/images/postre-5.jpg" alt="postres">
-                    </div>
-                    <div class="description">
-                        <h3>Nombre Plato</h3>
-                        <p>Descripción del contenido de la tabla</p>
-                        <p class="price">$3000</p>
-                    </div>
-                </article>
+                        <article>
+                            <div class="image-container">
+                                <img class="pr-img" src="/images/wok-5.jpg" alt="woks">
+                            </div>
+                            <div class="description">
+                                <h3>Nombre Plato</h3>
+                                <p>Descripción del contenido de la tabla</p>
+                                <p class="price">$3000</p>
+                            </div>
+                        </article>
 
-                <article>
-                    <div class="image-container">
-                        <img class="pr-img" src="/images/postre-6.jpg" alt="postres">
+                        <article>
+                            <div class="image-container">
+                                <img class="pr-img" src="/images/wok-6.png" alt="woks">
+                            </div>
+                            <div class="description">
+                                <h3>Nombre Plato</h3>
+                                <p>Descripción del contenido de la tabla</p>
+                                <p class="price">$3000</p>
+                            </div>
+                        </article>
                     </div>
-                    <div class="description">
-                        <h3>Nombre Plato</h3>
-                        <p>Descripción del contenido de la tabla</p>
-                        <p class="price">$3000</p>
-                    </div>
-                </article>
-            </div>
 
-        </div>
-    </main>
-    <%- include('./partials/footer') %> 
-</body>
+
+                    <div class="container">
+                        <h2>ENSALADAS</h2>
+
+                        <article>
+                            <div class="image-container">
+                                <img class="pr-img" src="/images/ensalada-1.jpg" alt="ensaladas">
+                            </div>
+                            <div class="description">
+                                <h3>Nombre Plato</h3>
+                                <p>Descripción del contenido de la tabla</p>
+                                <p class="price">$1250</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <div class="image-container">
+                                <img class="pr-img" src="/images/ensalada-2.jpg" alt="ensaladas">
+                            </div>
+                            <div class="description">
+                                <h3>Nombre Plato</h3>
+                                <p>Descripción del contenido de la tabla</p>
+                                <p class="price">$2250</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <div class="image-container">
+                                <img class="pr-img" src="/images/ensalada-3.jpg" alt="ensaladas">
+                            </div>
+                            <div class="description">
+                                <h3>Nombre Plato</h3>
+                                <p>Descripción del contenido de la tabla</p>
+                                <p class="price">$3000</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <div class="image-container">
+                                <img class="pr-img" src="/images/ensalada-4.jpg" alt="ensaladas">
+                            </div>
+                            <div class="description">
+                                <h3>Nombre Plato</h3>
+                                <p>Descripción del contenido de la tabla</p>
+                                <p class="price">$3000</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <div class="image-container">
+                                <img class="pr-img" src="/images/ensalada-5.jpg" alt="ensaladas">
+                            </div>
+                            <div class="description">
+                                <h3>Nombre Plato</h3>
+                                <p>Descripción del contenido de la tabla</p>
+                                <p class="price">$3000</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <div class="image-container">
+                                <img class="pr-img" src="/images/ensalada-6.jpg" alt="ensaladas">
+                            </div>
+                            <div class="description">
+                                <h3>Nombre Plato</h3>
+                                <p>Descripción del contenido de la tabla</p>
+                                <p class="price">$3000</p>
+                            </div>
+                        </article>
+                    </div>
+
+
+                    <div class="container">
+                        <h2>POSTRES</h2>
+
+                        <article>
+                            <div class="image-container">
+                                <img class="pr-img" src="/images/postre-1.png" alt="postres">
+                            </div>
+                            <div class="description">
+                                <h3>Nombre Plato</h3>
+                                <p>Descripción del contenido de la tabla</p>
+                                <p class="price">$1250</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <div class="image-container">
+                                <img class="pr-img" src="/images/postre-2.jpg" alt="postres">
+                            </div>
+                            <div class="description">
+                                <h3>Nombre Plato</h3>
+                                <p>Descripción del contenido de la tabla</p>
+                                <p class="price">$2250</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <div class="image-container">
+                                <img class="pr-img" src="/images/postre-3.jpg" alt="postres">
+                            </div>
+                            <div class="description">
+                                <h3>Nombre Plato</h3>
+                                <p>Descripción del contenido de la tabla</p>
+                                <p class="price">$3000</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <div class="image-container">
+                                <img class="pr-img" src="/imagess/postre-4.jpg" alt="postres">
+                            </div>
+                            <div class="description">
+                                <h3>Nombre Plato</h3>
+                                <p>Descripción del contenido de la tabla</p>
+                                <p class="price">$3000</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <div class="image-container">
+                                <img class="pr-img" src="/images/postre-5.jpg" alt="postres">
+                            </div>
+                            <div class="description">
+                                <h3>Nombre Plato</h3>
+                                <p>Descripción del contenido de la tabla</p>
+                                <p class="price">$3000</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <div class="image-container">
+                                <img class="pr-img" src="/images/postre-6.jpg" alt="postres">
+                            </div>
+                            <div class="description">
+                                <h3>Nombre Plato</h3>
+                                <p>Descripción del contenido de la tabla</p>
+                                <p class="price">$3000</p>
+                            </div>
+                        </article>
+                    </div>
+
+                </div>
+            </main>
+            <%- include('./partials/footer') %>
+    </body>
+
 </html>

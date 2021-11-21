@@ -101,6 +101,12 @@ header .fa-user{
   display: none;
 }
 
+header nav .active{
+  color: var(--orange);
+  border-bottom: 4px solid var(--orange);
+  font-weight: 500;
+}
+
 @media (min-width: 481px) {
   header .logo {
     display: block;
