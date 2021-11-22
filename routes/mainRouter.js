@@ -6,6 +6,8 @@ const multer = require('multer');
 const path = require('path');
 const { body } = require('express-validator');
 
+const validExtensions = ['.jpg', '.jpeg', '.png'];
+
 //multer
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -17,7 +19,9 @@ const storage = multer.diskStorage({
   }
 })
 
-const upload = multer({ storage: storage})
+const upload = multer({ storage: storage, fileFilter:(req, file, cb) => {
+  if(!validExtensions.includes(path.extname(file.originalname))) cb(null, false);
+}})
 
 const imagesPath = path.join(__dirname, '../public/images')
 
@@ -27,13 +31,8 @@ const validations = [
   body('description').notEmpty().withMessage("La descripcion no puede estar vacia"),
   body('image').custom((value, { req }) => {
     const file = req.file;
-    const validExtensions = ['.jpg', '.jpeg', '.png'];
     if(!file){
-      throw new Error("Debes agregar una imagen")
-    }
-    const extension = path.extname(file.originalname);
-    if(!validExtensions.includes(extension)){
-      throw new Error("La iamgen debe estar en formato jpg, jpeg o png");
+      throw new Error("Debes agregar una imagen en formato jpg, jpeg o png")
     }
     return true;
   })
