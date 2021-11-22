@@ -105,6 +105,10 @@ form #price{
     padding-left: 45px;
 }
 
+form .form-validation-error{
+    color: red;
+    text-align: left;
+}
 
 @media (min-width: 481px) {
     main .form-container{

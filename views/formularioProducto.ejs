@@ -7,32 +7,43 @@
         <!-- Header-->
         <%- include('./partials/header', {view: 'formulario_producto' }) %>
             <main>
-
                 <div class="form-container">
                     <h2 class="form-title">Cargar producto</h2>
                     <form class="product-form" action="/" method="POST" class='validated-form' novalidate
                         enctype="multipart/form-data">
                         <div class="input-group">
                             <label class="form-label" for="title">Título del plato</label>
-                            <input class="form-control" type=" text" id="title" name="title" required>
+                            <input class="form-control" type=" text" id="title" name="title" value="<%= locals.oldData ? oldData.title : null%>" required>
                         </div>
+                        <% if(locals.errors && errors.title){ %>
+                            <p class="form-validation-error"><%= errors.title.msg %></p>
+                        <% } %>
                         <div>
                             <div class="input-group">
                                 <label class="form-label" for="price">Precio</label>
                                 <span class="input-group-text" id="price-label">$</span>
                                 <input type="number" class="form-control" placeholder="0.00" id="price"
-                                    aria-label="price" name="price" aria-describedby="place-label" required>
-                            </div>
+                                    aria-label="price" name="price" aria-describedby="place-label" value="<%= locals.oldData ? oldData.price : null%>" required>
+                                </div>
+                                <% if(locals.errors && errors.price){ %>
+                                    <p class="form-validation-error"><%= errors.price.msg %></p>
+                                <% } %>
                         </div>
                         <div class="input-group">
                             <label class="form-label" for="description">Descripción</label>
-                            <textarea cols="1000" class="form-control" id="description" name="description"
+                            <textarea cols="1000" class="form-control" id="description" name="description" value="<%= locals.oldData ? oldData.description : null%>"
                                 required></textarea>
-                        </div>
+                            </div>
+                            <% if(locals.errors && errors.description){ %>
+                                <p class="form-validation-error"><%= errors.description.msg %></p>
+                            <% } %>
                         <div class="input-group">
                             <input type="file" class="form-control form-image" id="image" name="image" multiple>
                             <label class="input-group-text" for="image">Cargar Imagen</label>
                         </div>
+                        <% if(locals.errors && errors.image){ %>
+                            <p class="form-validation-error"><%= errors.image.msg %></p>
+                        <% } %>
                         <div class="btn-container">
                             <button class="form-button">Agregar plato</button>
                         </div>
