@@ -26,7 +26,7 @@ main div.menus article.tabla::before {
     width: 100%;
     transform: translateY(-50%);
     top: 50%;
-    font-size: 20px;
+    font-size: 15px;
     color: white;
     opacity: 80%;
     font-weight: 400;
@@ -46,7 +46,7 @@ main div.menus article.principales::before {
     width: 100%;
     transform: translateY(-50%);
     top: 50%;
-    font-size: 20px;
+    font-size: 15px;
     color: white;
     opacity: 80%;
     font-weight: 400;
@@ -70,7 +70,7 @@ main div.menus article.woks::before {
     width: 100%;
     transform: translateY(-50%);
     top: 50%;
-    font-size: 20px;
+    font-size: 15px;
     color: white;
     opacity: 80%;
     font-weight: 400;
@@ -90,7 +90,7 @@ main div.menus article.ensalada::before {
     width: 100%;
     transform: translateY(-50%);
     top: 50%;
-    font-size: 20px;
+    font-size: 15px;
     color: white;
     opacity: 80%;
     font-weight: 400;
@@ -110,7 +110,7 @@ main div.menus article.postre::before {
     width: 100%;
     transform: translateY(-50%);
     top: 50%;
-    font-size: 20px;
+    font-size: 15px;
     color: white;
     opacity: 80%;
     font-weight: 400;
@@ -131,7 +131,7 @@ main div.menus article.entradas::before {
     width: 100%;
     transform: translateY(-50%);
     top: 50%;
-    font-size: 20px;
+    font-size: 15px;
     color: white;
     opacity: 80%;
     font-weight: 400;
@@ -169,7 +169,6 @@ main h3 {
     color:white;
 }
 
-
 main div.menus {
     display: flex;
     flex-wrap: wrap;
@@ -190,7 +189,7 @@ article h3 {
 
 
 @media (min-width: 768px) {
-    main div article {
+    main div a {
         width: 45%;
     }
     main div.menus {
@@ -349,7 +348,7 @@ article h3 {
         position: relative;
         transition: all 400ms;
     }
-    main div article {
+    main div a {
         width: 30%;
         margin-bottom: 10px;
     }

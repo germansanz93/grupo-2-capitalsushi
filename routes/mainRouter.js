@@ -51,5 +51,6 @@ router.get('/crear_producto', mainController.formularioProducto)
 router.get('/editar_producto/:id', mainController.formularioProducto)
 router.get('/cartilla', mainController.cartilla)
 
+
 //module export
 module.exports = router;
