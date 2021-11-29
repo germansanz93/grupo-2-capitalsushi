@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head', {stylesheet: 'detalleProducto.css' , title: 'Crear producto' }) %>
+
+  <body>
+    <!-- Header-->
+    <%- include('./partials/header', {view: 'formulario_producto' }) %>
+      <main>
+        <div class="main-container">
+          <div class="main-header">
+            <a href=""><i class="fas fa-chevron-left"></i></a>
+            <h3 class="header-title">Producto</h3>
+            <a href=""><i class="fas fa-shopping-cart"></i></a>
+          </div>
+          <div class="main-content">
+            <img class="product-img" src=<%=`/images/${product.filename}` %> alt="capital-sushi-product-detail">
+            <div class="card-text">
+              <h3 class="product-title">
+                <%= product.title %>
+              </h3>
+              <div class="actions">
+                <div class="controls">
+                  <span><i class="fas fa-minus-circle"></i></span>
+                  <span class="qty">2</span>
+                  <span><i class="fas fa-plus-circle"></i></span>
+                </div>
+                <p class="subtotal">$ 2000</p>
+              </div>
+              <p class="product-price">precio: $<%= product.price %>
+              </p>
+              <a href="" class="cart-btn">Agregar al carrito</a>
+              <p class="product-description">
+                <%= product.description %>
+              </p>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer-->
+      <%- include('./partials/footer') %>
+  </body>
+
+</html>

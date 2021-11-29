@@ -50,6 +50,9 @@ router.get('/registrarse', mainController.registrarse)
 router.get('/crear_producto', mainController.formularioProducto)
 router.get('/editar_producto/:id', mainController.formularioProducto)
 router.get('/cartilla', mainController.cartilla)
+router.route('/productos/:id')
+  .get(mainController.mostrarProducto)
+  .delete(mainController.borrarProducto);
 
 
 //module export
