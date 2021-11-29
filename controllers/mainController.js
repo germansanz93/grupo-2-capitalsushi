@@ -49,6 +49,19 @@ const mainController = {
     stored.push(product);
     writeFileSync(productsFilePath, JSON.stringify(stored, null, 2))
     res.redirect('/menu');
+  },
+  mostrarProducto: (req, res) => {
+    const {id} = req.params;
+    const product = JSON.parse(readFileSync(productsFilePath)).filter(product => product.id == id)[0];
+    console.log(product)
+    res.render('../views/detalleProducto.ejs', {product});
+  },
+  borrarProducto: (req, res) => {
+    const {id} = req.params;
+    let stored = JSON.parse(readFileSync(productsFilePath))
+    stored = stored.filter(product => product.id != id);
+    writeFileSync(productsFilePath, JSON.stringify(stored, null, 2))
+    res.render('/views/cartilla');
   }
 }
 
