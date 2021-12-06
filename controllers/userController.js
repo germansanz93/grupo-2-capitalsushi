@@ -1,3 +1,4 @@
+const { validationResult } = require('express-validator');
 const User = require('../models/User');
 
 module.exports = {
@@ -10,7 +11,32 @@ module.exports = {
     res.send(user)
   },
   createUser: (req, res) => {
+    const result = validationResult(req);
+    if (!result.isEmpty()){
+      return res.render('../views/registrarse.ejs', {
+        errors: result.mapped(),
+        oldData: req.body
+      })
+    }
     const user = req.body.user;
-    console.log(user)
+    res.send(User.createUser(user));
+  },
+  deleteUser: (req, res) => {
+    const id = req.params.id;
+    res.send(User.deleteUser(id));
+
+  },
+  editUser: (req, res) => {
+    const result = validationResult(req);
+    if (!result.isEmpty()){
+      return res.render('../views/registrarse.ejs', {
+        errors: result.mapped(),
+        oldData: req.body
+      })
+    }
+    const id = req.params.id;
+    const user = req.body.user;
+    res.send(User.update(user));
   }
+
 }

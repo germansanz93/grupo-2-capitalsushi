@@ -26,10 +26,12 @@ const validations = [
 //rutas
 router.route('/')
   .get(userController.getUsers)
-  .post(userController.createUser)
+  .post(validations, userController.createUser)
 
 router.route('/:id')
   .get(userController.getUserById)
+  .put(userController.editUser)
+  .delete(validations, userController.deleteUser)
 
 
 //module export
