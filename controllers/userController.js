@@ -8,5 +8,9 @@ module.exports = {
   getUserById: async (req, res) => {
     const user = await User.getUserById(req.params.id);
     res.send(user)
+  },
+  createUser: (req, res) => {
+    const user = req.body.user;
+    console.log(user)
   }
 }

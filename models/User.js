@@ -32,12 +32,11 @@ const User = {
     let dbUser = users.find(user => user.id === id);
     if (dbUser) {
       dbUser.name = user.name;
+      dbUser.user_name = user.user_name;
+      dbUser.last_name = user.last_name;
       dbUser.email = user.email;
       dbUser.password = user.password;
       dbUser.address = user.address;
-      dbUser.phone = user.phone;
-      dbUser.role = user.role;
-      dbUser.image = user.image;
 
       users.forEach(function (user, index) {
         if (user.id === id) {
