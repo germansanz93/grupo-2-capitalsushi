@@ -4,8 +4,9 @@ const { body } = require('express-validator');
 const router = express.Router();
 const userController = require('../controllers/userController');
 
+
 const validations = [
-  body('user_name').notEmpty().withMessage("El nombre de usuario es obligatorio."),
+  body('userName').notEmpty().withMessage("El nombre de usuario es obligatorio."),
   body('name').notEmpty().withMessage("El nombre no puede estar vacio."),
   body('lastName').notEmpty().withMessage("El apellido no puede estar vacio."),
   body('address').notEmpty().withMessage("La direccion no puede estar vacia."),
@@ -24,15 +25,17 @@ const validations = [
 
 
 //rutas
-router.route('/')
-  .get(userController.getUsers)
-  .post(validations, userController.createUser)
-
 router.route('/:id')
   .get(userController.getUserById)
   .put(userController.editUser)
   .delete(validations, userController.deleteUser)
 
+router.route('/login').post(userController.login)
 
+router.route('/register').post(validations, userController.createUser)
+
+router.route('/')
+  .get(userController.getUsers)
+  
 //module export
 module.exports = router;

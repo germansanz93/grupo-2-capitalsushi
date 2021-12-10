@@ -11,7 +11,7 @@ module.exports = {
     res.send(user)
   },
   createUser: (req, res) => {
-    const result = validationResult(req);
+    const result = validationResult(req.body);
     if (!result.isEmpty()){
       return res.render('../views/registrarse.ejs', {
         errors: result.mapped(),
@@ -37,6 +37,10 @@ module.exports = {
     const id = req.params.id;
     const user = req.body.user;
     res.send(User.update(user));
+  },
+  login: (req, res) => {
+    console.log(req.body);
+    res.redirect('/');
   }
 
 }
