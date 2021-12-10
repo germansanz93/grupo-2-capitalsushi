@@ -22,7 +22,14 @@ const User = {
   getUserById: async function (id) {
     let user = await this.getAll().find(user => user.id === id);
     if (user) return user;
-    else return 'User Not Found';
+    else throw 'User Not Found';
+  },
+
+  getUserByEmail: async function (email) {
+    console.log(email)
+    let user = this.getAll().find(user => user.email === email);
+    if (user) return user;
+    else throw 'User Not Found';
   },
 
   //update user

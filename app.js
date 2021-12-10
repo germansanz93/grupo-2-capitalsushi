@@ -2,6 +2,8 @@
 const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
+const bodyParser = require('body-parser');
+require('dotenv').config();
 
 //modulos propios
 const mainRouter =require('./routes/mainRouter');
@@ -15,7 +17,7 @@ app.use(express.static(publicPath));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(morgan('dev'));
-
+app.use(bodyParser.urlencoded());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
