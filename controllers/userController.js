@@ -3,6 +3,7 @@ const User = require('../models/User');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
+
 const {secret} = require('../config/config')
 
 const salt = bcrypt.genSaltSync(10);
@@ -45,9 +46,9 @@ module.exports = {
   },
   login: async (req, res) => {
     const {email, password} = req.body;
-    console.log(email)
+    let user;
     try{
-      const user = await User.getUserByEmail(email);
+      user = await User.getUserByEmail(email);
     } catch {
       console.log('user not found')
       res.render('../views/mi_cuenta')
@@ -56,8 +57,11 @@ module.exports = {
     console.log(user)
     if(user && bcrypt.compareSync(password, user.password)){
       const token = jwt.sign(user, secret);
-      console.log(token);
+      res.cookie('token', token, {
+        expires: new Date(Date.now() + (1000 * 60 * 60 * 24)),
+        httpOnly: true
+      });
+      res.status(200).send({user, token});
     }
-    res.redirect('/');
   }
 }
