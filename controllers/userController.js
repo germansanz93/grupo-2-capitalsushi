@@ -25,7 +25,18 @@ module.exports = {
         oldData: req.body
       })
     }
-    const user = req.body.user;
+    const userInDB = User.getUserByEmail(req.body.email);
+    if(userInDB){
+      return res.render('../views/registrarse.ejs', {
+        errors: {
+          email: 'El email ya esta registrado'
+        },
+        oldData: req.body
+      })
+    }
+    const user = req.body;
+    user.password = bcrypt.hashSync(user.password, salt);
+    delete user.passwordConfirmation;
     res.send(User.createUser(user));
   },
   deleteUser: (req, res) => {
@@ -54,14 +65,13 @@ module.exports = {
       res.render('../views/mi_cuenta')
       return
     }
-    console.log(user)
     if(user && bcrypt.compareSync(password, user.password)){
       const token = jwt.sign(user, secret);
       res.cookie('token', token, {
         expires: new Date(Date.now() + (1000 * 60 * 60 * 24)),
         httpOnly: true
       });
-      res.status(200).send({user, token});
+      res.status(200).render('home.ejs',{user, token});
     }
   }
 }
