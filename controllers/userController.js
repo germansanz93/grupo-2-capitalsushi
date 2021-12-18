@@ -73,5 +73,7 @@ module.exports = {
       });
       res.status(200).render('home.ejs',{user, token});
     }
+    const oldData = {user, email, error: "credenciales incorrectas"}
+    res.render('mi_cuenta.ejs', {oldData})
   }
 }

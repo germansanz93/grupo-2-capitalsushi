@@ -16,13 +16,17 @@
           <div class="input-container">
             <i class="fas fa-user"></i>
             <label for="email"></label>
-            <input type="text" name="email" id="email" placeholder="Email" required>
+            <input type="text" name="email" id="email" placeholder="Email" value= "<%= locals.oldData ? locals.oldData.email : "" %>" required>
           </div>
           <div class="input-container">
             <i class="fas fa-lock"></i>
             <label for="password"></label>
             <input type="password" name="password" id="password" placeholder="password" required>
           </div>
+          <div class="error" id="credentials-popup">
+            <span class="close-btn" id="close-btn" onclick="closePopup()">X</span>
+            <%= locals.oldData ? locals.oldData.error : ''%>
+          </div> 
           <a class="password-recover" href="#">Olvidaste tu contraseña?</a>
           <div class="remember-check">
             <input type="checkbox" name="remember" id="remember">
@@ -37,6 +41,7 @@
     </div>
   </main>
   <%- include('./partials/footer') %> 
+  <script src="/js/closeCredentialsPopup.js"></script>
 </body>
 
 </html>

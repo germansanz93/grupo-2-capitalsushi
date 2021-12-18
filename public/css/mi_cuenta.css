@@ -2,7 +2,7 @@ body {
   background-color: var(--main-black);
 }
 
-main{
+main {
   position: relative;
 }
 
@@ -16,7 +16,7 @@ main .img-container {
   z-index: 10;
 }
 
-main .forms-container{
+main .forms-container {
   margin-top: 20px;
   width: 96%;
   margin: 0 auto;
@@ -101,13 +101,13 @@ main form .submit-btn:hover {
   cursor: pointer;
 }
 
-main form .btns{
+main form .btns {
   width: 95%;
   display: flex;
   justify-content: space-between;
 }
 
-main form .btns > *{
+main form .btns>* {
   display: inline-block;
   width: 48%;
 }
@@ -126,13 +126,30 @@ main form .password-recover {
   color: #FFF;
 }
 
+main form .error {
+  display: none;
+  background-color: #F99;
+  color: #FFF;
+  top: 25%;
+  z-index: 30;
+  padding: 2rem;
+  border-radius: 6px;
+  position: fixed;
+}
+
+main form .close-btn {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  cursor: pointer;
+}
 
 @media (min-width: 481px) {
-  main .main-img{
+  main .main-img {
     height: 200px;
   }
 
-  main .forms-container{
+  main .forms-container {
     width: 80%;
     margin: 20px auto;
     max-width: 410px;
@@ -140,7 +157,7 @@ main form .password-recover {
 }
 
 @media (min-width: 810px) {
-  main .main-img{
+  main .main-img {
     height: 70vh;
   }
 
@@ -148,11 +165,11 @@ main form .password-recover {
     font-size: 3.5rem;
   }
 
-  main .forms-nav{
+  main .forms-nav {
     display: none;
   }
 
-  main .forms-container{
+  main .forms-container {
     max-width: none;
     width: 60%;
     position: absolute;
@@ -177,7 +194,7 @@ main form .password-recover {
     padding: 0;
   }
 
-  main form{
+  main form {
     min-width: unset;
     scroll-snap-align: unset;
     width: 80%;
@@ -186,7 +203,7 @@ main form .password-recover {
     margin: 30px;
   }
 
-  main form .btns{
+  main form .btns {
     width: 95%;
   }
 }
