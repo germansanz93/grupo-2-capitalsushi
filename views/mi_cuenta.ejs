@@ -23,10 +23,12 @@
             <label for="password"></label>
             <input type="password" name="password" id="password" placeholder="password" required>
           </div>
-          <div class="error" id="credentials-popup">
-            <span class="close-btn" id="close-btn" onclick="closePopup()">X</span>
-            <%= locals.oldData ? locals.oldData.error : ''%>
-          </div> 
+          <% if (locals.errors && errors.credentialsError) { %>
+            <div class="error" id="credentials-popup">
+              <span class="close-btn" id="close-btn" onclick="closePopup()">X</span>
+              <%= locals.errors.credentialsError %>
+            </div> 
+          <% } %>
           <a class="password-recover" href="#">Olvidaste tu contraseña?</a>
           <div class="remember-check">
             <input type="checkbox" name="remember" id="remember">

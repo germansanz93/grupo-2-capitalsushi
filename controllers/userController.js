@@ -58,6 +58,7 @@ module.exports = {
   login: async (req, res) => {
     const {email, password} = req.body;
     let user;
+    console.log(res.cookies)
     try{
       user = await User.getUserByEmail(email);
     } catch {
@@ -71,9 +72,16 @@ module.exports = {
         expires: new Date(Date.now() + (1000 * 60 * 60 * 24)),
         httpOnly: true
       });
-      res.status(200).render('home.ejs',{user, token});
+      delete user.password;
+      req.session.user = user;
+      res.status(200).render('home.ejs',{token});
     }
-    const oldData = {user, email, error: "credenciales incorrectas"}
-    res.render('mi_cuenta.ejs', {oldData})
+    const oldData = {user, email}
+    const errors = {credentialsError: "credenciales invalidas"}
+    res.render('mi_cuenta.ejs', {oldData, errors})
+  },
+  logout: (req, res) => {
+    req.session.destroy();
+    return res.redirect('/');
   }
 }

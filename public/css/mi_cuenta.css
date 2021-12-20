@@ -127,7 +127,6 @@ main form .password-recover {
 }
 
 main form .error {
-  display: none;
   background-color: #F99;
   color: #FFF;
   top: 25%;
@@ -135,6 +134,7 @@ main form .error {
   padding: 2rem;
   border-radius: 6px;
   position: fixed;
+  transition: all .6s ease;
 }
 
 main form .close-btn {

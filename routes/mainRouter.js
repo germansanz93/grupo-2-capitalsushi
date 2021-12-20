@@ -6,6 +6,9 @@ const multer = require('multer');
 const path = require('path');
 const { body } = require('express-validator');
 
+const guestMiddleware = require('../middleware/guestMiddleware');
+const authMiddleware = require('../middleware/authMiddleware');
+
 const validExtensions = ['.jpg', '.jpeg', '.png'];
 
 //multer
@@ -45,8 +48,8 @@ router.route('/')
 router.get('/contacto', mainController.contacto)
 router.get('/menu', mainController.menu)
 router.get('/carrito', mainController.carrito)
-router.get('/mi_cuenta', mainController.miCuenta)
-router.get('/registrarse', mainController.registrarse)
+router.get('/mi_cuenta', guestMiddleware ,mainController.miCuenta)
+router.get('/registrarse', guestMiddleware, mainController.registrarse)
 router.get('/crear_producto', mainController.formularioProducto)
 router.get('/editar_producto/:id', mainController.formularioProducto)
 router.get('/cartilla', mainController.cartilla)

@@ -1,9 +1,8 @@
 const credentialsPopup = document.querySelector("#credentials-popup");
 
-if(credentialsPopup.innerText.includes("credenciales incorrectas")){
-  console.log('if')
-  credentialsPopup.style.display = "block";
-};
+setTimeout(() => {
+  credentialsPopup.style.opacity = "0";
+}, 2400)
 
 setTimeout(() => {
   credentialsPopup.style.display = "none";

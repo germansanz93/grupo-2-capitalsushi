@@ -4,7 +4,6 @@ const { body } = require('express-validator');
 const router = express.Router();
 const userController = require('../controllers/userController');
 
-
 const validations = [
   body('userName').notEmpty().withMessage("El nombre de usuario es obligatorio."),
   body('name').notEmpty().withMessage("El nombre no puede estar vacio."),

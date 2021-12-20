@@ -4,6 +4,8 @@ const path = require('path');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+const session = require('express-session');
+const {secret} = require('./config/config');
 require('dotenv').config();
 
 //modulos propios
@@ -20,6 +22,11 @@ app.use(express.urlencoded({extended: false}));
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(cookieParser());
+app.use(session({
+  secret,
+  resave: false,
+  saveUninitialized: false
+}))
 
 
 // view engine setup
