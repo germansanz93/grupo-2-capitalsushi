@@ -1,8 +1,6 @@
 const { validationResult } = require('express-validator');
 const User = require('../models/User');
 const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-
 
 const {secret} = require('../config/config')
 
@@ -66,15 +64,10 @@ module.exports = {
       return
     }
     if(user && bcrypt.compareSync(password, user.password)){
-      const token = jwt.sign(user, secret);
-      res.cookie('token', token, {
-        expires: new Date(Date.now() + (1000 * 60 * 60 * 24)),
-        httpOnly: true
-      });
-      res.locals.user = user;
       delete user.password;
       req.session.user = user;
-      res.status(200).render('home.ejs',{token});
+      req.session.cookie.expires = new Date(Date.now() + 1000 * 60 * 60 * 24)
+      res.status(200).render('home.ejs');
     }
     const oldData = {user, email}
     const errors = {credentialsError: "credenciales invalidas"}
