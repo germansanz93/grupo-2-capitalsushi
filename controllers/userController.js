@@ -58,7 +58,6 @@ module.exports = {
   login: async (req, res) => {
     const {email, password} = req.body;
     let user;
-    console.log(res.cookies)
     try{
       user = await User.getUserByEmail(email);
     } catch {
@@ -72,6 +71,7 @@ module.exports = {
         expires: new Date(Date.now() + (1000 * 60 * 60 * 24)),
         httpOnly: true
       });
+      res.locals.user = user;
       delete user.password;
       req.session.user = user;
       res.status(200).render('home.ejs',{token});

@@ -11,6 +11,7 @@ require('dotenv').config();
 //modulos propios
 const mainRouter =require('./routes/mainRouter');
 const userRouter = require('./routes/userRouter');
+const loggedUserMiddleware = require('./middleware/loggedUserMiddleware');
 
 //configs
 const app = express();
@@ -27,7 +28,7 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }))
-
+app.use(loggedUserMiddleware);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

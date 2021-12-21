@@ -7,7 +7,12 @@
       <h1>Capital Sushi</h1>
       <h3>Sushi bar</h3>
     </div>
-    <a class="header-user" href="/mi_cuenta"> <i class="fas fa-user"></i> </a>
+    <div class="user-menu">
+      <% if (locals.user) { %>
+        <span class="username"><%= user.name %> </span>
+      <% } %>
+      <a class="header-user" href="/mi_cuenta"> <i class="fas fa-user"></i></a>
+    </div>
     <a class="header-user" href="#" id="hamburger" onclick="HamburgerScript()"> <i class="fas fa-bars"></i> </a>
   </div>
   <nav>

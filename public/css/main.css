@@ -128,6 +128,17 @@ header .fa-bars {
   z-index: 200;
 }
 
+header .user-menu{
+  display: flex;
+  align-items: center;
+  margin: 0 1rem;
+}
+
+header .username {
+  color: #FFF;
+  display: none;
+}
+
 header .fa-user {
   color: #FFF;
   font-size: 35px;
@@ -186,6 +197,10 @@ header nav .active {
   }
 
   header .fa-user {
+    display: block;
+  }
+
+  header .username{
     display: block;
   }
 }
