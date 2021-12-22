@@ -10,7 +10,7 @@ main .user-profile {
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-top: calc(55vw - 110px);
+  margin-top: calc(55vw - 100px);
   margin-bottom: 4rem;
 }
 
@@ -32,9 +32,16 @@ main .user-profile h2 {
 
 main .user-profile .user-info {
   border-bottom: 1px solid #CCCC;
-  width: 100%;
-  text-align: center;
+  width: 95%;
   padding: .8rem;
+  display: flex;
+  align-items: baseline;
+}
+
+main .user-profile i {
+  color: #666;
+  width: 20%;
+  text-align: center;
 }
 
 main .user-profile p {
@@ -53,4 +60,19 @@ main .user-profile .edit-btn {
   letter-spacing: 1px;
   font-size: 1.1rem;
   border-radius: 2rem;
+}
+
+@media (min-width: 372px) {
+  main .user-img {
+    width: 130px;
+    height: 130px;  
+  }
+
+  main .user-profile {
+    margin-top: calc(40vw - 90px);
+  }
+
+  main .user-profile::before {
+    transform: translateY(-145vw);
+  }
 }
