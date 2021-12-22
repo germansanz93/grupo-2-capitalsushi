@@ -36,7 +36,7 @@ app.set('view engine', 'ejs');
 
 //rutas
 app.use('/', mainRouter)
-app.use('/user', userRouter)
+app.use('/usuario', userRouter)
 
 //server escuchando
 app.listen(PORT, () => {

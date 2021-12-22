@@ -1,28 +1,29 @@
-
 <header>
-<img class="logo" src="/images/index.jpeg" alt="">
-<div class="header-container">
-  <div class="top-header">
-    <div class="header-titles">
-      <h1>Capital Sushi</h1>
-      <h3>Sushi bar</h3>
+  <img class="logo" src="/images/index.jpeg" alt="">
+  <div class="header-container">
+    <div class="top-header">
+      <div class="header-titles">
+        <h1>Capital Sushi</h1>
+        <h3>Sushi bar</h3>
+      </div>
+      <div class="user-menu">
+        <% if (locals.user) { %>
+          <span class="username">
+            <%= user.name %>
+          </span>
+          <% } %>
+            <a class="header-user" href="/usuario/ingresar"> <i class="fas fa-user"></i></a>
+      </div>
+      <a class="header-user" href="#" id="hamburger" onclick="HamburgerScript()"> <i class="fas fa-bars"></i> </a>
     </div>
-    <div class="user-menu">
-      <% if (locals.user) { %>
-        <span class="username"><%= user.name %> </span>
-      <% } %>
-      <a class="header-user" href="/mi_cuenta"> <i class="fas fa-user"></i></a>
-    </div>
-    <a class="header-user" href="#" id="hamburger" onclick="HamburgerScript()"> <i class="fas fa-bars"></i> </a>
+    <nav>
+      <ul>
+        <li><a class=<%=view=='home' && 'active' %> href="/">Inicio</a></li>
+        <li><a class=<%=view=='menu' && 'active' %> href="/menu">Menu</a></li>
+        <li><a class=<%=view=='carrito' && 'active' %> href="/carrito">Carrito</a></li>
+        <li><a class=<%=view=='mi_cuenta' && 'active' %> href="/usuario/ingresar">Mi cuenta</a></li>
+        <li><a class=<%=view=='contacto' && 'active' %> href="/contacto">Contacto</a></li>
+      </ul>
+    </nav>
   </div>
-  <nav>
-    <ul>
-      <li><a class= <%= view == 'home' && 'active' %>  href="/">Inicio</a></li>
-      <li><a class= <%= view == 'menu' && 'active' %> href="/menu">Menu</a></li>
-      <li><a class= <%= view == 'carrito' && 'active' %> href="/carrito">Carrito</a></li>
-      <li><a class= <%= view == 'mi_cuenta' && 'active' %> href="/mi_cuenta">Mi cuenta</a></li>
-      <li><a class= <%= view == 'contacto' && 'active' %> href="/contacto">Contacto</a></li>
-    </ul>
-  </nav>
-</div>
 </header>

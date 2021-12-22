@@ -2,7 +2,8 @@
 const express = require('express');
 const { body } = require('express-validator');
 const router = express.Router();
-const userController = require('../controllers/userController');
+const {getUserById, editUser, deleteUser, account, login, register, createUser, getUsers, profile} = require('../controllers/userController');
+const guestMiddleware = require('../middleware/guestMiddleware');
 
 const validations = [
   body('userName').notEmpty().withMessage("El nombre de usuario es obligatorio."),
@@ -23,18 +24,23 @@ const validations = [
 ]
 
 
-//rutas
-router.route('/:id')
-  .get(userController.getUserById)
-  .put(userController.editUser)
-  .delete(validations, userController.deleteUser)
-
-router.route('/login').post(userController.login)
-
-router.route('/register').post(validations, userController.createUser)
-
+//rutasrs
 router.route('/')
-  .get(userController.getUsers)
+  .get(getUsers)
   
+  router.route('/ingresar')
+  .get(guestMiddleware, account)
+  .post(login);
+  
+  router.route('/registrarse')
+  .get(guestMiddleware, register)
+  .post(validations, createUser);
+  
+  router.get('/perfil', profile)
+  
+  router.route('/:id')
+    .get(getUserById)
+    .put(editUser)
+    .delete(validations, deleteUser);
 //module export
 module.exports = router;

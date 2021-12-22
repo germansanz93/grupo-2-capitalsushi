@@ -1,7 +1,7 @@
 //modulos requeridos
 const express = require('express');
 const router = express.Router();
-const mainController = require('../controllers/mainController');
+const { index, createProduct, contact, menu, cart, productForm, chart, showProduct, deleteProduct } = require('../controllers/mainController');
 const multer = require('multer');
 const path = require('path');
 const { body } = require('express-validator');
@@ -22,19 +22,21 @@ const storage = multer.diskStorage({
   }
 })
 
-const upload = multer({ storage: storage, fileFilter:(req, file, cb) => {
-  if(!validExtensions.includes(path.extname(file.originalname))) cb(null, false);
-}})
+const upload = multer({
+  storage: storage, fileFilter: (req, file, cb) => {
+    if (!validExtensions.includes(path.extname(file.originalname))) cb(null, false);
+  }
+})
 
 const imagesPath = path.join(__dirname, '../public/images')
 
 const validations = [
   body('title').notEmpty().withMessage("El titulo no puede estar vacio."),
-  body('price').isNumeric({min: 0.01}).withMessage("El precio debe ser mayor a cero."),
+  body('price').isNumeric({ min: 0.01 }).withMessage("El precio debe ser mayor a cero."),
   body('description').notEmpty().withMessage("La descripcion no puede estar vacia"),
   body('image').custom((value, { req }) => {
     const file = req.file;
-    if(!file){
+    if (!file) {
       throw new Error("Debes agregar una imagen en formato jpg, jpeg o png")
     }
     return true;
@@ -43,19 +45,17 @@ const validations = [
 
 //rutas
 router.route('/')
-  .get(mainController.index)
-  .post(upload.single('image'), validations, mainController.crearProducto);
-router.get('/contacto', mainController.contacto)
-router.get('/menu', mainController.menu)
-router.get('/carrito', mainController.carrito)
-router.get('/mi_cuenta', guestMiddleware ,mainController.miCuenta)
-router.get('/registrarse', guestMiddleware, mainController.registrarse)
-router.get('/crear_producto', mainController.formularioProducto)
-router.get('/editar_producto/:id', mainController.formularioProducto)
-router.get('/cartilla', mainController.cartilla)
+  .get(index)
+  .post(upload.single('image'), validations, createProduct);
+router.get('/contacto', contact)
+router.get('/menu', menu)
+router.get('/carrito', cart)
+router.get('/crear_producto', productForm)
+router.get('/editar_producto/:id', productForm)
+router.get('/cartilla', chart)
 router.route('/productos/:id')
-  .get(mainController.mostrarProducto)
-  .delete(mainController.borrarProducto);
+  .get(showProduct)
+  .delete(deleteProduct);
 
 
 //module export
