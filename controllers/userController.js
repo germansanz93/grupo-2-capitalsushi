@@ -79,7 +79,7 @@ module.exports = {
     res.render('mi_cuenta.ejs', { oldData, errors })
   },
   profile: (req, res) => {
-    res.send('asdasd');
+    res.render('profile.ejs');
   },
   logout: (req, res) => {
     req.session.destroy();

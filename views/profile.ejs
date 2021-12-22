@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head', {stylesheet: 'profile.css' , title: 'Perfil' }) %>
+
+  <body>
+    <%- include('./partials/header', {view: 'perfil' }) %>
+      <main>
+        <div class="user-profile">
+          <img class="user-img" src="/images/index.jpeg" alt="user img">
+          <h2>Usuario</h2>
+          <div class="user-info">
+            <p>nombre</p>
+          </div>
+          <div class="user-info">
+            <p>apellido</p>
+          </div>
+          <div class="user-info">
+            <p>email</p>
+          </div>
+          <div class="user-info">
+            <p>direccion</p>
+          </div>
+          <div class="user-info">
+            <p>telefono</p>
+          </div>
+          <a href="" class="edit-btn">
+            Editar perfil
+          </a>
+        </div>
+      </main>
+      <%- include('./partials/footer') %>
+  </body>
+
+</html>
