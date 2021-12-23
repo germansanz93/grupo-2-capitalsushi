@@ -6,32 +6,36 @@
   <body>
     <%- include('./partials/header', {view: 'perfil' }) %>
       <main>
-        <div class="user-profile">
-          <img class="user-img" src="/images/index.jpeg" alt="user img">
-          <h2>Usuario</h2>
-          <div class="user-info">
-            <i class="fas fa-user"></i>
-            <p>nombre</p>
+        <div class="main-container">
+          <div class="user-profile">
+            <div class="user-header">
+              <img class="user-img" src="/images/index.jpeg" alt="user img">
+              <h2><%= locals.user.user_name || 'null' %> </h2>
+            </div>
+            <div class="user-info">
+              <i class="fas fa-user"></i>
+              <p><%= locals.user.name || 'null' %> </p>
+            </div>
+            <div class="user-info">
+              <i class="fas fa-user"></i>
+              <p><%= locals.user.last_name || 'null' %> </p>
+            </div>
+            <div class="user-info">
+              <i class="fas fa-envelope"></i>
+              <p><%= locals.user.email || 'null' %> </p>
+            </div>
+            <div class="user-info">
+              <i class="fas fa-map-marked-alt"></i>
+              <p><%= locals.user.address || 'null' %> </p>
+            </div>
+            <div class="user-info">
+              <i class="fas fa-mobile"></i>
+              <p><%= locals.user.phone || 'null' %> </p>
+            </div>
+            <a href="" class="edit-btn">
+              Editar perfil
+            </a>
           </div>
-          <div class="user-info">
-            <i class="fas fa-user"></i>
-            <p>apellido</p>
-          </div>
-          <div class="user-info">
-            <i class="fas fa-envelope"></i>
-            <p>email</p>
-          </div>
-          <div class="user-info">
-            <i class="fas fa-map-marked-alt"></i>
-            <p>direccion</p>
-          </div>
-          <div class="user-info">
-            <i class="fas fa-mobile"></i>
-            <p>telefono</p>
-          </div>
-          <a href="" class="edit-btn">
-            Editar perfil
-          </a>
         </div>
       </main>
       <%- include('./partials/footer') %>

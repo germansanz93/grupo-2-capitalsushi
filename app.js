@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const {secret} = require('./config/config');
+const cors = require('cors');
 require('dotenv').config();
 
 //modulos propios
@@ -29,6 +30,7 @@ app.use(session({
   saveUninitialized: false
 }))
 app.use(loggedUserMiddleware);
+app.use(cors());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

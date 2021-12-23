@@ -7,7 +7,6 @@ const path = require('path');
 const { body } = require('express-validator');
 
 const guestMiddleware = require('../middleware/guestMiddleware');
-const authMiddleware = require('../middleware/authMiddleware');
 
 const validExtensions = ['.jpg', '.jpeg', '.png'];
 

@@ -1,3 +1,9 @@
+main .main-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 main .user-img {
   border-radius: 50%;
   width: 100px;
@@ -12,6 +18,7 @@ main .user-profile {
   flex-direction: column;
   margin-top: calc(55vw - 100px);
   margin-bottom: 4rem;
+  width: 100%;
 }
 
 main .user-profile::before {
@@ -65,7 +72,7 @@ main .user-profile .edit-btn {
 @media (min-width: 372px) {
   main .user-img {
     width: 130px;
-    height: 130px;  
+    height: 130px;
   }
 
   main .user-profile {
@@ -75,4 +82,65 @@ main .user-profile .edit-btn {
   main .user-profile::before {
     transform: translateY(-145vw);
   }
+
+  main .user-profile i {
+    margin-right: 1rem;
+    margin-left: 2rem;
+  }
+}
+
+@media (min-width: 482px) {
+
+  main .user-img {
+    width: 150px;
+    height: 150px;
+  }
+
+  main .user-profile {
+    margin-top: calc(30vw - 90px);
+    max-width: 500px;
+  }
+
+  main .user-profile::before {
+    transform: translateY(-155vw);
+  }
+
+  main .user-profile h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 654px) {
+  main .user-profile::before {
+    display: none;
+  }
+
+  main .user-profile {
+    border-radius: 16px;
+    padding-bottom: 2rem;
+    box-shadow: -2px 5px 16px 4px rgba(0, 0, 0, 0.36);
+    margin-top: 2rem;
+  }
+
+  main .user-profile .user-header {
+    width: 100%;
+    background-color: var(--orange);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 1rem 2rem;
+  }
+
+  main .user-profile .user-img {
+    border: none;
+    width: 110px;
+    height: 110px;
+  }
+
+  main .user-profile h2 {
+    color: #FFF;
+  }
+
 }

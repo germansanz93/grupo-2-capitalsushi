@@ -4,6 +4,7 @@ const { body } = require('express-validator');
 const router = express.Router();
 const {getUserById, editUser, deleteUser, account, login, register, createUser, getUsers, profile} = require('../controllers/userController');
 const guestMiddleware = require('../middleware/guestMiddleware');
+const authMiddleware = require('../middleware/authMiddleware');
 
 const validations = [
   body('userName').notEmpty().withMessage("El nombre de usuario es obligatorio."),
@@ -36,7 +37,7 @@ router.route('/')
   .get(guestMiddleware, register)
   .post(validations, createUser);
   
-  router.get('/perfil', profile)
+  router.get('/perfil', authMiddleware, profile)
   
   router.route('/:id')
     .get(getUserById)

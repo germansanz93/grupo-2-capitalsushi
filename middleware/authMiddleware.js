@@ -1,5 +1,7 @@
 module.exports = (req, res, next) => {
-  if (!req.session.user) {
-    return res.redirect('/mi_cuenta');
+  if(!req.session.user){
+    console.log(req.session)
+    return res.redirect('/usuario/ingresar');
   }
+  next();
 }
