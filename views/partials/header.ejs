@@ -12,7 +12,7 @@
             <%= user.name %>
           </span>
           <% } %>
-            <a class="header-user" href="/usuario/ingresar"> <i class="fas fa-user"></i></a>
+            <a class="header-user" href="#" onclick="UserScript()"> <i class="fas fa-user"></i></a>
       </div>
       <a class="header-user" href="#" id="hamburger" onclick="HamburgerScript()"> <i class="fas fa-bars"></i> </a>
     </div>
@@ -23,6 +23,9 @@
         <li><a class=<%=view=='carrito' && 'active' %> href="/carrito">Carrito</a></li>
         <li><a class=<%=view=='mi_cuenta' && 'active' %> href="/usuario/ingresar">Mi cuenta</a></li>
         <li><a class=<%=view=='contacto' && 'active' %> href="/contacto">Contacto</a></li>
+        <% if (locals.user) { %>
+          <li><a href="/usuario/salir">Salir</a></li>
+        <% } %>
       </ul>
     </nav>
   </div>

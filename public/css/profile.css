@@ -2,6 +2,7 @@ main .main-container {
   display: flex;
   justify-content: center;
   width: 100%;
+  position: relative;
 }
 
 main .user-img {
@@ -16,21 +17,27 @@ main .user-profile {
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-top: calc(55vw - 100px);
+  margin-top: calc(45vw - 100px);
   margin-bottom: 4rem;
   width: 100%;
 }
 
 main .user-profile::before {
   content: "";
-  width: 200vw;
-  height: 200vw;
+  width: 110vw;
+  height: 30vw;
+  border-bottom-right-radius: 100%;
+  border-bottom-left-radius: 100%;
   background-color: var(--orange);
-  border-radius: 50%;
   position: absolute;
   top: 0;
-  transform: translateY(-130vw);
   z-index: -10;
+}
+
+main .user-profile .user-header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 main .user-profile h2 {
@@ -79,10 +86,6 @@ main .user-profile .edit-btn {
     margin-top: calc(40vw - 90px);
   }
 
-  main .user-profile::before {
-    transform: translateY(-145vw);
-  }
-
   main .user-profile i {
     margin-right: 1rem;
     margin-left: 2rem;
@@ -99,10 +102,6 @@ main .user-profile .edit-btn {
   main .user-profile {
     margin-top: calc(30vw - 90px);
     max-width: 500px;
-  }
-
-  main .user-profile::before {
-    transform: translateY(-155vw);
   }
 
   main .user-profile h2 {

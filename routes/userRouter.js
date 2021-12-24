@@ -2,7 +2,7 @@
 const express = require('express');
 const { body } = require('express-validator');
 const router = express.Router();
-const {getUserById, editUser, deleteUser, account, login, register, createUser, getUsers, profile} = require('../controllers/userController');
+const {getUserById, editUser, deleteUser, account, login, register, createUser, getUsers, profile, logout} = require('../controllers/userController');
 const guestMiddleware = require('../middleware/guestMiddleware');
 const authMiddleware = require('../middleware/authMiddleware');
 
@@ -39,9 +39,12 @@ router.route('/')
   
   router.get('/perfil', authMiddleware, profile)
   
+  router.get('/salir', authMiddleware, logout)
+  
   router.route('/:id')
     .get(getUserById)
     .put(editUser)
     .delete(validations, deleteUser);
+
 //module export
 module.exports = router;
