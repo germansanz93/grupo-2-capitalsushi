@@ -34,6 +34,7 @@ module.exports = {
     const user = req.body;
     user.password = bcrypt.hashSync(user.password, salt);
     delete user.passwordConfirmation;
+    
     res.send(User.createUser(user));
   },
   deleteUser: (req, res) => {
@@ -64,15 +65,14 @@ module.exports = {
     try {
       user = await User.getUserByEmail(email);
     } catch {
-      console.log('user not found')
-      res.render('../views/mi_cuenta')
+      res.render('mi_cuenta.ejs', {errors: {credentialsError: "credenciales invalidas"}})
       return
     }
     if (user && bcrypt.compareSync(password, user.password)) {
       delete user.password;
       req.session.user = user;
       req.session.cookie.expires = new Date(Date.now() + 1000 * 60 * 60 * 24)
-      res.status(200).render('home.ejs');
+      res.status(200).redirect('/usuario/perfil');
     }
     const oldData = { user, email }
     const errors = { credentialsError: "credenciales invalidas" }

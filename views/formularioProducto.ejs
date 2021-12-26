@@ -39,7 +39,7 @@
                             <% } %>
                         <div class="input-group">
                             <input type="file" class="form-control form-image" id="image" name="image" multiple>
-                            <label class="input-group-text" for="image">Cargar Imagen</label>
+                            <label class="input-group-text image-upload" for="image">Cargar Imagen</label>
                         </div>
                         <% if(locals.errors && errors.image){ %>
                             <p class="form-validation-error"><%= errors.image.msg %></p>
