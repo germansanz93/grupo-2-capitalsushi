@@ -448,14 +448,5 @@
     "address": "O'higgins 930",
     "email": "germansanz93@gmail.com",
     "password": "$2a$10$MCSP5XTt5GXAbKJjNqFGaehERaBM44tWd0JtNS3rV2mquALmEXiQa"
-  },
-  {
-    "name": "Hola",
-    "last-name": "123",
-    "email": "hola123@gmail.com",
-    "address": "hola 123",
-    "phone": "123123123",
-    "password": "$2a$10$upqlAZ6eF2ssqd4Yb0iVrOZ8ja0nIxgGfFzTDAVeEI0YnKdu2btX.",
-    "id": "c6b0a7a0-997f-41cd-bb2a-39a4ec81bdd7"
   }
 ]

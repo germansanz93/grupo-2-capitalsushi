@@ -14,16 +14,18 @@ module.exports = {
     const user = await User.getUserById(req.params.id);
     res.send(user)
   },
-  createUser: (req, res) => {
+  createUser: async (req, res) => {
     const result = validationResult(req.body);
     if (!result.isEmpty()) {
+      console.log('errores')
       return res.render('../views/registrarse.ejs', {
         errors: result.mapped(),
         oldData: req.body
       })
     }
-    const userInDB = User.getUserByEmail(req.body.email);
-    if (userInDB) {
+    const userInDB = await User.getUserByEmail(req.body.email);
+    if (userInDB && userInDB != null) {
+      console.log('el usuario ya existe', userInDB)
       return res.render('../views/registrarse.ejs', {
         errors: {
           email: 'El email ya esta registrado'
@@ -32,10 +34,13 @@ module.exports = {
       })
     }
     const user = req.body;
+    user.profilePic = req.file.filename;
     user.password = bcrypt.hashSync(user.password, salt);
     delete user.passwordConfirmation;
-    
-    res.send(User.createUser(user));
+
+    req.session.user = user;
+    req.session.cookie.expires = new Date(Date.now() + 1000 * 60 * 60 * 24)
+    res.status(200).redirect('/usuario/perfil');
   },
   deleteUser: (req, res) => {
     const id = req.params.id;

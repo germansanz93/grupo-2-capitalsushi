@@ -26,10 +26,14 @@ const User = {
   },
 
   getUserByEmail: async function (email) {
-    console.log(email)
-    let user = this.getAll().find(user => user.email === email);
-    if (user) return user;
-    else throw 'User Not Found';
+    try {
+      let user = await this.getAll().find(user => user.email === email);
+      if (user) return user;
+      else throw 'User Not Found';
+    } catch {
+      console.log('user not found')
+      return null
+    }
   },
 
   //update user
@@ -49,7 +53,7 @@ const User = {
           users[index] = dbUser;
         }
       })
-      writeFile(this.usersFilePath, JSON.stringify(users, null, 2), {encoding: 'utf8'}, (err) => {
+      writeFile(this.usersFilePath, JSON.stringify(users, null, 2), { encoding: 'utf8' }, (err) => {
         if (err) throw err;
       });
     } else {
@@ -65,7 +69,7 @@ const User = {
     const users = await this.getAll();
     users.push(user);
     console.log(users)
-    await writeFile(this.usersFilePath, JSON.stringify(users, null, 2), {encoding: 'utf-8'}, (error) => {
+    await writeFile(this.usersFilePath, JSON.stringify(users, null, 2), { encoding: 'utf-8' }, (error) => {
       if (error) throw error;
       return this.getUserById(user.id);
     });

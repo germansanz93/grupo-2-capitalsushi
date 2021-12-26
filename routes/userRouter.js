@@ -24,6 +24,7 @@ const storage = multer.diskStorage({
 const upload = multer({
   storage: storage, fileFilter: (req, file, cb) => {
     if (!validExtensions.includes(path.extname(file.originalname))) cb(null, false);
+    else cb(null, file.originalname)
   }
 })
 
@@ -66,7 +67,7 @@ router.route('/ingresar')
 
 router.route('/registrarse')
   .get(guestMiddleware, register)
-  .post(upload.single('image'), validations, createUser);
+  .post( upload.single('image'), validations ,createUser);
 
 router.get('/perfil', authMiddleware, profile)
 
