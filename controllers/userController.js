@@ -14,7 +14,7 @@ module.exports = {
     const user = await User.getUserById(req.params.id);
     res.send(user)
   },
-  createUser: async (req, res) => {
+  createUser: (req, res) => {
     const result = validationResult(req);
     if(!result.isEmpty()) {
       console.log(result);
@@ -23,7 +23,7 @@ module.exports = {
         oldData: req.body
       })
     }
-    const userInDB = await User.getUserByEmail(req.body.email);
+    const userInDB = User.getUserByEmail(req.body.email);
     if (userInDB && userInDB != null) {
       console.log('el usuario ya existe', userInDB)
       return res.render('../views/registrarse.ejs', {
@@ -37,9 +37,8 @@ module.exports = {
     user.profilePic = req.file.filename;
     user.password = bcrypt.hashSync(user.password, salt);
     delete user.passwordConfirmation;
-    const userResponse = User.createUser(user)
+    User.createUser(user)
     
-    delete user.password;
     req.session.user = user;
     console.log(req.session.user);
     req.session.cookie.expires = new Date(Date.now() + 1000 * 60 * 60 * 24);
@@ -49,6 +48,9 @@ module.exports = {
     const id = req.params.id;
     res.send(User.deleteUser(id));
 
+  },
+  editUserForm: (req, res) => {
+    res.render(path.join(__dirname, '../views/editarUsuario'));
   },
   editUser: (req, res) => {
     const result = validationResult(req);

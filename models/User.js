@@ -1,4 +1,4 @@
-const { readFileSync, writeFile } = require('fs');
+const { readFileSync, writeFileSync, writeFile } = require('fs');
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
 
@@ -19,15 +19,15 @@ const User = {
   },
 
   //get one user
-  getUserById: async function (id) {
-    let user = await this.getAll().find(user => user.id === id);
+  getUserById: function (id) {
+    let user = this.getAll().find(user => user.id === id);
     if (user) return user;
     else throw 'User Not Found';
   },
 
-  getUserByEmail: async function (email) {
+  getUserByEmail: function (email) {
     try {
-      let user = await this.getAll().find(user => user.email === email);
+      let user = this.getAll().find(user => user.email === email);
       if (user) return user;
       else throw 'User Not Found';
     } catch {
@@ -53,9 +53,7 @@ const User = {
           users[index] = dbUser;
         }
       })
-      writeFile(this.usersFilePath, JSON.stringify(users, null, 2), { encoding: 'utf8' }, (err) => {
-        if (err) throw err;
-      });
+      writeFileSync(this.usersFilePath, JSON.stringify(users, null, 2), { encoding: 'utf8' });
     } else {
       return 'User Not Found';
     }
@@ -69,10 +67,7 @@ const User = {
     user.id = uuidv4();
     const users = await this.getAll();
     users.push(user);
-    await writeFile(this.usersFilePath, JSON.stringify(users, null, 2), error => {
-      if (error) console.error(error);
-      return;
-    });
+    await writeFileSync(this.usersFilePath, JSON.stringify(users, null, 2));
     return user
   },
 
