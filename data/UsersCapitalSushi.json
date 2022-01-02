@@ -448,5 +448,15 @@
     "address": "O'higgins 930",
     "email": "germansanz93@gmail.com",
     "password": "$2a$10$MCSP5XTt5GXAbKJjNqFGaehERaBM44tWd0JtNS3rV2mquALmEXiQa"
+  },
+  {
+    "name": "Juanito",
+    "lastName": "Arco iris",
+    "email": "juanito@arcoiris.com",
+    "address": "calle 123",
+    "phone": "123123123",
+    "password": "$2a$10$U.p5JKs4exbbBVrZjXtfYuamXWDSG5QbZPDlwi3UVwZLRKomIwlg2",
+    "profilePic": "image-1641046386786-672840709.jpg",
+    "id": "8804b86d-9712-4217-b80c-677dbcc9c189"
   }
 ]

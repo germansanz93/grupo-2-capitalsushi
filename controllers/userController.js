@@ -15,9 +15,9 @@ module.exports = {
     res.send(user)
   },
   createUser: async (req, res) => {
-    const result = validationResult(req.body);
-    if (!result.isEmpty()) {
-      console.log('errores')
+    const result = validationResult(req);
+    if(!result.isEmpty()) {
+      console.log(result);
       return res.render('../views/registrarse.ejs', {
         errors: result.mapped(),
         oldData: req.body
@@ -33,13 +33,14 @@ module.exports = {
         oldData: req.body
       })
     }
-    const user = req.body;
+    const user = {...req.body};
     user.profilePic = req.file.filename;
     user.password = bcrypt.hashSync(user.password, salt);
     delete user.passwordConfirmation;
-
-    req.session.user = user;
-    req.session.cookie.expires = new Date(Date.now() + 1000 * 60 * 60 * 24)
+    const userResponse = User.createUser(user)
+    
+    req.session.user = userResponse;
+    req.session.cookie.expires = new Date(Date.now() + 1000 * 60 * 60 * 24);
     res.status(200).redirect('/usuario/perfil');
   },
   deleteUser: (req, res) => {

@@ -16,27 +16,27 @@
           <div class="input-container">
             <i class="fas fa-user"></i>
             <label for="name"></label>
-            <input type="text" name="name" id="name" placeholder="Nombre" required>
+            <input type="text" name="name" id="name" placeholder="Nombre" value= "<%= locals.oldData ? locals.oldData.name : "" %>"  required>
           </div>
           <div class="input-container">
             <i class="fas fa-user"></i>
             <label for="last-name"></label>
-            <input type="text" name="last-name" id="last-name" placeholder="Apellido" required>
+            <input type="text" name="lastName" id="last-name" placeholder="Apellido" value= "<%= locals.oldData ? locals.oldData.lastName : "" %>" required>
           </div>
           <div class="input-container">
             <i class="fas fa-envelope"></i>
             <label for="email"></label>
-            <input type="email" name="email" id="email" placeholder="Correo electrónico" required>
+            <input type="email" name="email" id="email" placeholder="Correo electrónico" value= "<%= locals.oldData ? locals.oldData.email : "" %>" required>
           </div>
           <div class="input-container">
             <i class="fas fa-map-marked-alt"></i>
             <label for="address"></label>
-            <input type="text" name="address" id="address" placeholder="Direccion" required>
+            <input type="text" name="address" id="address" placeholder="Direccion" value= "<%= locals.oldData ? locals.oldData.address : "" %>" required>
           </div>
           <div class="input-container">
             <i class="fas fa-mobile"></i>
             <label for="phone"></label>
-            <input type="text" name="phone" id="phone" placeholder="Telefono" required>
+            <input type="text" name="phone" id="phone" placeholder="Telefono" value= "<%= locals.oldData ? locals.oldData.phone : "" %>" required>
           </div>
           <div class="input-container">
             <i class="fas fa-lock"></i>

@@ -32,7 +32,7 @@ const validExtensions = ['.jpg', '.jpeg', '.png'];
 
 
 const validations = [
-  body('userName').notEmpty().withMessage("El nombre de usuario es obligatorio."),
+  // body('userName').notEmpty().withMessage("El nombre de usuario es obligatorio."),
   body('name').notEmpty().withMessage("El nombre no puede estar vacio."),
   body('lastName').notEmpty().withMessage("El apellido no puede estar vacio."),
   body('address').notEmpty().withMessage("La direccion no puede estar vacia."),

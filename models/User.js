@@ -65,14 +65,16 @@ const User = {
 
   //create user
   createUser: async function (user) {
+    console.log('User.js: create user', user)
     user.id = uuidv4();
     const users = await this.getAll();
     users.push(user);
     console.log(users)
-    await writeFile(this.usersFilePath, JSON.stringify(users, null, 2), { encoding: 'utf-8' }, (error) => {
-      if (error) throw error;
-      return this.getUserById(user.id);
+    writeFile(this.usersFilePath, JSON.stringify(users, null, 2), error => {
+      if (error) console.error(error);
+      return;
     });
+    return user
   },
 
   //delete user
