@@ -39,7 +39,9 @@ module.exports = {
     delete user.passwordConfirmation;
     const userResponse = User.createUser(user)
     
-    req.session.user = userResponse;
+    delete user.password;
+    req.session.user = user;
+    console.log(req.session.user);
     req.session.cookie.expires = new Date(Date.now() + 1000 * 60 * 60 * 24);
     res.status(200).redirect('/usuario/perfil');
   },

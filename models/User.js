@@ -69,8 +69,7 @@ const User = {
     user.id = uuidv4();
     const users = await this.getAll();
     users.push(user);
-    console.log(users)
-    writeFile(this.usersFilePath, JSON.stringify(users, null, 2), error => {
+    await writeFile(this.usersFilePath, JSON.stringify(users, null, 2), error => {
       if (error) console.error(error);
       return;
     });
