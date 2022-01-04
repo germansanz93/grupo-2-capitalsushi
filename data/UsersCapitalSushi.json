@@ -452,11 +452,11 @@
   {
     "name": "Juanito",
     "lastName": "Arco iris",
-    "email": "juanito@arcoiris.com",
+    "email": "juanito@arcoris.com",
     "address": "calle 123",
     "phone": "123123123",
-    "password": "$2a$10$2H7.vUTpwJtPPUGJHatFZOtW1LDFnJ356G/PBnVd0xePaHUUM/gQ.",
-    "profilePic": "image-1641124730293-809110517.jpg",
-    "id": "6648c6e7-1c3a-40ba-b966-7a92cf64ac58"
+    "password": "$2a$10$CXJj8.JF6MfdksyuAe89V.hfFJu984cNfksShNbkGfPdie8SfGZSe",
+    "profilePic": "image-1641297023273-611170790.jpg",
+    "id": "6c56b343-5a3f-41f5-a2d4-55e24847ac56"
   }
 ]

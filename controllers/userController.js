@@ -41,7 +41,6 @@ module.exports = {
     
     req.session.user = user;
     console.log(req.session.user);
-    req.session.cookie.expires = new Date(Date.now() + 1000 * 60 * 60 * 24);
     res.status(200).redirect('/usuario/perfil');
   },
   deleteUser: (req, res) => {
@@ -55,7 +54,7 @@ module.exports = {
   editUser: (req, res) => {
     const result = validationResult(req);
     if (!result.isEmpty()) {
-      return res.render('../views/registrarse.ejs', {
+      return res.render('../views/editarUsuario.ejs', {
         errors: result.mapped(),
         oldData: req.body
       })
@@ -70,7 +69,7 @@ module.exports = {
     res.render(path.join(__dirname, '../views/registrarse.ejs'));
   },
   login: async (req, res) => {
-    const { email, password } = req.body;
+    const { email, password, remember } = req.body;
     let user;
     try {
       user = await User.getUserByEmail(email);
@@ -81,8 +80,8 @@ module.exports = {
     if (user && bcrypt.compareSync(password, user.password)) {
       delete user.password;
       req.session.user = user;
-      req.session.cookie.expires = new Date(Date.now() + 1000 * 60 * 60 * 24)
-      res.status(200).redirect('/usuario/perfil');
+      if (req.body.remember != undefined) req.session.cookie.expires = new Date(Date.now() + 1000 * 60 * 60 * 24 * 7);
+      return res.status(200).redirect('/usuario/perfil');
     }
     const oldData = { user, email }
     const errors = { credentialsError: "credenciales invalidas" }

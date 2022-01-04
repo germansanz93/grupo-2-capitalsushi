@@ -16,27 +16,27 @@
           <div class="input-container">
             <i class="fas fa-user"></i>
             <label for="name"></label>
-            <input type="text" name="name" id="name" placeholder="Nombre" value= "<%= locals.oldData ? locals.oldData.name : "" %>"  required>
+            <input type="text" name="name" id="name" placeholder="Nombre" value= "<%= locals.user ? locals.user.name : "" %>"  required>
           </div>
           <div class="input-container">
             <i class="fas fa-user"></i>
             <label for="last-name"></label>
-            <input type="text" name="lastName" id="last-name" placeholder="Apellido" value= "<%= locals.oldData ? locals.oldData.lastName : "" %>" required>
+            <input type="text" name="lastName" id="last-name" placeholder="Apellido" value= "<%= locals.user ? locals.user.lastName : "" %>" required>
           </div>
           <div class="input-container">
             <i class="fas fa-envelope"></i>
             <label for="email"></label>
-            <input type="email" name="email" id="email" placeholder="Correo electrónico" value= "<%= locals.oldData ? locals.oldData.email : "" %>" required>
+            <input type="email" name="email" id="email" placeholder="Correo electrónico" value= "<%= locals.user ? locals.user.email : "" %>" required>
           </div>
           <div class="input-container">
             <i class="fas fa-map-marked-alt"></i>
             <label for="address"></label>
-            <input type="text" name="address" id="address" placeholder="Direccion" value= "<%= locals.oldData ? locals.oldData.address : "" %>" required>
+            <input type="text" name="address" id="address" placeholder="Direccion" value= "<%= locals.user ? locals.user.address : "" %>" required>
           </div>
           <div class="input-container">
             <i class="fas fa-mobile"></i>
             <label for="phone"></label>
-            <input type="text" name="phone" id="phone" placeholder="Telefono" value= "<%= locals.oldData ? locals.oldData.phone : "" %>" required>
+            <input type="text" name="phone" id="phone" placeholder="Telefono" value= "<%= locals.user ? locals.user.phone : "" %>" required>
           </div>
           <div class="input-container">
             <i class="fas fa-lock"></i>

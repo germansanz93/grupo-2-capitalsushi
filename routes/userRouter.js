@@ -31,7 +31,7 @@ const upload = multer({
 const validExtensions = ['.jpg', '.jpeg', '.png'];
 
 
-const validations = [
+const editUserValidations = [
   // body('userName').notEmpty().withMessage("El nombre de usuario es obligatorio."),
   body('name').notEmpty().withMessage("El nombre no puede estar vacio."),
   body('lastName').notEmpty().withMessage("El apellido no puede estar vacio."),
@@ -44,7 +44,11 @@ const validations = [
       throw new Error("Debes agregar una imagen en formato jpg, jpeg o png")
     }
     return true;
-  }),
+  })
+]
+
+const createUserValidations = [
+  ...editUserValidations,
   body('password').notEmpty().withMessage('Debe ingresar una contraseña.').bail()
     .isLength({ min: 6 }).withMessage('La contraseña debe tener al menos 6 caracteres'),
   body('passwordConfirmation').custom((value, { req }) => {
@@ -57,6 +61,8 @@ const validations = [
 ]
 
 
+
+
 //rutasrs
 router.route('/')
   .get(getUsers)
@@ -67,18 +73,19 @@ router.route('/ingresar')
 
 router.route('/registrarse')
   .get(guestMiddleware, register)
-  .post( upload.single('image'), validations ,createUser);
+  .post( upload.single('image'), createUserValidations ,createUser);
 
 router.get('/perfil', authMiddleware, profile)
 
 router.get('/salir', authMiddleware, logout)
 
-router.route('/editarUsuario').get(editUserForm)
+router.route('/editarUsuario').get(authMiddleware, editUserForm)
+                              .post(upload.single('image'), editUserValidations, editUser)
 
 router.route('/:id')
   .get(getUserById)
   .put(editUser)
-  .delete(validations, deleteUser);
+  .delete(deleteUser);
 
 //module export
 module.exports = router;
