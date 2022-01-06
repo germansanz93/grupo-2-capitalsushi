@@ -11,7 +11,7 @@
     </div>
     <div class="forms-container">
       <div class="forms-carousel">
-        <form class="sign-up-form" action="/usuario/registrarse" method='post' enctype="multipart/form-data">
+        <form class="sign-up-form" action="/usuario/editarUsuario" method='post'>
           <h3>Mis datos</h3>
           <div class="input-container">
             <i class="fas fa-user"></i>
@@ -43,13 +43,13 @@
             <label for="password"></label>
             <input type="password" name="password" id="password" placeholder="contraseña" required>
           </div>
-          <div class="input-group">
+          <!-- <div class="input-group">
             <input type="file" class="form-control form-image" id="image" name="image">
             <label class="input-group-text image-upload" for="image">Cargar Imagen</label>
-        </div>
-        <% if(locals.errors && errors.image){ %>
+        </div> -->
+        <!-- <% if(locals.errors && errors.image){ %>
             <p class="form-validation-error"><%= errors.image.msg %></p>
-        <% } %>
+        <% } %> -->
           <div class="btns">
             <a class="sign-up-btn" href="/usuario/ingresar">Eliminar Cuenta</a>
             <input class="submit-btn" type="submit" value="Guardar">

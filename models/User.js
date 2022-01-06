@@ -38,15 +38,14 @@ const User = {
 
   //update user
   updateUser: function (id, user) {
+    delete user.password;
     const users = this.getAll();
     let dbUser = users.find(user => user.id === id);
+    console.log(dbUser);
     if (dbUser) {
-      dbUser.name = user.name;
-      dbUser.user_name = user.user_name;
-      dbUser.last_name = user.last_name;
-      dbUser.email = user.email;
-      dbUser.password = user.password;
-      dbUser.address = user.address;
+      for(let key in user){
+        dbUser[key] = user[key];
+      }
 
       users.forEach(function (user, index) {
         if (user.id === id) {

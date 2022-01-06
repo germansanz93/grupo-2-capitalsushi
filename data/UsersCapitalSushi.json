@@ -446,8 +446,9 @@
     "name": "German",
     "lastName": "Sanz",
     "address": "O'higgins 930",
-    "email": "germansanz93@gmail.com",
-    "password": "$2a$10$MCSP5XTt5GXAbKJjNqFGaehERaBM44tWd0JtNS3rV2mquALmEXiQa"
+    "email": "germansanz@gmail.com",
+    "password": "$2a$10$MCSP5XTt5GXAbKJjNqFGaehERaBM44tWd0JtNS3rV2mquALmEXiQa",
+    "phone": "123123"
   },
   {
     "name": "Juanito",

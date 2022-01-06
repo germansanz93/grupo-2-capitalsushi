@@ -38,13 +38,6 @@ const editUserValidations = [
   body('address').notEmpty().withMessage("La direccion no puede estar vacia."),
   body('email').normalizeEmail().isEmail().withMessage("Debe ingresar una direccion de mail valida").bail()
     .notEmpty().withMessage("La descripcion no puede estar vacia"),
-  body('image').custom((value, { req }) => {
-    const file = req.file;
-    if (!file) {
-      throw new Error("Debes agregar una imagen en formato jpg, jpeg o png")
-    }
-    return true;
-  })
 ]
 
 const createUserValidations = [
@@ -55,9 +48,15 @@ const createUserValidations = [
     if (value !== req.body.password) {
       throw new Error('Password confirmation does not match password');
     }
-    // Indicates the success of this synchronous custom validator
     return true;
   }),
+  body('image').custom((value, { req }) => {
+    const file = req.file;
+    if (!file) {
+      throw new Error("Debes agregar una imagen en formato jpg, jpeg o png")
+    }
+    return true;
+  })
 ]
 
 
@@ -80,7 +79,7 @@ router.get('/perfil', authMiddleware, profile)
 router.get('/salir', authMiddleware, logout)
 
 router.route('/editarUsuario').get(authMiddleware, editUserForm)
-                              .post(upload.single('image'), editUserValidations, editUser)
+                              .post(editUserValidations, editUser)
 
 router.route('/:id')
   .get(getUserById)
