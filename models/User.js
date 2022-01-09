@@ -1,4 +1,4 @@
-const { readFileSync, writeFileSync, writeFile } = require('fs');
+const { readFileSync, writeFileSync, unlinkSync } = require('fs');
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
 
@@ -6,6 +6,7 @@ const { v4: uuidv4 } = require('uuid');
 const User = {
 
   usersFilePath: path.join(__dirname, '../data/UsersCapitalSushi.json'),
+  imagesFilePath: path.join(__dirname, '../public/images/'),
 
   // get all users
   getAll: function () {
@@ -73,6 +74,8 @@ const User = {
   //delete user
   deleteUser: async function (id) {
     let users = this.getAll();
+    let deletedUser = this.getUserById(id);
+    unlinkSync(`${this.imagesFilePath}${deletedUser.profilePic}`)
     users = users.filter(user => user.id != id);
     await writeFileSync(this.usersFilePath, JSON.stringify(users, null, 2));
     return true;

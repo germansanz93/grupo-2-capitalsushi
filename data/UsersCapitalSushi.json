@@ -449,15 +449,5 @@
     "email": "germansanz@gmail.com",
     "password": "$2a$10$MCSP5XTt5GXAbKJjNqFGaehERaBM44tWd0JtNS3rV2mquALmEXiQa",
     "phone": "123123"
-  },
-  {
-    "name": "Juanito",
-    "lastName": "Arco iris",
-    "email": "juanito@arcoris.com",
-    "address": "calle 123",
-    "phone": "123123123",
-    "password": "$2a$10$CXJj8.JF6MfdksyuAe89V.hfFJu984cNfksShNbkGfPdie8SfGZSe",
-    "profilePic": "image-1641297023273-611170790.jpg",
-    "id": "6c56b343-5a3f-41f5-a2d4-55e24847ac56"
   }
 ]
