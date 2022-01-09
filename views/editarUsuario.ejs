@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <%- include('./partials/head', {stylesheet: 'mi_cuenta.css', title: 'Editar informacion'}) %> 
+  <%- include('./partials/head', {stylesheet: 'mi_cuenta.css', stylesheet2: 'editarUsuario.css',title: 'Editar informacion'}) %> 
 
 <body>
   <%- include('./partials/header', {view: 'editarUsuario'}) %> 
@@ -43,22 +43,26 @@
             <label for="password"></label>
             <input type="password" name="password" id="password" placeholder="contraseña" required>
           </div>
-          <!-- <div class="input-group">
-            <input type="file" class="form-control form-image" id="image" name="image">
-            <label class="input-group-text image-upload" for="image">Cargar Imagen</label>
-        </div> -->
-        <!-- <% if(locals.errors && errors.image){ %>
-            <p class="form-validation-error"><%= errors.image.msg %></p>
-        <% } %> -->
           <div class="btns">
-            <a class="sign-up-btn" href="/usuario/ingresar">Eliminar Cuenta</a>
+            <a class="sign-up-btn" href="#" onclick="showDeletePopUp()">Eliminar Cuenta</a>
             <input class="submit-btn" type="submit" value="Guardar">
           </div>
         </form>
       </div>
     </div>
+    <div class="deletePopUp">
+      <h2>Eliminar cuenta</h2>
+      <p>Esta seguro que desea eliminar su cuenta?</p>
+      <small>Esta accion no puede dehacerse.</small>
+      <form action="/usuario/eliminar/:<%= locals.user.id %> " method="post">
+        <label for="password">Ingrese su contrasena para continuar:</label>
+        <input class="input-container" type="password" name="password" id="password">
+        <button class="sign-up-btn" type="submit" >Eliminar</button>
+      </form>
+    </div>
   </main>
   <%- include('./partials/footer') %> 
+  <script src="/js/deletePopUp.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,32 @@
+main .img-container::before{
+  background-color: #141313DD;
+  width: 100vw;
+  height: 100%;
+  display: block;
+  position: absolute;
+  content: "";
+  z-index: 20;
+  display: var(--display, none);
+}
+
+main .deletePopUp{
+  background-color: var(--orange);
+  color: #FFF;
+  width: 400px;
+  height: 260px;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  display: var(--display, none);
+}
+
+main .deletePopUp .sign-up-btn:hover{
+  cursor: pointer;
+}
+

@@ -11,6 +11,9 @@
   <!-- estilos -->
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href= <%= `/css/${stylesheet}` %> >
+  <% if (locals.stylesheet2) { %>
+    <link rel="stylesheet" href= <%= `/css/${stylesheet2}` %> >
+  <% } %>
   <!-- Iconos Fontawesome -->
   <script src="https://kit.fontawesome.com/e785f1ab1e.js" crossorigin="anonymous"></script>
 </head>
