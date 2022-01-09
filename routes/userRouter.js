@@ -72,7 +72,7 @@ router.route('/ingresar')
 
 router.route('/registrarse')
   .get(guestMiddleware, register)
-  .post( upload.single('image'), createUserValidations ,createUser);
+  .post( upload.single('image'), createUserValidations ,createUser)
 
 router.get('/perfil', authMiddleware, profile)
 
@@ -80,6 +80,8 @@ router.get('/salir', authMiddleware, logout)
 
 router.route('/editarUsuario').get(authMiddleware, editUserForm)
                               .post(editUserValidations, editUser)
+
+router.post('/eliminar/:id', authMiddleware, deleteUser)
 
 router.route('/:id')
   .get(getUserById)

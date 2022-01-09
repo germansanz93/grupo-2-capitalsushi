@@ -10,7 +10,7 @@ main .img-container::before{
 }
 
 main .deletePopUp{
-  background-color: var(--orange);
+  background-color: #FF555599;
   color: #FFF;
   width: 400px;
   height: 260px;
@@ -30,3 +30,30 @@ main .deletePopUp .sign-up-btn:hover{
   cursor: pointer;
 }
 
+main .deletePopUp .back:hover{
+  color: green;
+}
+
+main .deletePopUp .delete:hover{
+  color: red;
+}
+
+main .edit-error{
+  background-color: #F99;
+  color: #FFF;
+  top: 50%;
+  left: 50%;
+  z-index: 30;
+  padding: 2rem;
+  transform: translateX(-50%) translateY(-50%);
+  border-radius: 6px;
+  position: fixed;
+  transition: all .6s ease;
+}
+
+main .close-btn {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  cursor: pointer;
+}

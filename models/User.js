@@ -72,9 +72,9 @@ const User = {
 
   //delete user
   deleteUser: async function (id) {
-    const users = this.getAll();
+    let users = this.getAll();
     users = users.filter(user => user.id != id);
-    await writeFile(this.usersFilePath, JSON.stringify(users, null, 2));
+    await writeFileSync(this.usersFilePath, JSON.stringify(users, null, 2));
     return true;
   }
 };

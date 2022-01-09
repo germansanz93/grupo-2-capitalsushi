@@ -45,8 +45,17 @@ module.exports = {
   },
   deleteUser: (req, res) => {
     const id = req.params.id;
-    res.send(User.deleteUser(id));
-
+    const { password } = req.body;
+    console.log(id, password);
+    dbUser = User.getUserById(id);
+    if(bcrypt.compareSync(password, dbUser.password)){
+      User.deleteUser(id);
+      res.redirect('/');
+    } else {
+      delete dbUser.password;
+      res.render('../views/editarUsuario.ejs', {errors: {credentialsError: "Invalid password"}, oldData: {...dbUser}});
+    }
+    // res.send(User.deleteUser(id));
   },
   editUserForm: (req, res) => {
     res.render(path.join(__dirname, '../views/editarUsuario'));

@@ -1,49 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <%- include('./partials/head', {stylesheet: 'mi_cuenta.css', title: 'Mi cuenta'}) %> 
+<%- include('./partials/head', {stylesheet: 'mi_cuenta.css' , title: 'Mi cuenta' }) %>
 
-<body>
-  <%- include('./partials/header', {view: 'mi_cuenta'}) %> 
-  <main>
-    <div class="img-container">
-      <img class="main-img" src="/images/main-header.jpg" alt="">
-    </div>
-    <div class="forms-container">
-      <div class="forms-carousel">
-        <form class="sign-in-form" action="/usuario/ingresar" method="post">
-          <h3>Acceder</h3>
-          <div class="input-container">
-            <i class="fas fa-user"></i>
-            <label for="email"></label>
-            <input type="text" name="email" id="email" placeholder="Email" value= "<%= locals.oldData ? locals.oldData.email : "" %>" required>
+  <body>
+    <%- include('./partials/header', {view: 'mi_cuenta' }) %>
+      <main>
+        <div class="img-container">
+          <img class="main-img" src="/images/main-header.jpg" alt="">
+        </div>
+        <div class="forms-container">
+          <div class="forms-carousel">
+            <form class="sign-in-form" action="/usuario/ingresar" method="post">
+              <h3>Acceder</h3>
+              <div class="input-container">
+                <i class="fas fa-user"></i>
+                <label for="email"></label>
+                <input type="text" name="email" id="email" placeholder="Email"
+                  value="<%= locals.oldData ? locals.oldData.email : "" %>" required>
+              </div>
+              <div class="input-container">
+                <i class="fas fa-lock"></i>
+                <label for="password"></label>
+                <input type="password" name="password" id="password" placeholder="password" required>
+              </div>
+              <% if (locals.errors && errors.credentialsError) { %>
+                <div class="error" id="credentials-popup">
+                  <span class="close-btn" id="close-btn" onclick="closePopup()">X</span>
+                  <%= locals.errors.credentialsError %>
+                </div>
+                <% } %>
+                  <a class="password-recover" href="#">Olvidaste tu contraseña?</a>
+                  <div class="remember-check">
+                    <input type="checkbox" name="remember" id="remember">
+                    <label for="remember">Recuerdame</label>
+                  </div>
+                  <div class="btns">
+                    <a class="sign-up-btn" href="/usuario/registrarse">Crear cuenta</a>
+                    <input class="submit-btn" type="submit" value="Acceder">
+                  </div>
+            </form>
           </div>
-          <div class="input-container">
-            <i class="fas fa-lock"></i>
-            <label for="password"></label>
-            <input type="password" name="password" id="password" placeholder="password" required>
-          </div>
-          <% if (locals.errors && errors.credentialsError) { %>
-            <div class="error" id="credentials-popup">
-              <span class="close-btn" id="close-btn" onclick="closePopup()">X</span>
-              <%= locals.errors.credentialsError %>
-            </div> 
-          <% } %>
-          <a class="password-recover" href="#">Olvidaste tu contraseña?</a>
-          <div class="remember-check">
-            <input type="checkbox" name="remember" id="remember">
-            <label for="remember">Recuerdame</label>
-          </div>
-          <div class="btns">
-            <a class="sign-up-btn" href="/usuario/registrarse">Crear cuenta</a>
-            <input class="submit-btn" type="submit" value="Acceder">
-          </div>
-        </form>
-      </div>
-    </div>
-  </main>
-  <%- include('./partials/footer') %> 
-  <script src="/js/closeCredentialsPopup.js"></script>
-</body>
+        </div>
+      </main>
+      <%- include('./partials/footer') %>
+        <script src="/js/closeCredentialsPopup.js"></script>
+  </body>
 
 </html>
