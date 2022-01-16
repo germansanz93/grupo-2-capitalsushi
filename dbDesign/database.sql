@@ -13,7 +13,7 @@ CREATE TABLE product(
   id VARCHAR(36) NOT NULL PRIMARY KEY,
   title VARCHAR(80) NOT NULL,
   category_id VARCHAR(36) NOT NULL, 
-  FOREIGN KEY (category_id) REFERENCES category(id),
+  FOREIGN KEY (category_id) REFERENCES category(id) ON DELETE CASCADE ON UPDATE CASCADE,
   prod_description TEXT(400),
   picture TEXT(200),
   price DOUBLE NOT NULL
@@ -27,7 +27,7 @@ CREATE TABLE user_role(
 CREATE TABLE user(
   id VARCHAR(36) NOT NULL PRIMARY KEY,
   role_id VARCHAR(36) NOT NULL,
-  FOREIGN KEY (role_id) REFERENCES user_role(id),
+  FOREIGN KEY (role_id) REFERENCES user_role(id) ON DELETE CASCADE ON UPDATE CASCADE,
   name VARCHAR(20) NOT NULL,
   last_name VARCHAR(20) NOT NULL,
   address VARCHAR(50) NOT NULL,
@@ -40,14 +40,14 @@ CREATE TABLE user(
 CREATE TABLE order_list(
   id VARCHAR(36) NOT NULL PRIMARY KEY,
   user_id VARCHAR(36) NOT NULL,
-  FOREIGN KEY (user_id) REFERENCES user(id)
+  FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE order_item(
   id VARCHAR(36) NOT NULL PRIMARY KEY,
   order_id VARCHAR(36) NOT NULL,
-  FOREIGN KEY (order_id) REFERENCES order_list(id),
+  FOREIGN KEY (order_id) REFERENCES order_list(id) ON DELETE CASCADE ON UPDATE CASCADE,
   product_id VARCHAR(36) NOT NULL,
-  FOREIGN KEY (product_id) REFERENCES product(id),
+  FOREIGN KEY (product_id) REFERENCES product(id) ON DELETE CASCADE ON UPDATE CASCADE,
   qty INTEGER NOT NULL
 );
