@@ -3,6 +3,7 @@ const { readFileSync, writeFileSync } = require('fs');
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
 const { validationResult } = require('express-validator');
+let db = require("../database/models/Product");
 
 const productsFilePath = path.join(__dirname, '../data/ProductsCapitalSushi.json');
 
@@ -28,21 +29,17 @@ const mainController = {
     res.render(path.join(__dirname, '../views/cartilla.ejs'))
   },
   createProduct: (req, res) => {
-    const result = validationResult(req);
-    if (!result.isEmpty()) {
-      return res.render('../views/formularioProducto.ejs',{ 
-        errors: result.mapped(),
-        oldData: req.body  
-      })
-    }
-    const { title, price, description } = req.body;
-    const id = uuidv4();
-    const { filename } = req.file;
-    const product = { id, title, description, filename, price }
-    const stored = JSON.parse(readFileSync(productsFilePath))
-    stored.push(product);
-    writeFileSync(productsFilePath, JSON.stringify(stored, null, 2))
-    res.redirect('/menu');
+    db.createProduct({
+      id: req.body.id,
+      title: req.body.title,
+      category_id: req.body.category_id,
+      prod_description: req.body.prod_description,
+      picture: req.body.picture,
+      price: req.body.price,
+    })
+    .then (product => {
+      res.redirect("/product")
+    })
   },
   showProduct: (req, res) => {
     const {id} = req.params;
@@ -51,11 +48,10 @@ const mainController = {
     res.render('../views/detalleProducto.ejs', {product});
   },
   deleteProduct: (req, res) => {
-    const {id} = req.params;
-    let stored = JSON.parse(readFileSync(productsFilePath))
-    stored = stored.filter(product => product.id != id);
-    writeFileSync(productsFilePath, JSON.stringify(stored, null, 2))
-    res.render('/views/cartilla');
+    db.Product.destroy({
+      where:{id:req.params.id}
+    })
+    res.redirect("/product")},
   }
 }
 
