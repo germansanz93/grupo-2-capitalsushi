@@ -9,7 +9,7 @@ main {
 }
 
 .banner img {
-    width: 100%;
+    width: 90%;
     object-fit: cover;
     height: 105px;
 }
