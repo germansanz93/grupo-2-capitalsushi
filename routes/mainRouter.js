@@ -1,7 +1,17 @@
 //modulos requeridos
 const express = require('express');
 const router = express.Router();
-const { index, createProduct, contact, menu, cart, productForm, chart, showProduct, deleteProduct } = require('../controllers/mainController');
+const { 
+  index, 
+  createProduct, 
+  contact, 
+  menu, 
+  cart, 
+  productForm, 
+  chart, 
+  showProduct, 
+  deleteProduct
+} = require('../controllers/mainController');
 const multer = require('multer');
 const path = require('path');
 const { body } = require('express-validator');
@@ -55,7 +65,6 @@ router.get('/cartilla', chart)
 router.route('/productos/:id')
   .get(showProduct)
   .delete(deleteProduct);
-
 
 //module export
 module.exports = router;
