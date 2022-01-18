@@ -28,5 +28,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   )
 
+  //TODO: relaciones
+
   return OrderItem;
 }
