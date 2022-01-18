@@ -22,12 +22,13 @@ main h3 {
 main p {
     color: grey;
     text-align: center;
-    font-size: 10px;
+    font-size: 12px;
     background-color: white;
 }
 
 .price {
     text-align: right;
+    margin-top: 25%;
 }
 
 .pr-img{
@@ -73,17 +74,31 @@ article {
         font-size: 30px;
         margin: 20px;
     }
+    .pr-img {
+        width: 200px;
+        object-fit: cover;
+        height: 145px;
+        margin-bottom: 0px;
+    }
     main p {
-        font-size: 15px;
+        font-size: 20px;
     }
     main h3 {
-        font-size: 20px;
+        font-size: 25px;
     }
     main {
         padding: 20px;
     }
+    .price {
+        position: relative;
+        width: 100%;
+        right: 0px;
+        left: 130px;
+        bottom: 0px;
+        font-size: 20px;
+        margin-top: 18%;
+    }
 }
-
 /* DESKTOP */
 
 @media (min-width: 1024px) {
@@ -92,10 +107,10 @@ article {
         margin: 30px;
     }
     main p {
-        font-size: 20px;
+        font-size: 30px;
     }
     main h3 {
-        font-size: 25px;
+        font-size: 35px;
     }
     main {
         padding: 40px 40px;
@@ -110,6 +125,9 @@ article {
         position: relative;
         width: 100%;
         right: 0px;
+        left: 150px;
         bottom: 0px;
+        font-size: 30px;
+        margin-top: 15%;
     }
 }
