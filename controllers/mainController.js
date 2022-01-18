@@ -53,6 +53,5 @@ const mainController = {
     })
     res.redirect("/product")},
   }
-.
 
 module.exports = mainController;
