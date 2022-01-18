@@ -18,5 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   )
 
+  //TODO: relaciones
+  
   return Category;
 }

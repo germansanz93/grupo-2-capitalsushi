@@ -10,7 +10,8 @@ module.exports = (sequelize, DataTypes) => {
       role_id: {
         type: DataTypes.STRING,
         allowNull: false,
-        foreignKey: true
+        foreignKey: true,
+        defaultValue: 2
       },
       name: {
         type: DataTypes.STRING,
@@ -46,6 +47,8 @@ module.exports = (sequelize, DataTypes) => {
       tableName: 'user'
     }
   )
+
+  //TODO: relaciones
 
   return User;
 }

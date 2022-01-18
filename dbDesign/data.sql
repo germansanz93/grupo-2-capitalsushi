@@ -19,13 +19,13 @@ VALUES ('64916ea4-1c89-495b-9197-de846e75a183', 'postre1', '0477037a-ebdb-48d3-a
 INSERT INTO product(id, title, category_id, prod_description, picture, price)
 VALUES ('7d057932-73dd-4bba-952a-d5b59c01537a', 'Entrada1', '97cdc1e3-9e1d-4988-a2d3-9d7d527f35f5', 'Descripcion de la entrada 1', 'entrada-1.jpg', 500);
 
-INSERT INTO user_role(id, name) VALUES ('01b5a5c1-9157-4ac8-95e2-6db2312e6bf7', 'Customer');
-INSERT INTO user_role(id, name) VALUES ('5c3cd357-3b02-4307-bc3f-afab692ab8a6', 'Admin');
+INSERT INTO user_role(id, name) VALUES (1, 'Admin');
+INSERT INTO user_role(id, name) VALUES (2, 'Customer');
 
 INSERT INTO user (id, role_id, name, last_name, address, email, phone, password, profile_pic)
-VALUES ('36b0ed55-0730-4ddb-bb8e-64ee1bfad56e', '01b5a5c1-9157-4ac8-95e2-6db2312e6bf7', 'first', 'customer', 'nowhere', 'customer@one.com', '1111111111', '$2a$10$MCSP5XTt5GXAbKJjNqFGaehERaBM44tWd0JtNS3rV2mquALmEXiQa', 'image-1641297023273-611170790.jpg');
+VALUES ('36b0ed55-0730-4ddb-bb8e-64ee1bfad56e', 2, 'first', 'customer', 'nowhere', 'customer@one.com', '1111111111', '$2a$10$MCSP5XTt5GXAbKJjNqFGaehERaBM44tWd0JtNS3rV2mquALmEXiQa', 'image-1641297023273-611170790.jpg');
 INSERT INTO user (id, role_id, name, last_name, address, email, phone, password, profile_pic)
-VALUES ('4ba9345d-be87-4964-81eb-671c76ce2e35', '5c3cd357-3b02-4307-bc3f-afab692ab8a6', 'admin', 'admin', 'nowhere', 'admin@capital.com', '1111111111', '$2a$10$MCSP5XTt5GXAbKJjNqFGaehERaBM44tWd0JtNS3rV2mquALmEXiQa', 'image-1641471006101-814988620.jpg');
+VALUES ('4ba9345d-be87-4964-81eb-671c76ce2e35', 1, 'admin', 'admin', 'nowhere', 'admin@capital.com', '1111111111', '$2a$10$MCSP5XTt5GXAbKJjNqFGaehERaBM44tWd0JtNS3rV2mquALmEXiQa', 'image-1641471006101-814988620.jpg');
 
 INSERT INTO order_list(id, user_id) VALUES ('f8c8a796-c2f8-48b2-9bb8-fc51ae044e49', '36b0ed55-0730-4ddb-bb8e-64ee1bfad56e');
 
