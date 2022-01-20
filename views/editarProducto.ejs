@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head', {stylesheet: 'mi_cuenta.css' , stylesheet2: 'editarProducto.css'
+  ,title: 'Editar informacion' }) %>
+
+<body>
+    <%- include('./partials/header', {view: 'editarProducto' }) %>
+
+    <main>
+        <form action="?_method=PUT" method="POST" enctype="multipart/form-data" class="form-user">
+
+            <h2>EDITAR PRODUCTO: <%= old.name %></h2>
+
+            <div>
+                <label for="name">Nombre</label>
+                <input id="name" type="text" name="name" placeholder="Nombre Producto" value="<%= old.name %>">
+
+                <% if (locals.errors && errors.name) { %>
+                    <div class="text-error">
+                        <%= errors.name.msg %> 
+                    </div>
+                <% } %>
+
+            </div>
+
+            <div>
+                <label for="description">Descripcion</label>
+                <input id="description" type="text" name="description"
+                placeholder="Descripción" 
+                value="<%= old.description %>">
+
+                <% if (locals.errors && errors.description) { %>
+                    <div class="text-error">
+                        <%= errors.description.msg %> 
+                    </div>
+                <% } %>
+
+            </div>
+            
+            
+            <div>
+                <label>Agregar imagenes del producto:</label>
+                <input type="file" name="image" accept=".jpg, .png" multiple
+            >
+
+                <% if (locals.errors && errors.image) { %>
+                    <div class="text-error">
+                        <%= errors.image.msg %> 
+                    </div>
+                <% } %>
+
+            </div>
+            
+
+            <div>
+                <label for="price">Precio</label>
+                <input id="price" type="text" name="price" value="<%= old.price %>"
+                placeholder="Precio">
+
+                <% if (locals.errors && errors.price) { %>
+                    <div class="text-error">
+                        <%= errors.price.msg %> 
+                    </div>
+                <% } %>
+
+            </div>
+            
+            <div>
+                <label for="discount">Descuento</label>
+                <input id="discount" type="number" name="discount" placeholder="Descuento">
+            </div>
+
+            <div>
+                <label>Categoria</label>
+                <select name="category_id">
+                    <% category.forEach(category => { %>
+                    <option value="<%= category.id %>"><%= category.name %></option>
+                    <% }); %>
+                </select>
+            </div>
+
+            <ul class="errores"></ul>
+            <div>
+                <button type="submit">Actualizar Producto</button>
+            </div>
+        </form>
+    </main>
+    <%- include('./partials/footer') %>
+</body>
+</html>

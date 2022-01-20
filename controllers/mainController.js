@@ -47,6 +47,20 @@ const mainController = {
     console.log(product)
     res.render('../views/detalleProducto.ejs', {product});
   },
+  editarProducto: (req, res) => {
+    db.Product.update({
+             nombre: req.body.nombreEditado,
+             precio: req.body.precioEditado,
+             descripcion: req.body.descripcionEditada
+           },
+          {
+             where: { id: req.params.id }
+          }
+       )
+       .then(() => {
+          res.redirect('/product');
+       })
+      },
   deleteProduct: (req, res) => {
     db.Product.destroy({
       where:{id:req.params.id}
