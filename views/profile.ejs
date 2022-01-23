@@ -9,7 +9,7 @@
         <div class="main-container">
           <div class="user-profile">
             <div class="user-header">
-              <img class="user-img" src="/images/index.jpeg" alt="user img">
+              <img class="user-img" src=<%=`/images/${locals.user.profile_pic}`%> alt="user img">
               <h2><%= `${locals.user.name} ${locals.user.last_name}` %> </h2>
             </div>
             <div class="user-info">

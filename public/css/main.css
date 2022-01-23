@@ -137,6 +137,14 @@ header .user-menu{
 header .username {
   color: #FFF;
   display: none;
+  padding-right: 12px;
+}
+
+header .profile-pic {
+  display: none;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
 }
 
 header .fa-user {
@@ -201,6 +209,10 @@ header nav .active {
   }
 
   header .username{
+    display: block;
+  }
+
+  header .profile-pic {
     display: block;
   }
 }

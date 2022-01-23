@@ -11,8 +11,10 @@
           <span class="username">
             <%= user.name %>
           </span>
-          <% } %>
+          <a class="header-user" href="#" onclick="UserScript()"><img class="profile-pic" src=<%=`/images/${user.profile_pic}`%> alt=""></a>
+          <% } else {%>
             <a class="header-user" href="#" onclick="UserScript()"> <i class="fas fa-user"></i></a>
+          <% } %>
       </div>
       <a class="header-user" href="#" id="hamburger" onclick="HamburgerScript()"> <i class="fas fa-bars"></i> </a>
     </div>
