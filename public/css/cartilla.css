@@ -67,6 +67,39 @@ article {
     display: block;
 }
 
+@media (min-width: 425px) {
+    main h2 {
+        text-align: left;
+        font-size: 27px;
+        font-weight: 600;
+        background-color: white;
+        margin: 20px 20px;
+    }
+    .pr-img {
+        width: 120px;
+        object-fit: cover;
+        height: 100px;
+        margin-bottom: 0px;
+    }
+    main p {
+        color: grey;
+        text-align: center;
+        font-size: 17px;
+        background-color: white;
+    }
+    main h3 {
+        text-align: center;
+        font-size: 18px;
+        background-color: white;
+    }
+    main {
+        padding: 20px;
+    }
+    .price {
+        text-align: right;
+        margin-top: 8%;
+    }
+}
 /* TABLET */
 
 @media (min-width: 768px) {
@@ -77,11 +110,11 @@ article {
     .pr-img {
         width: 200px;
         object-fit: cover;
-        height: 145px;
+        height: 170px;
         margin-bottom: 0px;
     }
     main p {
-        font-size: 20px;
+        font-size: 25px;
     }
     main h3 {
         font-size: 25px;
@@ -93,7 +126,7 @@ article {
         position: relative;
         width: 100%;
         right: 0px;
-        left: 130px;
+        left: 40px;
         bottom: 0px;
         font-size: 20px;
         margin-top: 18%;
@@ -107,7 +140,7 @@ article {
         margin: 30px;
     }
     main p {
-        font-size: 30px;
+        font-size: 40px;
     }
     main h3 {
         font-size: 35px;
@@ -116,7 +149,38 @@ article {
         padding: 40px 40px;
     }
     .pr-img{
-        width: 200px;
+        width: 250px;
+        object-fit: cover;
+        height: 250px;
+        margin-bottom: 0px;
+    }
+    .price {
+        position: relative;
+        width: 100%;
+        right: 0px;
+        left: 30px;
+        bottom: 0px;
+        font-size: 30px;
+        margin-top: 10%;
+    }
+}
+
+@media (min-width:1294px) {
+    main h2 {
+        font-size: 40px;
+        margin: 30px;
+    }
+    main p {
+        font-size: 40px;
+    }
+    main h3 {
+        font-size: 35px;    
+    }
+    main {
+        padding: 40px 40px;
+    }
+    .pr-img{
+        width: 300px;
         object-fit: cover;
         height: 200px;
         margin-bottom: 0px;
@@ -129,5 +193,36 @@ article {
         bottom: 0px;
         font-size: 30px;
         margin-top: 15%;
+    }
+}
+
+@media (min-width:1440px) {
+    main h2 {
+        font-size: 40px;
+        margin: 30px;
+    }
+    main p {
+        font-size: 50px;
+    }
+    main h3 {
+        font-size: 40px;    
+    }
+    main {
+        padding: 40px 40px;
+    }
+    .pr-img{
+        width: 300px;
+        object-fit: cover;
+        height: 200px;
+        margin-bottom: 0px;
+    }
+    .price {
+        position: relative;
+        width: 100%;
+        right: 0px;
+        left: 40px;
+        bottom: 0px;
+        font-size: 40px;
+        margin-top: 6%;
     }
 }
