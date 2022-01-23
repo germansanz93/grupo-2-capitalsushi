@@ -52,7 +52,7 @@ module.exports = {
         user.id = uuidv4();
         db.User.create(user).then(user => {
           req.session.user = user;
-          res.redirect('/usuario/perfil');
+          res.redirect('/user/profile');
         })
       }).catch(function(){
         if (!result.isEmpty()) {
@@ -93,23 +93,29 @@ module.exports = {
       })
     }
     const user = { ...req.body };
-    console.log(req.session.user.id)
     const id = req.session.user.id;
-    dbUser = db.User.findOne({where: {id}});
+    db.User.findOne({where: {id}})
+    .then(function(dbUser){
+      if (bcrypt.compareSync(user.password, dbUser.password)) {
+        delete user.password;
+        db.User.update({...user}, {where: {id}})
+        .then(function(){
+          req.session.user = user;
+          req.session.user.id = id;  
+          res.redirect('/user/profile');
+        })
+      } else {
+        console.log('contraseña incorrecta')
+        return res.render('../views/editarUsuario.ejs', {
+          errors: {
+            password: 'La contraseña es incorrecta'
+          },
+          oldData: req.body
+        })
+      }
+    })
 
-    if (bcrypt.compareSync(user.password, dbUser.password)) {
-      req.session.user = db.User.update({...user}, {where: {id}}).then(function(){
-        res.redirect('/usuario/perfil');
-      })
-    } else {
-      console.log('contraseña incorrecta')
-      return res.render('../views/editarUsuario.ejs', {
-        errors: {
-          password: 'La contraseña es incorrecta'
-        },
-        oldData: req.body
-      })
-    }
+
   },
   account: (req, res) => {
     res.render(path.join(__dirname, '../views/mi_cuenta.ejs'));
