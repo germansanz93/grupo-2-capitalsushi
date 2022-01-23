@@ -10,6 +10,7 @@ const cors = require('cors');
 require('dotenv').config();
 
 //modulos propios
+const productRouter = require('./routes/userRouter');
 const mainRouter =require('./routes/mainRouter');
 const userRouter = require('./routes/userRouter');
 const loggedUserMiddleware = require('./middleware/loggedUserMiddleware');
@@ -38,7 +39,8 @@ app.set('view engine', 'ejs');
 
 //rutas
 app.use('/', mainRouter)
-app.use('/usuario', userRouter)
+app.use('/user', userRouter)
+app.use('/product', productRouter)
 
 //server escuchando
 app.listen(PORT, () => {

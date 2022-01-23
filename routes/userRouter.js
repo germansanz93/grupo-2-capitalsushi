@@ -34,7 +34,7 @@ const validExtensions = ['.jpg', '.jpeg', '.png'];
 const editUserValidations = [
   // body('userName').notEmpty().withMessage("El nombre de usuario es obligatorio."),
   body('name').notEmpty().withMessage("El nombre no puede estar vacio."),
-  body('lastName').notEmpty().withMessage("El apellido no puede estar vacio."),
+  body('last_name').notEmpty().withMessage("El apellido no puede estar vacio."),
   body('address').notEmpty().withMessage("La direccion no puede estar vacia."),
   body('email').normalizeEmail().isEmail().withMessage("Debe ingresar una direccion de mail valida").bail()
     .notEmpty().withMessage("La descripcion no puede estar vacia"),
@@ -50,7 +50,7 @@ const createUserValidations = [
     }
     return true;
   }),
-  body('image').custom((value, { req }) => {
+  body('profile_pic').custom((value, { req }) => {
     const file = req.file;
     if (!file) {
       throw new Error("Debes agregar una imagen en formato jpg, jpeg o png")
@@ -62,7 +62,7 @@ const createUserValidations = [
 
 
 
-//rutasrs
+//rutas
 router.route('/')
   .get(getUsers)
 
@@ -72,7 +72,7 @@ router.route('/ingresar')
 
 router.route('/registrarse')
   .get(guestMiddleware, register)
-  .post( upload.single('image'), createUserValidations ,createUser)
+  .post(upload.single('profile_pic'), createUserValidations ,createUser)
 
 router.get('/perfil', authMiddleware, profile)
 
