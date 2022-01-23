@@ -10,11 +10,11 @@
           <div class="user-profile">
             <div class="user-header">
               <img class="user-img" src="/images/index.jpeg" alt="user img">
-              <h2><%= `${locals.user.name} ${locals.user.lastName}` %> </h2>
+              <h2><%= `${locals.user.name} ${locals.user.last_name}` %> </h2>
             </div>
             <div class="user-info">
               <i class="fas fa-user"></i>
-              <p><%= `${locals.user.name} ${locals.user.lastName}`%> </p>
+              <p><%= `${locals.user.name} ${locals.user.last_name}`%> </p>
             </div>
             <div class="user-info">
               <i class="fas fa-envelope"></i>
@@ -28,7 +28,7 @@
               <i class="fas fa-mobile"></i>
               <p><%= locals.user.phone || 'null' %> </p>
             </div>
-            <a href="/usuario/editarUsuario" class="edit-btn">
+            <a href="/user/editUser" class="edit-btn">
               Editar perfil
             </a>
           </div>

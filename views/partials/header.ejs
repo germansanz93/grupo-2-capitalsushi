@@ -20,11 +20,11 @@
       <ul>
         <li><a class=<%=view=='home' && 'active' %> href="/">Inicio</a></li>
         <li><a class=<%=view=='menu' && 'active' %> href="/menu">Menu</a></li>
-        <li><a class=<%=view=='carrito' && 'active' %> href="/carrito">Carrito</a></li>
-        <li><a class=<%=view=='mi_cuenta' && 'active' %> href="/usuario/ingresar">Mi cuenta</a></li>
-        <li><a class=<%=view=='contacto' && 'active' %> href="/contacto">Contacto</a></li>
+        <li><a class=<%=view=='carrito' && 'active' %> href="/cart">Carrito</a></li>
+        <li><a class=<%=view=='mi_cuenta' && 'active' %> href="/user/login">Mi cuenta</a></li>
+        <li><a class=<%=view=='contacto' && 'active' %> href="/contact">Contacto</a></li>
         <% if (locals.user) { %>
-          <li><a href="/usuario/salir">Salir</a></li>
+          <li><a href="/user/logout">Salir</a></li>
         <% } %>
       </ul>
     </nav>

@@ -14,10 +14,10 @@ const guestMiddleware = require('../middleware/guestMiddleware');
 //rutas
 router.route('/')
   .get(index)
-router.get('/contacto', contact)
+router.get('/contact', contact)
 router.get('/menu', menu)
-router.get('/carrito', cart)
-router.get('/cartilla', chart)
+router.get('/cart', cart)
+router.get('/chart', chart)
 
 
 //module export

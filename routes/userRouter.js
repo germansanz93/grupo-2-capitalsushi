@@ -66,19 +66,19 @@ const createUserValidations = [
 router.route('/')
   .get(getUsers)
 
-router.route('/ingresar')
+router.route('/login')
   .get(guestMiddleware, account)
   .post(login);
 
-router.route('/registrarse')
+router.route('/register')
   .get(guestMiddleware, register)
   .post(upload.single('profile_pic'), createUserValidations ,createUser)
 
-router.get('/perfil', authMiddleware, profile)
+router.get('/profile', authMiddleware, profile)
 
-router.get('/salir', authMiddleware, logout)
+router.get('/logout', authMiddleware, logout)
 
-router.route('/editarUsuario').get(authMiddleware, editUserForm)
+router.route('/editUser').get(authMiddleware, editUserForm)
                               .post(editUserValidations, editUser)
 
 router.post('/eliminar/:id', authMiddleware, deleteUser)

@@ -125,12 +125,14 @@ module.exports = {
           delete user.password;
           req.session.user = user;
           if (req.body.remember != undefined) req.session.cookie.expires = new Date(Date.now() + 1000 * 60 * 60 * 24 * 7);
-          res.redirect('/usuario/perfil');
+          res.redirect('/user/profile');
+        }else {
+          const oldData = { email }
+          const errors = { credentialsError: "credenciales invalidas" }
+          res.render('mi_cuenta.ejs', { oldData, errors })
         }
       }).catch(function (error) {
-        const oldData = { user, email }
-        const errors = { credentialsError: "credenciales invalidas" }
-        res.render('mi_cuenta.ejs', { oldData, errors })
+        res.render('mi_cuenta.ejs')
       })
   },
   // login: async (req, res) => {
