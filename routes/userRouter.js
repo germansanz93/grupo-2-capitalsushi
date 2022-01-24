@@ -2,7 +2,20 @@
 const express = require('express');
 const { body } = require('express-validator');
 const router = express.Router();
-const { getUserById, editUser, deleteUser, account, login, register, createUser, getUsers, profile, logout, editUserForm } = require('../controllers/userController');
+const { 
+  getUserById, 
+  editUser, 
+  deleteUser, 
+  account, 
+  login, 
+  register, 
+  createUser, 
+  getUsers, 
+  profile, 
+  logout, 
+  editUserForm,
+  changePassword
+  } = require('../controllers/userController');
 const guestMiddleware = require('../middleware/guestMiddleware');
 const authMiddleware = require('../middleware/authMiddleware');
 const multer = require('multer');
@@ -40,8 +53,7 @@ const editUserValidations = [
     .notEmpty().withMessage("La descripcion no puede estar vacia"),
 ]
 
-const createUserValidations = [
-  ...editUserValidations,
+const passwordValidations = [
   body('password').notEmpty().withMessage('Debe ingresar una contraseña.').bail()
     .isLength({ min: 6 }).withMessage('La contraseña debe tener al menos 6 caracteres'),
   body('passwordConfirmation').custom((value, { req }) => {
@@ -50,6 +62,11 @@ const createUserValidations = [
     }
     return true;
   }),
+]
+
+const createUserValidations = [
+  ...editUserValidations,
+  ...passwordValidations,
   body('profile_pic').custom((value, { req }) => {
     const file = req.file;
     if (!file) {
@@ -58,6 +75,7 @@ const createUserValidations = [
     return true;
   })
 ]
+
 
 
 
@@ -82,6 +100,8 @@ router.route('/editUser').get(authMiddleware, editUserForm)
                               .post(editUserValidations, editUser)
 
 router.post('/eliminar/:id', authMiddleware, deleteUser)
+
+router.post('/:id/password', authMiddleware, passwordValidations,changePassword)
 
 router.route('/:id')
   .get(getUserById)

@@ -114,8 +114,6 @@ module.exports = {
         })
       }
     })
-
-
   },
   account: (req, res) => {
     res.render(path.join(__dirname, '../views/mi_cuenta.ejs'));
@@ -166,5 +164,38 @@ module.exports = {
   logout: (req, res) => {
     req.session.destroy();
     res.redirect('/');
+  },
+  changePassword: (req, res) => {
+    const result = validationResult(req);
+    if (!result.isEmpty()) {
+      console.log(result)
+      return res.render('../views/profile.ejs', {
+        errors: result.mapped(),
+        oldData: req.body
+      })
+      // TODO: agregar que se muestre un error si la contrasenha no cumple con los requisitos
+    }
+    const user = { ...req.body };
+    const id = req.session.user.id;
+    db.User.findOne({where: {id}})
+    .then(function(dbUser){
+      if (bcrypt.compareSync(user.oldPassword, dbUser.password)) {
+        delete user.oldPassword;
+        delete user.passwordConfirmation;
+        user.password = bcrypt.hashSync(user.password, salt);
+        db.User.update({...user}, {where: {id}})
+        .then(function(){
+          res.redirect('/user/profile');
+        })
+      } else {
+        console.log('contraseña incorrecta')
+        return res.render('../views/editarUsuario.ejs', {
+          errors: {
+            password: 'La contraseña es incorrecta'
+          },
+          oldData: req.body
+        })
+      }
+    })
   }
 }

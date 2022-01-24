@@ -28,13 +28,31 @@
               <i class="fas fa-mobile"></i>
               <p><%= locals.user.phone || 'null' %> </p>
             </div>
+            <a onclick="showPasswordForm()" href="#" class="edit-btn">
+              Cambiar contraseña
+            </a>
             <a href="/user/editUser" class="edit-btn">
               Editar perfil
             </a>
           </div>
         </div>
+        <div class="password-change">
+          <form action=<%=`${user.id}/password`%> method="post">
+            <label for="oldPassword">Contraseña actual: </label>
+            <input type="password" name="oldPassword" id="oldPassword">
+            <label for="password">Nueva contraseña: </label>
+            <input type="password" name="password" id="password">
+            <label for="passwordConfirmation">Confirmar contraseña: </label>
+            <input type="password" name="passwordConfirmation" id="passwordConfirmation">
+            <div class="buttons">
+              <button onclick="hidePasswordForm()">Atras</button>
+              <button type="submit">Cambiar</button>
+            </div>
+          </form>
+        </div>
       </main>
       <%- include('./partials/footer') %>
+      <script src="/js/changePassword.js"></script>
   </body>
 
 </html>
