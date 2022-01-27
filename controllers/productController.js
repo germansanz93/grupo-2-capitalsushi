@@ -2,20 +2,20 @@ const { readFileSync, writeFileSync } = require('fs');
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
 const { calidationResult } = require('express-validator');
-const db = require("../database/models/Product");
+const db = require("../database/models");
 
-const productsFilePath = path.join(__dirname, '../data/ProductsCapitalSushi.json');
 
 const productController = {
-  createProduct: (req, res) => {
-    db.createProduct({
-      id: req.body.id,
-      title: req.body.title,
-      category_id: req.body.category_id,
-      prod_description: req.body.prod_description,
-      picture: req.body.picture,
-      price: req.body.price,
+  allProducts: (req, res) => {
+    db.Product.findAll()
+    .then(function(products){
+      res.json(products)
     })
+  },
+  createProduct: (req, res) => {
+    const product = {...req.body}
+    product.id = uuidv4();
+    db.Product.create(product)
       .then(product => {
         res.redirect("/product")
       })
@@ -26,7 +26,7 @@ const productController = {
     console.log(product)
     res.render('../views/detalleProducto.ejs', { product });
   },
-  editarProducto: (req, res) => {
+  editProduct: (req, res) => {
     db.Product.update({
       nombre: req.body.nombreEditado,
       precio: req.body.precioEditado,
@@ -47,7 +47,11 @@ const productController = {
     res.redirect("/product")
   },
   productForm: (req, res) => {
-    res.render(path.join(__dirname, '../views/formularioProducto.ejs'))
+    db.Category.findAll()
+    .then(function(categories){
+      console.log(categories);
+      res.render(path.join(__dirname, '../views/formularioProducto.ejs'), {categories});
+    })
   },
 }
 

@@ -9,8 +9,7 @@
             <main>
                 <div class="form-container">
                     <h2 class="form-title">Cargar producto</h2>
-                    <form class="product-form" action="/" method="POST" class='validated-form' novalidate
-                        enctype="multipart/form-data">
+                    <form class="product-form" action="/product/" method="post">
                         <div class="input-group">
                             <label class="form-label" for="title">Título del plato</label>
                             <input class="form-control" type=" text" id="title" name="title" value="<%= locals.oldData ? oldData.title : null%>" required>
@@ -18,6 +17,15 @@
                         <% if(locals.errors && errors.title){ %>
                             <p class="form-validation-error"><%= errors.title.msg %></p>
                         <% } %>
+                        <div class="input-group">
+                            <label class="form-label" for="category">Categoria</label>
+                            <!-- <input class="form-control" type="text" id="category" name="category" value="<%= locals.oldData ? oldData.category : null%>" required> -->
+                            <select name="category" id="category">
+                                <% for( let category of locals.categories ) { %>
+                                    <option value="<%= category.id %>"><%= category.cat_name %> </option>
+                                <% } %>
+                            </select>
+                        </div>
                         <div>
                             <div class="input-group">
                                 <label class="form-label" for="price">Precio</label>
@@ -38,14 +46,14 @@
                                 <p class="form-validation-error"><%= errors.description.msg %></p>
                             <% } %>
                         <div class="input-group">
-                            <input type="file" class="form-control form-image" id="image" name="image" multiple>
+                            <input type="file" class="form-control form-image" id="image" name="picture" multiple>
                             <label class="input-group-text image-upload" for="image">Cargar Imagen</label>
                         </div>
                         <% if(locals.errors && errors.image){ %>
                             <p class="form-validation-error"><%= errors.image.msg %></p>
                         <% } %>
                         <div class="btn-container">
-                            <button class="form-button">Agregar plato</button>
+                            <button class="form-button" type="submit">Agregar plato</button>
                         </div>
                     </form>
                 </div>

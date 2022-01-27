@@ -101,7 +101,7 @@ router.route('/editUser').get(authMiddleware, editUserForm)
 
 router.post('/eliminar/:id', authMiddleware, deleteUser)
 
-router.post('/:id/password', authMiddleware, passwordValidations,changePassword)
+router.post('/:id/password', authMiddleware, passwordValidations, changePassword)
 
 router.route('/:id')
   .get(getUserById)

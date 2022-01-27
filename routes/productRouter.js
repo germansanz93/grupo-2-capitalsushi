@@ -4,8 +4,11 @@ const router = express.Router();
 const { 
   productForm, 
   showProduct, 
-  deleteProduct
-} = require('../controllers/mainController');
+  deleteProduct,
+  allProducts,
+  createProduct,
+  editProduct
+} = require('../controllers/productController');
 const multer = require('multer');
 const path = require('path');
 const { body } = require('express-validator');
@@ -38,7 +41,7 @@ const validations = [
   body('title').notEmpty().withMessage("El titulo no puede estar vacio."),
   body('price').isNumeric({ min: 0.01 }).withMessage("El precio debe ser mayor a cero."),
   body('description').notEmpty().withMessage("La descripcion no puede estar vacia"),
-  body('image').custom((value, { req }) => {
+  body('picture').custom((value, { req }) => {
     const file = req.file;
     if (!file) {
       throw new Error("Debes agregar una imagen en formato jpg, jpeg o png")
@@ -47,10 +50,12 @@ const validations = [
   })
 ]
 
-//rutas
-// router.route('/')
-//   .post(upload.single('image'), validations, createProduct);
-router.get('/new', productForm)
+// rutas
+router.route('/')
+  .get(allProducts)
+  .post((req, res, next) => {console.log(req.body); next()} ,upload.single('picture'), validations, createProduct);
+router.route('/new')
+  .get(productForm)
 router.route('/:id')
   .get(showProduct)
   .delete(deleteProduct);

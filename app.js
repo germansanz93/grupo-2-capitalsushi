@@ -10,7 +10,7 @@ const cors = require('cors');
 require('dotenv').config();
 
 //modulos propios
-const productRouter = require('./routes/userRouter');
+const productRouter = require('./routes/productRouter');
 const mainRouter =require('./routes/mainRouter');
 const userRouter = require('./routes/userRouter');
 const loggedUserMiddleware = require('./middleware/loggedUserMiddleware');
