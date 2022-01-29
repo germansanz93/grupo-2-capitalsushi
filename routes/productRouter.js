@@ -11,6 +11,7 @@ const {
   editProduct
 } = require('../controllers/productController');
 const guestMiddleware = require('../middleware/guestMiddleware');
+const isAdmin = require('../middleware/adminMiddleware')
 const authMiddleware = require('../middleware/authMiddleware');
 const multer = require('multer');
 const path = require('path');
@@ -54,9 +55,9 @@ const validations = [
 // rutas
 router.route('/')
   .get(allProducts)
-  .post(upload.single('picture'), validations, createProduct);
+  .post(isAdmin, upload.single('picture'), validations, createProduct);
 router.route('/new')
-  .get(productForm)
+  .get(isAdmin, productForm)
 router.route('/:id')
   .get(showProduct)
   .delete(deleteProduct);

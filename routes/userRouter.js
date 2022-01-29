@@ -90,7 +90,7 @@ router.route('/login')
 
 router.route('/register')
   .get(guestMiddleware, register)
-  .post(upload.single('profile_pic'), createUserValidations ,createUser)
+  .post(authMiddleware, upload.single('profile_pic'), createUserValidations ,createUser)
 
 router.get('/profile', authMiddleware, profile)
 
