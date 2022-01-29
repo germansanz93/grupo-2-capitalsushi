@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head', {stylesheet: 'cpanel.css', title: 'CPanel'}) %> 
+
+<body>
+    <%- include('./partials/header', {view: 'cpanel'}) %>
+        <main>
+          <div class="main-container">
+            <div class="side-bar">
+
+            </div>
+            <div class="main-content">
+
+            </div>
+            <div class='no-mobile'>
+              <p>Esta seccion de la pagina no se encuentra disponible en mobile ni tablet,
+                <br> acceda desde un dispositivo con una resolucion mayor a 810px
+              </p>
+            </div>
+          </div>
+        </main>
+        <%- include('./partials/footer') %>
+        <script src="/js/noMobile.js"></script>
+</body>
+
+</html>

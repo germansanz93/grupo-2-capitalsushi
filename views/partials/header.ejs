@@ -23,8 +23,11 @@
         <li><a class=<%=view=='home' && 'active' %> href="/">Inicio</a></li>
         <li><a class=<%=view=='menu' && 'active' %> href="/menu">Menu</a></li>
         <li><a class=<%=view=='carrito' && 'active' %> href="/cart">Carrito</a></li>
-        <li><a class=<%=view=='mi_cuenta' && 'active' %> href="/user/login">Mi cuenta</a></li>
+        <li><a class=<%=(view=='mi_cuenta' || view=='profile') && 'active' %> href="/user/login">Mi cuenta</a></li>
         <li><a class=<%=view=='contacto' && 'active' %> href="/contact">Contacto</a></li>
+        <% if (locals.user && user.role_id == 1) {%> 
+        <li><a class=<%=view=='cpanel' && 'active' %> href="/cpanel">CPanel</a></li>
+        <% } %> 
         <% if (locals.user) { %>
           <li><a href="/user/logout">Salir</a></li>
         <% } %>

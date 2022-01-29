@@ -23,7 +23,10 @@ const mainController = {
     res.render(path.join(__dirname, '../views/carrito.ejs'));
   },
   chart: (req, res) => {
-    res.render(path.join(__dirname, '../views/cartilla.ejs'))
+    res.render(path.join(__dirname, '../views/cartilla.ejs'));
+  },
+  cpanel: (req, res) => {
+    res.render(path.join(__dirname, '../views/cpanel.ejs'));
   }
 }
 
