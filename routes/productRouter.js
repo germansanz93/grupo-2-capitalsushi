@@ -1,5 +1,6 @@
 //modulos requeridos
 const express = require('express');
+const { body } = require('express-validator');
 const router = express.Router();
 const { 
   productForm, 
@@ -9,14 +10,12 @@ const {
   createProduct,
   editProduct
 } = require('../controllers/productController');
+const guestMiddleware = require('../middleware/guestMiddleware');
+const authMiddleware = require('../middleware/authMiddleware');
 const multer = require('multer');
 const path = require('path');
-const { body } = require('express-validator');
 
-const guestMiddleware = require('../middleware/guestMiddleware');
-
-const validExtensions = ['.jpg', '.jpeg', '.png'];
-
+const imagesPath = path.join(__dirname, '../public/images')
 
 //multer
 const storage = multer.diskStorage({
@@ -32,10 +31,11 @@ const storage = multer.diskStorage({
 const upload = multer({
   storage: storage, fileFilter: (req, file, cb) => {
     if (!validExtensions.includes(path.extname(file.originalname))) cb(null, false);
+    else cb(null, file.originalname)
   }
 })
 
-const imagesPath = path.join(__dirname, '../public/images')
+const validExtensions = ['.jpg', '.jpeg', '.png'];
 
 const validations = [
   body('title').notEmpty().withMessage("El titulo no puede estar vacio."),
@@ -44,6 +44,7 @@ const validations = [
   body('picture').custom((value, { req }) => {
     const file = req.file;
     if (!file) {
+      console.log("no image error")
       throw new Error("Debes agregar una imagen en formato jpg, jpeg o png")
     }
     return true;
@@ -53,7 +54,7 @@ const validations = [
 // rutas
 router.route('/')
   .get(allProducts)
-  .post((req, res, next) => {console.log(req.body); next()} ,upload.single('picture'), validations, createProduct);
+  .post(upload.single('picture'), validations, createProduct);
 router.route('/new')
   .get(productForm)
 router.route('/:id')

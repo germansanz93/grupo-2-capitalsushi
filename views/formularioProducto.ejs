@@ -9,7 +9,7 @@
             <main>
                 <div class="form-container">
                     <h2 class="form-title">Cargar producto</h2>
-                    <form class="product-form" action="/product/" method="post">
+                    <form class="product-form" action="/product/" method="post" enctype="multipart/form-data">
                         <div class="input-group">
                             <label class="form-label" for="title">Título del plato</label>
                             <input class="form-control" type=" text" id="title" name="title" value="<%= locals.oldData ? oldData.title : null%>" required>
@@ -19,8 +19,7 @@
                         <% } %>
                         <div class="input-group">
                             <label class="form-label" for="category">Categoria</label>
-                            <!-- <input class="form-control" type="text" id="category" name="category" value="<%= locals.oldData ? oldData.category : null%>" required> -->
-                            <select name="category" id="category">
+                            <select name="category_id" id="category">
                                 <% for( let category of locals.categories ) { %>
                                     <option value="<%= category.id %>"><%= category.cat_name %> </option>
                                 <% } %>
@@ -39,14 +38,14 @@
                         </div>
                         <div class="input-group">
                             <label class="form-label" for="description">Descripción</label>
-                            <textarea cols="1000" class="form-control" id="description" name="description" value="<%= locals.oldData ? oldData.description : null%>"
+                            <textarea cols="1000" class="form-control" id="description" name="prod_description" value="<%= locals.oldData ? oldData.description : null%>"
                                 required></textarea>
                             </div>
                             <% if(locals.errors && errors.description){ %>
                                 <p class="form-validation-error"><%= errors.description.msg %></p>
                             <% } %>
                         <div class="input-group">
-                            <input type="file" class="form-control form-image" id="image" name="picture" multiple>
+                            <input type="file" class="form-control form-image" id="image" name="picture">
                             <label class="input-group-text image-upload" for="image">Cargar Imagen</label>
                         </div>
                         <% if(locals.errors && errors.image){ %>

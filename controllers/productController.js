@@ -14,6 +14,7 @@ const productController = {
   },
   createProduct: (req, res) => {
     const product = {...req.body}
+    product.picture = req.file.filename;
     product.id = uuidv4();
     db.Product.create(product)
       .then(product => {
