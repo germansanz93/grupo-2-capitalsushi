@@ -8,7 +8,8 @@ const {
   deleteProduct,
   allProducts,
   createProduct,
-  editProduct
+  editProduct,
+  editProductForm
 } = require('../controllers/productController');
 const guestMiddleware = require('../middleware/guestMiddleware');
 const isAdmin = require('../middleware/adminMiddleware')
@@ -56,10 +57,14 @@ const validations = [
 router.route('/')
   .get(allProducts)
   .post(isAdmin, upload.single('picture'), validations, createProduct);
+
 router.route('/new')
   .get(isAdmin, productForm)
+
 router.route('/:id')
   .get(showProduct)
   .delete(deleteProduct);
 
-  module.exports = router;
+router.route('/:id/edit')
+  .get(editProductForm)
+module.exports = router;

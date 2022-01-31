@@ -19,7 +19,6 @@ router.get('/contact', contact)
 router.get('/menu', menu)
 router.get('/cart', cart)
 router.get('/chart', chart)
-router.get('/cpanel', cpanel)
 
 
 //module export

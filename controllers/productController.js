@@ -27,6 +27,9 @@ const productController = {
     console.log(product)
     res.render('../views/detalleProducto.ejs', { product });
   },
+  editProductForm: (req, res) => {
+    res.render('../views/editProductForm.ejs');
+  },
   editProduct: (req, res) => {
     db.Product.update({
       nombre: req.body.nombreEditado,
@@ -51,7 +54,7 @@ const productController = {
     db.Category.findAll()
     .then(function(categories){
       console.log(categories);
-      res.render(path.join(__dirname, '../views/formularioProducto.ejs'), {categories});
+      res.render(path.join(__dirname, '../views/productForm.ejs'), {categories});
     })
   },
 }
