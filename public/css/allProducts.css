@@ -1,0 +1,25 @@
+main .main-table {
+  width: 100%;
+}
+
+main .main-table tr {
+  height: 40px;
+}
+
+main .main-table tr:hover {
+  cursor: pointer;
+  background-color: var(--orange) !important;
+}
+
+main .main-table tr:nth-child(even){
+  background-color: #EEE;
+}
+
+main .main-table td{
+  text-align: center;
+}
+
+main .main-table td i:hover {
+  color: #FFF;
+  transform: scale(1.2);
+}

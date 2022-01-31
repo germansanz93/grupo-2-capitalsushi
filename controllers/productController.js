@@ -7,9 +7,14 @@ const db = require("../database/models");
 
 const productController = {
   allProducts: (req, res) => {
-    db.Product.findAll()
+    db.Product.findAll({
+      include: [
+        {association: "category"}
+      ]
+    }
+    )
     .then(function(products){
-      res.json(products)
+      res.render('../views/allProducts.ejs', { products })
     })
   },
   createProduct: (req, res) => {
