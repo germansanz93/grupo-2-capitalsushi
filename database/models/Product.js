@@ -33,7 +33,16 @@ module.exports = (sequelize, DataTypes) => {
     }
   )
 
-  //TODO: relaciones
+  Product.associate = function(models){
+    Product.belongsTo(models.Category, {
+      as: "category",
+      foreignKey: "category_id"
+    }),
+    Product.hasMany(models.OrderItem, {
+      as: "orderItems",
+      foreignKey: "product_id"
+    })
+  }
 
   return Product;
 }

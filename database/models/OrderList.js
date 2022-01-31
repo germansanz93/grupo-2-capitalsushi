@@ -19,7 +19,16 @@ module.exports = (sequelize, DataTypes) => {
     }
   )
 
-  //TODO: relaciones
+  OrderList.associate = function(models){
+    OrderList.hasMany(models.OrderItem, {
+      as: "order_items",
+      foreignKey: "order_id"
+    }),
+    OrderList.belongsTo(models.User, {
+      as: "user",
+      foreignKey: "user_id"
+    })
+  }
 
   return OrderList;
 }

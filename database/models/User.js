@@ -48,7 +48,16 @@ module.exports = (sequelize, DataTypes) => {
     }
   )
 
-  //TODO: relaciones
+  User.associate = function(models){
+    User.hasMany(models.OrderList, {
+      as: "orders",
+      foreignKey: "user_id"
+    }),
+    User.belongsTo(models.UserRole, {
+      as: "role",
+      foreignKey: "role_id"
+    })
+  }
 
   return User;
 }

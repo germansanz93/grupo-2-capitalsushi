@@ -18,7 +18,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   )
 
-  //TODO: relaciones
+  Category.associate = function(models){
+    Category.hasMany(models.Product, {
+      as: "products",
+      foreignKey: "category_id"
+    })
+  }
   
   return Category;
 }
