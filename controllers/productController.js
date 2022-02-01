@@ -9,16 +9,16 @@ const productController = {
   allProducts: (req, res) => {
     db.Product.findAll({
       include: [
-        {association: "category"}
+        { association: "category" }
       ]
     }
     )
-    .then(function(products){
-      res.render('../views/allProducts.ejs', { products })
-    })
+      .then(function (products) {
+        res.render('../views/allProducts.ejs', { products })
+      })
   },
   createProduct: (req, res) => {
-    const product = {...req.body}
+    const product = { ...req.body }
     product.picture = req.file.filename;
     product.id = uuidv4();
     db.Product.create(product)
@@ -33,7 +33,18 @@ const productController = {
     res.render('../views/detalleProducto.ejs', { product });
   },
   editProductForm: (req, res) => {
-    res.render('../views/editProductForm.ejs');
+    const { id } = req.params;
+    const productPromise = db.Product.findOne({
+      where: { id }
+    });
+    const categoriesPromise = db.Category.findAll();
+    Promise.all([productPromise, categoriesPromise]).then(function (values) {
+      const product = values[0];
+      const categories = values[1]
+      console.log(values)
+      res.render('../views/editProductForm.ejs', { product, categories })
+    })
+    
   },
   editProduct: (req, res) => {
     db.Product.update({
@@ -58,10 +69,10 @@ const productController = {
   },
   productForm: (req, res) => {
     db.Category.findAll()
-    .then(function(categories){
-      console.log(categories);
-      res.render(path.join(__dirname, '../views/productForm.ejs'), {categories});
-    })
+      .then(function (categories) {
+        console.log(categories);
+        res.render(path.join(__dirname, '../views/productForm.ejs'), { categories });
+      })
   },
 }
 

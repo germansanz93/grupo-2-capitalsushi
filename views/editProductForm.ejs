@@ -10,11 +10,11 @@
     <main>
         <form action="?_method=PUT" method="POST" enctype="multipart/form-data" class="form-user">
 
-            <h2>EDITAR PRODUCTO: <%= old.name %></h2>
+            <h2>EDITAR PRODUCTO: <%= product.title %></h2>
 
             <div>
                 <label for="name">Nombre</label>
-                <input id="name" type="text" name="name" placeholder="Nombre Producto" value="<%= old.name %>">
+                <input id="name" type="text" name="name" placehproducter="Nombre Producto" value="<%= product.title %>">
 
                 <% if (locals.errors && errors.name) { %>
                     <div class="text-error">
@@ -27,8 +27,8 @@
             <div>
                 <label for="description">Descripcion</label>
                 <input id="description" type="text" name="description"
-                placeholder="Descripción" 
-                value="<%= old.description %>">
+                placehproducter="Descripción" 
+                value="<%= product.prod_description %>">
 
                 <% if (locals.errors && errors.description) { %>
                     <div class="text-error">
@@ -41,8 +41,7 @@
             
             <div>
                 <label>Agregar imagenes del producto:</label>
-                <input type="file" name="image" accept=".jpg, .png" multiple
-            >
+                <input type="file" value="<%= product.picture %>" name="image" accept=".jpg, .png" multiple>
 
                 <% if (locals.errors && errors.image) { %>
                     <div class="text-error">
@@ -55,8 +54,8 @@
 
             <div>
                 <label for="price">Precio</label>
-                <input id="price" type="text" name="price" value="<%= old.price %>"
-                placeholder="Precio">
+                <input id="price" type="text" name="price" value="<%= product.price %>"
+                placehproducter="Precio">
 
                 <% if (locals.errors && errors.price) { %>
                     <div class="text-error">
@@ -66,16 +65,16 @@
 
             </div>
             
-            <div>
+            <!-- <div>
                 <label for="discount">Descuento</label>
-                <input id="discount" type="number" name="discount" placeholder="Descuento">
-            </div>
+                <input id="discount" type="number" name="discount" placehproducter="Descuento">
+            </div> -->
 
             <div>
                 <label>Categoria</label>
                 <select name="category_id">
-                    <% category.forEach(category => { %>
-                    <option value="<%= category.id %>"><%= category.name %></option>
+                    <% categories.forEach(category => { %>
+                    <option value="<%= category.id %>"><%= category.cat_name %></option>
                     <% }); %>
                 </select>
             </div>
