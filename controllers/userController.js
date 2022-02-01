@@ -14,8 +14,15 @@ module.exports = {
   //   res.send(users)
   // },
   getUsers: async (req, res) => {
-    db.User.findAll().then(users => {
-      res.send(users);
+    db.User.findAll(
+      {
+        include:
+        [
+          {association: "role"}
+        ]
+      }
+    ).then(users => {
+      res.render('../views/allUsers.ejs', { users });
     })
   },
   // getUserById: async (req, res) => {
@@ -54,7 +61,7 @@ module.exports = {
           req.session.user = user;
           res.redirect('/user/profile');
         })
-      }).catch(function(){
+      }).catch(function () {
         if (!result.isEmpty()) {
           console.log(result);
           return res.render('../views/registrarse.ejs', {
@@ -68,16 +75,16 @@ module.exports = {
     const id = req.params.id;
     const { password } = req.body;
     console.log(id, password);
-    dbUser = db.User.findOne({where: {id}})
-    .then(dbUser => {
-    if (bcrypt.compareSync(password, dbUser.password)) {
-      User.deleteUser(id);
-      res.redirect('/');
-    } else {
-      delete dbUser.password;
-      res.render('../views/editarUsuario.ejs', { errors: { credentialsError: "Invalid password" }, oldData: { ...dbUser } });
-    }
-    })
+    dbUser = db.User.findOne({ where: { id } })
+      .then(dbUser => {
+        if (bcrypt.compareSync(password, dbUser.password)) {
+          User.deleteUser(id);
+          res.redirect('/');
+        } else {
+          delete dbUser.password;
+          res.render('../views/editarUsuario.ejs', { errors: { credentialsError: "Invalid password" }, oldData: { ...dbUser } });
+        }
+      })
     res.send(User.deleteUser(id));
   },
   editUserForm: (req, res) => {
@@ -94,26 +101,26 @@ module.exports = {
     }
     const user = { ...req.body };
     const id = req.session.user.id;
-    db.User.findOne({where: {id}})
-    .then(function(dbUser){
-      if (bcrypt.compareSync(user.password, dbUser.password)) {
-        delete user.password;
-        db.User.update({...user}, {where: {id}})
-        .then(function(){
-          req.session.user = user;
-          req.session.user.id = id;  
-          res.redirect('/user/profile');
-        })
-      } else {
-        console.log('contraseña incorrecta')
-        return res.render('../views/editarUsuario.ejs', {
-          errors: {
-            password: 'La contraseña es incorrecta'
-          },
-          oldData: req.body
-        })
-      }
-    })
+    db.User.findOne({ where: { id } })
+      .then(function (dbUser) {
+        if (bcrypt.compareSync(user.password, dbUser.password)) {
+          delete user.password;
+          db.User.update({ ...user }, { where: { id } })
+            .then(function () {
+              req.session.user = user;
+              req.session.user.id = id;
+              res.redirect('/user/profile');
+            })
+        } else {
+          console.log('contraseña incorrecta')
+          return res.render('../views/editarUsuario.ejs', {
+            errors: {
+              password: 'La contraseña es incorrecta'
+            },
+            oldData: req.body
+          })
+        }
+      })
   },
   account: (req, res) => {
     res.render(path.join(__dirname, '../views/mi_cuenta.ejs'));
@@ -130,7 +137,7 @@ module.exports = {
           req.session.user = user;
           if (req.body.remember != undefined) req.session.cookie.expires = new Date(Date.now() + 1000 * 60 * 60 * 24 * 7);
           res.redirect('/user/profile');
-        }else {
+        } else {
           const oldData = { email }
           const errors = { credentialsError: "credenciales invalidas" }
           res.render('mi_cuenta.ejs', { oldData, errors })
@@ -177,25 +184,25 @@ module.exports = {
     }
     const user = { ...req.body };
     const id = req.session.user.id;
-    db.User.findOne({where: {id}})
-    .then(function(dbUser){
-      if (bcrypt.compareSync(user.oldPassword, dbUser.password)) {
-        delete user.oldPassword;
-        delete user.passwordConfirmation;
-        user.password = bcrypt.hashSync(user.password, salt);
-        db.User.update({...user}, {where: {id}})
-        .then(function(){
-          res.redirect('/user/profile');
-        })
-      } else {
-        console.log('contraseña incorrecta')
-        return res.render('../views/editarUsuario.ejs', {
-          errors: {
-            password: 'La contraseña es incorrecta'
-          },
-          oldData: req.body
-        })
-      }
-    })
+    db.User.findOne({ where: { id } })
+      .then(function (dbUser) {
+        if (bcrypt.compareSync(user.oldPassword, dbUser.password)) {
+          delete user.oldPassword;
+          delete user.passwordConfirmation;
+          user.password = bcrypt.hashSync(user.password, salt);
+          db.User.update({ ...user }, { where: { id } })
+            .then(function () {
+              res.redirect('/user/profile');
+            })
+        } else {
+          console.log('contraseña incorrecta')
+          return res.render('../views/editarUsuario.ejs', {
+            errors: {
+              password: 'La contraseña es incorrecta'
+            },
+            oldData: req.body
+          })
+        }
+      })
   }
 }

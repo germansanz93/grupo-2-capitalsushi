@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head', {stylesheet: 'allUsers.css' , title: 'Usuarios' }) %>
+
+  <body>
+    <%- include('./partials/header', {view: 'allUsers' }) %>
+      <main>
+        <div class="main-container">
+          <h2 class="main-title">Usuarios</h2>
+          <table class="main-table">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Direccion</th>
+                <th>Email</th>
+                <th>Telefono</th>
+                <th>Foto</th>
+                <th>Rol</th>
+              </tr>
+            </thead>
+            <tbody>
+              <%if (locals.users) for(let user of users) {%>
+                <tr>
+                  <td>
+                    <%= user.name %>
+                  </td>
+                  <td>
+                    <%= user.last_name %>
+                  </td>
+                  <td>
+                    <%= user.address %>
+                  </td>
+                  <td>
+                    <%= user.email %>
+                  </td>
+                  <td>
+                    <%= user.phone %>
+                  </td>
+                  <td>
+                    <%= user.profile_pic %>
+                  </td>
+                  <td>
+                    <%= user.role.name %>
+                  </td>
+                  <td>
+                    <span><i class="fas fa-trash-alt"></i></span>
+                    <span><i class="far fa-edit"></i></span>
+                  </td>
+                </tr>
+                <% } %>
+            </tbody>
+          </table>
+        </div>
+      </main>
+      <%- include('./partials/footer') %>
+  </body>
+
+</html>
