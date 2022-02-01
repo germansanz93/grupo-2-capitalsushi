@@ -1,3 +1,23 @@
+main .top-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main .top-container a {
+  text-decoration: none;
+  color: #FFF;
+  background-color: var(--orange);
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  margin-right: 2rem;
+  font-weight: 400;
+}
+
+main .top-container a:hover {
+  opacity: 0.9;
+} 
+
 main .main-title {
   margin: 2rem;
 }
@@ -7,11 +27,7 @@ main .main-table {
   margin-bottom: 2rem;
 }
 
-main .main-table tr {
-  height: 40px;
-}
-
-main .main-table tr:hover {
+main .main-table tr.content-rows:hover {
   cursor: pointer;
   background-color: var(--orange) !important;
 }
@@ -22,6 +38,24 @@ main .main-table tr:nth-child(even){
 
 main .main-table td{
   text-align: center;
+}
+
+main .main-table .table-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+}
+
+main .main-table .table-btns a{
+  text-decoration: none;
+  color: black;
+}
+
+main .main-table .table-btns button{
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 main .main-table td i {

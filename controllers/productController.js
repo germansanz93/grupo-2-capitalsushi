@@ -50,8 +50,9 @@ const productController = {
       })
   },
   deleteProduct: (req, res) => {
+    const { id } = req.params;
     db.Product.destroy({
-      where: { id: req.params.id }
+      where: { id }
     })
     res.redirect("/product")
   },

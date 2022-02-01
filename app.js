@@ -7,6 +7,7 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const {secret} = require('./config/config');
 const cors = require('cors');
+const methodOverride = require("method-override");
 require('dotenv').config();
 
 //modulos propios
@@ -25,6 +26,7 @@ app.use(express.urlencoded({extended: false}));
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(cookieParser());
+app.use(methodOverride('_method'));
 app.use(session({
   secret,
   resave: false,

@@ -7,7 +7,10 @@
     <%- include('./partials/header', {view: 'allProducts' }) %>
       <main>
         <div class="main-container">
-          <h2 class="main-title">Productos</h2>
+          <div class="top-container">
+            <h2 class="main-title">Productos</h2>
+            <a href="/product/new">Crear Producto</a>
+          </div>
           <table class="main-table">
             <thead>
               <tr>
@@ -21,7 +24,7 @@
             </thead>
             <tbody>
               <%if (locals.products) for(let product of products) {%>
-                <tr>
+                <tr class="content-rows">
                   <td>
                     <%= product.title %>
                   </td>
@@ -37,9 +40,11 @@
                   <td>
                     <%= product.price %>
                   </td>
-                  <td>
-                    <span><i class="fas fa-trash-alt"></i></span>
-                    <span><i class="far fa-edit"></i></span>
+                  <td class="table-btns">
+                    <form action="/product/<%= product.id %>?_method=DELETE" method="POST">
+                      <button><i class="fas fa-trash-alt"></i></button>
+                    </form>
+                    <a href="/product/<%= product.id %>/edit"><i class="far fa-edit"></i></a>
                   </td>
                 </tr>
                 <% } %>
