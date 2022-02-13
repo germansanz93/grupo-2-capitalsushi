@@ -1,7 +1,7 @@
 const { readFileSync, writeFileSync } = require('fs');
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
-const { calidationResult } = require('express-validator');
+const { validationResult } = require('express-validator');
 const db = require("../database/models");
 
 
@@ -42,16 +42,15 @@ const productController = {
       const product = values[0];
       const categories = values[1]
       console.log(values)
-      res.render('../views/editProductForm.ejs', { product, categories })
+      res.render('../views/editProductForm.ejs', {oldData : product, categories});
     })
     
   },
   editProduct: (req, res) => {
-    db.Product.update({
-      nombre: req.body.nombreEditado,
-      precio: req.body.precioEditado,
-      descripcion: req.body.descripcionEditada
-    },
+    const product = req.body
+    product.picture = req.file.filename;
+    db.Product.update(
+      body,
       {
         where: { id: req.params.id }
       }
@@ -64,14 +63,15 @@ const productController = {
     const { id } = req.params;
     db.Product.destroy({
       where: { id }
+    }).then(() => {
+      res.redirect('/product')
     })
-    res.redirect("/product")
   },
   productForm: (req, res) => {
     db.Category.findAll()
       .then(function (categories) {
         console.log(categories);
-        res.render(path.join(__dirname, '../views/productForm.ejs'), { categories });
+        res.render('../views/productForm.ejs', { categories });
       })
   },
 }

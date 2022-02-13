@@ -67,4 +67,5 @@ router.route('/:id')
 
 router.route('/:id/edit')
   .get(editProductForm)
+  .put(upload.single('picture'), validations, editProduct);
 module.exports = router;

@@ -1,7 +1,8 @@
 module.exports = {
   "development": {
+    "ssl": "false",
     "username": "root",
-    "password": "root",
+    "password": null,
     "database": "capital_sushi",
     "host": "127.0.0.1",
     "port": "3307",
