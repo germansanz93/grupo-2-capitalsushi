@@ -129,13 +129,15 @@ module.exports = {
     res.render(path.join(__dirname, '../views/registrarse.ejs'));
   },
   login: (req, res) => {
+    console.log("login")
     const { email, password, remember } = req.body;
     db.User.findOne({ where: { email } })
       .then(user => {
+        console.log("loginn")
         if (bcrypt.compareSync(password, user.password)) {
           delete user.password;
           req.session.user = user;
-          if (req.body.remember != undefined) req.session.cookie.expires = new Date(Date.now() + 1000 * 60 * 60 * 24 * 7);
+          if (req.body.remember != undefined) {req.session.cookie.expires = new Date(Date.now() + 1000 * 60 * 60 * 24 * 7)};
           res.redirect('/user/profile');
         } else {
           const oldData = { email }
@@ -143,6 +145,7 @@ module.exports = {
           res.render('mi_cuenta.ejs', { oldData, errors })
         }
       }).catch(function (error) {
+        console.log(error)
         res.render('mi_cuenta.ejs')
       })
   },
