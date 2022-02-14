@@ -3,7 +3,7 @@ const path = require('path');
 const { v4: uuidv4 } = require('uuid');
 const { validationResult } = require('express-validator');
 const db = require("../database/models");
-
+const fs = require('fs')
 
 const productController = {
   allProducts: (req, res) => {
@@ -61,10 +61,25 @@ const productController = {
   },
   deleteProduct: (req, res) => {
     const { id } = req.params;
-    db.Product.destroy({
-      where: { id }
-    }).then(() => {
-      res.redirect('/product')
+    db.Product.findOne({
+      where: {id}
+    }).then((product) => {
+      // Remove old photo
+      const {picture} = product
+      if (picture) {
+        const picPath = path.join(__dirname, "..", "public", "images", picture);
+        if (fs.existsSync(picPath)) {
+          fs.unlink(picPath, (err) => {
+            if (err) {
+              console.error(err);
+              return;
+            }
+          });
+        }
+      }
+      const deletePromise = db.Product.destroy({
+        where: { id }
+      }).then(() => res.redirect('/product'))
     })
   },
   productForm: (req, res) => {

@@ -8,8 +8,8 @@
             <main>
                 <div class="form-container">
                     <form action="?_method=PUT" method="POST" enctype="multipart/form-data" class="form-user">
-                        <h2>EDITAR PRODUCTO: <%= oldData.title %>
-                        </h2>
+                        <h2>EDITAR PRODUCTO: <%= oldData.title %></h2>
+                        <img class='product-img'  src="/images/<%= oldData.picture %>" alt="">
                         <%- include('./partials/productFormContent') %>
                     </form>
                 </div>
