@@ -1,9 +1,9 @@
 const { readFileSync, writeFileSync } = require('fs');
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
-const { calidationResult } = require('express-validator');
+const { validationResult } = require('express-validator');
 const db = require("../database/models");
-
+const fs = require('fs')
 
 const productController = {
   allProducts: (req, res) => {
@@ -11,9 +11,7 @@ const productController = {
       include: [
         { association: "category" }
       ]
-    }
-    )
-      .then(function (products) {
+    }).then(function (products) {
         res.render('../views/allProducts.ejs', { products })
       })
   },
@@ -42,16 +40,15 @@ const productController = {
       const product = values[0];
       const categories = values[1]
       console.log(values)
-      res.render('../views/editProductForm.ejs', { product, categories })
+      res.render('../views/editProductForm.ejs', {oldData : product, categories});
     })
     
   },
   editProduct: (req, res) => {
-    db.Product.update({
-      nombre: req.body.nombreEditado,
-      precio: req.body.precioEditado,
-      descripcion: req.body.descripcionEditada
-    },
+    const product = req.body
+    product.picture = req.file.filename;
+    db.Product.update(
+      body,
       {
         where: { id: req.params.id }
       }
@@ -62,16 +59,32 @@ const productController = {
   },
   deleteProduct: (req, res) => {
     const { id } = req.params;
-    db.Product.destroy({
-      where: { id }
+    db.Product.findOne({
+      where: {id}
+    }).then((product) => {
+      // Remove old photo
+      const {picture} = product
+      if (picture) {
+        const picPath = path.join(__dirname, "..", "public", "images", picture);
+        if (fs.existsSync(picPath)) {
+          fs.unlink(picPath, (err) => {
+            if (err) {
+              console.error(err);
+              return;
+            }
+          });
+        }
+      }
+      const deletePromise = db.Product.destroy({
+        where: { id }
+      }).then(() => res.redirect('/product'))
     })
-    res.redirect("/product")
   },
   productForm: (req, res) => {
     db.Category.findAll()
       .then(function (categories) {
         console.log(categories);
-        res.render(path.join(__dirname, '../views/productForm.ejs'), { categories });
+        res.render('../views/productForm.ejs', { categories });
       })
   },
 }

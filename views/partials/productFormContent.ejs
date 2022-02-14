@@ -1,0 +1,43 @@
+<div class="input-group">
+  <label class="form-label" for="title">Título del plato</label>
+  <input class="form-control" type=" text" id="title" name="title" value="<%= locals.oldData ? oldData.title : null%>" required>
+</div>
+<% if(locals.errors && errors.title){ %>
+  <p class="form-validation-error"><%= errors.title.msg %></p>
+<% } %>
+<div class="input-group">
+  <label class="form-label" for="category">Categoria</label>
+  <select name="category_id" id="category">
+      <% for( let category of locals.categories ) { %>
+          <option value="<%= category.id %>"><%= category.cat_name %> </option>
+      <% } %>
+  </select>
+</div>
+<div>
+  <div class="input-group">
+      <label class="form-label" for="price">Precio</label>
+      <span class="input-group-text" id="price-label">$</span>
+      <input type="number" class="form-control" placeholder="0.00" id="price"
+          aria-label="price" name="price" aria-describedby="place-label" value="<%= locals.oldData ? oldData.price : null%>" required>
+      </div>
+      <% if(locals.errors && errors.price){ %>
+          <p class="form-validation-error"><%= errors.price.msg %></p>
+      <% } %>
+</div>
+<div class="input-group">
+  <label class="form-label" for="description">Descripción</label>
+  <textarea cols="1000" class="form-control" id="description" name="prod_description" required><%=locals.oldData ? oldData.prod_description : null%></textarea>
+  </div>
+  <% if(locals.errors && errors.description){ %>
+      <p class="form-validation-error"><%= errors.description.msg %></p>
+  <% } %>
+<div class="input-group">
+  <input type="file" class="form-control form-image" id="image" name="picture">
+  <label class="input-group-text image-upload" for="image">Cargar Imagen</label>
+</div>
+<% if(locals.errors && errors.image){ %>
+  <p class="form-validation-error"><%= errors.image.msg %></p>
+<% } %>
+<div class="btn-container">
+  <button class="form-button" type="submit">Agregar plato</button>
+</div>

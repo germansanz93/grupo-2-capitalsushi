@@ -116,6 +116,11 @@ form .form-validation-error{
     text-align: left;
 }
 
+form .product-img{
+    width: 100%;
+    margin-top: 20px;
+}
+
 @media (min-width: 481px) {
     main .form-container{
         max-width: 516px;
