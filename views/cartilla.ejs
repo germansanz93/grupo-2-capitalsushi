@@ -9,17 +9,29 @@
                     <% categories.forEach(category => { %> 
                     <div class="container">
                         <div class="h2-container">
-                            <h2 id="entradas"><%= category.cat_name %> </h2>
+                            <h2 id="<%= category.cat_name.toLowerCase() %>"><%= category.cat_name %> </h2>
                         </div>
-                        <% products.filter(product => product.category.cat_name == category.cat_name).forEach(product => { %> 
+                        <% products.filter(product => product.category.cat_name == category.cat_name).forEach(product => { %>  
                             <article>
                                 <div class="image-container">
                                     <img class="pr-img" src="/images/<%= product.picture %>" alt="<%= product.title %>">
-                                </div>
-                                <div class="description">
-                                    <h3><%= product.title %> </h3>
-                                    <p><%= product.prod_description %> </p>
-                                    <p class="price">$<%= product.price %> </p>
+                                    </div>
+                                    <div class="prod-info">
+                                    <div class="description">
+                                        <h3 class="product-title"><%= product.title %> </h3>
+                                        <p><%= product.prod_description %> </p>
+                                    </div>
+                                    <div class="cart-price">
+                                        <div class="qty-selector">
+                                            <span><i class="fas fa-minus-circle"></i></span>
+                                            <span class="qty">1</span>
+                                            <span><i onclick="addItem('<%= product.id %>')" class="fas fa-plus-circle"></i></span>
+                                        </div>
+                                        <div class="add-item">
+                                            <span class="cart-add-btn"><i class="fas fa-solid fa-cart-plus"></i></span>
+                                        </div>
+                                        <p class="price">$<%= product.price %> </p>
+                                    </div>
                                 </div>
                             </article>
                         <% }) %> 
@@ -28,6 +40,7 @@
                 </div>
             </main>
             <%- include('./partials/footer') %>
+            <script src="/js/addToCart.js"></script>
     </body>
 
 </html>

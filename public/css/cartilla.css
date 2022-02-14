@@ -28,7 +28,6 @@ main p {
 
 .price {
     text-align: right;
-    margin-top: 25%;
 }
 
 .pr-img{
@@ -56,6 +55,35 @@ article {
     width: 100%;
     margin: 30px 10px;
 }
+
+article .prod-info {
+    padding-left: 20px;
+}
+
+article .prod-info h3 {
+    text-align: left;
+}
+
+h3.product-title {
+    text-transform: capitalize;
+}
+
+article .add-item {
+    background-color: #AAA;
+    width: 15vw;
+    color: #FFF;
+    border-radius: 2px;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+article .add-item:hover {
+    background-color: var(--orange);
+    cursor: pointer;
+}
+
 
 .name-price {
     width: 100%;
