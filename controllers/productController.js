@@ -11,9 +11,7 @@ const productController = {
       include: [
         { association: "category" }
       ]
-    }
-    )
-      .then(function (products) {
+    }).then(function (products) {
         res.render('../views/allProducts.ejs', { products })
       })
   },
