@@ -51,6 +51,50 @@ main .icon i {
   flex-grow: 1;
 }
 
+.itemCarrusel {
+  height: 100%;
+  position: relative;
+}
+
+.tarjetaCarrusel {
+  height: 100%;
+}
+
+.flechasCarrusel {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  color: black;
+}
+
+#conteItemsCarrusel {
+  height: 300px;
+  width: 100%;
+  overflow: hidden;
+}
+
+a{
+  text-decoration: none;
+}
+
+#contePuntos {
+  display: flex;
+  justify-content: space-around;
+}
+
+#contePuntos > a{
+  font-size: 1.5em;
+  font-style: none;
+  color: grey;
+}
+
+
+
 @media (min-width: 481px) {
   main img{
     height: 250px;

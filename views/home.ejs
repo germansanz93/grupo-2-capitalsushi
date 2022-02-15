@@ -6,7 +6,54 @@
   <body>
     <%- include('./partials/header', {view: 'home' }) %>
       <main>
-        <img src="/images/sushiNigris.jpg" alt="">
+
+        <div id="conteItemsCarrusel">
+          <div class="itemCarrusel" id="itemCarrusel-1">
+            <div class="tarjetaCarrusel" id="tarjetaCarrusel-1">
+              <img src="/images/sushiNigris.jpg" alt="item-1-Carrusel">
+            </div>
+            <div class="flechasCarrusel">
+              <a href="#itemCarrusel-3">
+                <i class="fa-solid fa-angle-left"></i>
+              </a>
+              <a href="#itemCarrusel-2">
+                <i class="fa-solid fa-angle-right"></i>
+              </a>
+            </div>
+          </div>
+          <div class="itemCarrusel" id="itemCarrusel-2">
+            <div class="tarjetaCarrusel" id="tarjetaCarrusel-2">
+              <img src="/images/dos.jpg" alt="item-2-Carrusel">
+            </div>
+            <div class="flechasCarrusel">
+              <a href="#itemCarrusel-1">
+                <i class="fa-solid fa-angle-left"></i>
+              </a>
+              <a href="#itemCarrusel-3">
+                <i class="fa-solid fa-angle-right"></i>
+              </a>
+            </div>
+          </div>
+          <div class="itemCarrusel" id="itemCarrusel-3">
+            <div class="tarjetaCarrusel" id="tarjetaCarrusel-3">
+              <img src="/images/tres.webp" alt="item-3-Carrusel">
+            </div>
+            <div class="flechasCarrusel">
+              <a href="#itemCarrusel-2">
+                <i class="fa-solid fa-angle-left"></i>
+              </a>
+              <a href="#itemCarrusel-1">
+                <i class="fa-solid fa-angle-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div id="contePuntos">
+          <a href="#itemCarrusel-1">*</a>
+          <a href="#itemCarrusel-2">*</a>
+          <a href="#itemCarrusel-3">*</a>
+        </div>
+        
         <div class="info-container">
           <article class="delivery">
             <div class="icon">
