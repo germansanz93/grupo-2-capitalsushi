@@ -2,7 +2,7 @@
 <html lang="en">
 <%- include('./partials/head', {stylesheet: 'cartilla.css' , title: 'Cartilla' }) %>
 
-    <body>
+    <body onload="updateQty()">
         <%- include('./partials/header', {view: 'cartilla' }) %>
             <main>
                 <div class="div-main">
@@ -23,12 +23,9 @@
                                     </div>
                                     <div class="cart-price">
                                         <div class="qty-selector">
-                                            <span><i class="fas fa-minus-circle"></i></span>
-                                            <span class="qty">1</span>
+                                            <span><i onclick="removeItem('<%= product.id %>')" class="fas fa-minus-circle"></i></span>
+                                            <span class="qty" id="<%=product.id%>">0</span>
                                             <span><i onclick="addItem('<%= product.id %>')" class="fas fa-plus-circle"></i></span>
-                                        </div>
-                                        <div class="add-item">
-                                            <span class="cart-add-btn"><i class="fas fa-solid fa-cart-plus"></i></span>
                                         </div>
                                         <p class="price">$<%= product.price %> </p>
                                     </div>
@@ -37,10 +34,13 @@
                         <% }) %> 
                     </div>
                     <% }) %> 
+                    <div class="add-item">
+                        <span class="cart-add-btn"><i class="fas fa-solid fa-cart-plus"></i></span>
+                    </div>
                 </div>
             </main>
             <%- include('./partials/footer') %>
-            <script src="/js/addToCart.js"></script>
+            <script src="/js/cartFunctions.js"></script>
     </body>
 
 </html>
