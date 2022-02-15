@@ -40,9 +40,9 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 //rutas
-app.use('/', mainRouter)
 app.use('/user', userRouter)
 app.use('/product', productRouter)
+app.use('/', mainRouter)
 
 //server escuchando
 app.listen(PORT, () => {

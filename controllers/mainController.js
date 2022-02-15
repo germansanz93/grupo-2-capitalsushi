@@ -35,8 +35,8 @@ const mainController = {
       res.render(path.join(__dirname, '../views/cartilla.ejs'), {products, categories});
     })
   },
-  cpanel: (req, res) => {
-    res.render(path.join(__dirname, '../views/cpanel.ejs'));
+  notfound: (req,res) => {
+    res.render(path.join(__dirname, '../views/404.ejs'));
   }
 }
 

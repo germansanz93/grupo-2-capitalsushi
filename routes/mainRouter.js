@@ -7,7 +7,7 @@ const {
   menu, 
   cart, 
   chart,
-  cpanel
+  notfound
 } = require('../controllers/mainController');
 
 const guestMiddleware = require('../middleware/guestMiddleware');
@@ -19,6 +19,7 @@ router.get('/contact', contact)
 router.get('/menu', menu)
 router.get('/cart', cart)
 router.get('/chart', chart)
+router.get('*', notfound)
 
 
 //module export
