@@ -68,7 +68,7 @@ h3.product-title {
     text-transform: capitalize;
 }
 
-article .add-item {
+.add-item {
     background-color: #AAA;
     width: 15vw;
     color: #FFF;

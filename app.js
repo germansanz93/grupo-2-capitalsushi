@@ -14,6 +14,7 @@ require('dotenv').config();
 const productRouter = require('./routes/productRouter');
 const mainRouter =require('./routes/mainRouter');
 const userRouter = require('./routes/userRouter');
+const orderRouter = require('./routes/orderRouter');
 const loggedUserMiddleware = require('./middleware/loggedUserMiddleware');
 
 //configs
@@ -42,6 +43,7 @@ app.set('view engine', 'ejs');
 //rutas
 app.use('/user', userRouter)
 app.use('/product', productRouter)
+app.use('/order', orderRouter)
 app.use('/', mainRouter)
 
 //server escuchando
