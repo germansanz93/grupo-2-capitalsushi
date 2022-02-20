@@ -121,9 +121,9 @@ function populateCart() {
                 `<p>${product.prod_description.substring(0, 20)}...</p>`+
                 '<div class="actions">'+
                   '<div class="controls">'+
-                    '<span><i class="fas fa-minus-circle"></i></span>'+
-                    `<span class="qty">${product.qty}</span>`+
-                    '<span><i class="fas fa-plus-circle"></i></span>'+
+                    `<span onclick=removeItem('${product.id}')><i class="fas fa-minus-circle"></i></span>`+
+                    `<span class="qty" id=${product.id}>${product.qty}</span>`+
+                    `<span onclick=addItem('${product.id}')><i class="fas fa-plus-circle"></i></span>`+
                   '</div>'+
                   `<p class="subtotal">$ ${product.qty*product.price}</p>`+
                 '</div>'+
