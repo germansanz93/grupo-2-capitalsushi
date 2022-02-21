@@ -49,7 +49,9 @@ const Main = () => {
                                 <h1>Ultimo Producto Listado</h1>
                                 <p>Capital Federal, Argentina</p>
                             </div>
-                            <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 30 +'rem'}} src="" alt=" Ultimo producto "/>
+                            <div className="imagen-product">
+                                <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 30 +'rem'}} src="" alt=" Ultimo producto "/>
+                            </div>                       
                         </div>
                         <Chart />
                     </div>
