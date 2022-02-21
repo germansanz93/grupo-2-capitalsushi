@@ -18,7 +18,17 @@ function addItem(id) {
     updateChartQty(id, 1)
   }
   localStorage.setItem('order', JSON.stringify(order))
-  location.reload()
+  if(location.href.includes('cart')){
+    const totalTag = document.querySelector('.total-number')
+    const total = totalTag.innerText.split('$')[1]
+    const subTag = document.getElementsByClassName(`${id}`)[0]
+    const sub = document.getElementsByClassName(`${id}`)[0].innerText.split('$')[1]
+    const actQty = document.getElementById(id).innerText
+    const toAdd = sub/(actQty - 1)
+    subTag.innerText = `$${+sub + toAdd}`
+    totalTag.innerText = `$${+total + toAdd}`
+    if(actQty == 0) location.reload()
+  }
 }
 
 function removeItem(id) {
@@ -41,7 +51,17 @@ function removeItem(id) {
     updateChartQty(id, 1)
   }
   localStorage.setItem('order', JSON.stringify(order))
-  location.reload()
+  if(location.href.includes('cart')){
+    const totalTag = document.querySelector('.total-number')
+    const total = totalTag.innerText.split('$')[1]
+    const subTag = document.getElementsByClassName(`${id}`)[0]
+    const sub = document.getElementsByClassName(`${id}`)[0].innerText.split('$')[1]
+    const actQty = document.getElementById(id).innerText
+    const toSubstract = +sub/(parseInt(actQty)+1)
+    subTag.innerText = `$${+sub - toSubstract}`
+    totalTag.innerText = `$${+total - toSubstract}`
+    if(actQty == 0) destroyItem(id)
+  }
 }
 
 function updateChartQty(id, number) {
@@ -150,7 +170,7 @@ function populateCart() {
           `<span class="qty" id=${product.id}>${product.qty}</span>` +
           `<span onclick=addItem('${product.id}')><i class="fas fa-plus-circle"></i></span>` +
           '</div>' +
-          `<p class="subtotal">$ ${product.qty * product.price}</p>` +
+          `<p class="subtotal ${product.id}">$${product.qty * product.price}</p>` +
           '</div>' +
           '</div>' +
           '</div>'
@@ -158,7 +178,7 @@ function populateCart() {
         cartList.prepend(
           html
         )
-        document.querySelector('.total-number').innerText = `Total: $${total}`
+        document.querySelector('.total-number').innerText = `$${total}`
       })
     }).catch(function (error) {
       console.log(error)
