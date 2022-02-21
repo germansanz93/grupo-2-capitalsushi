@@ -2,6 +2,7 @@
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
 const { validationResult } = require('express-validator');
+require('dotenv').config();
 let db = require("../database/models");
 
 const productsFilePath = path.join(__dirname, '../data/ProductsCapitalSushi.json');

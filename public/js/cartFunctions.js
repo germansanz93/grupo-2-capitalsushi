@@ -18,6 +18,7 @@ function addItem(id) {
     updateChartQty(id, 1)
   }
   localStorage.setItem('order', JSON.stringify(order))
+  location.reload()
 }
 
 function removeItem(id) {
@@ -40,6 +41,7 @@ function removeItem(id) {
     updateChartQty(id, 1)
   }
   localStorage.setItem('order', JSON.stringify(order))
+  location.reload()
 }
 
 function updateChartQty(id, number) {
@@ -84,6 +86,26 @@ function sendOrderToApi() {
   }
 }
 
+function payOrder() {
+  order = localStorage.getItem('order')
+  console.log(order)
+  if (order != null) {
+    fetch('http://localhost:5000/order/pay', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json',
+      },
+      redirect: 'follow',
+      body: JSON.stringify({ order })
+    }).then(function (response) {
+      if (response.ok) {
+        console.log('mercalibre')
+      }
+    })
+  }
+}
+
 function populateCart() {
   order = localStorage.getItem('order')
   if (order != null) {
@@ -105,8 +127,10 @@ function populateCart() {
       console.log(data);
       const cartList = document.querySelector('.list-container')
       const cards = document.querySelectorAll(".main-card-content")
+      let total = 0;
       cards.forEach(card => card.remove())
       data.forEach(product => {
+        total += product.price * product.qty
         const html = document.createElement('div')
         html.classList.add('card')
         html.innerHTML =
@@ -134,6 +158,7 @@ function populateCart() {
         cartList.prepend(
           html
         )
+        document.querySelector('.total-number').innerText = `Total: $${total}`
       })
     }).catch(function (error) {
       console.log(error)

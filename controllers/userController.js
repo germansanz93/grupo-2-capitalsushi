@@ -109,6 +109,7 @@ module.exports = {
             .then(function () {
               req.session.user = user;
               req.session.user.id = id;
+              req.session.user.profile_pic = dbUser.profile_pic
               res.redirect('/user/profile');
             })
         } else {

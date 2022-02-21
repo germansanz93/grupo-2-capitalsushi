@@ -46,9 +46,11 @@ const productController = {
   },
   editProduct: (req, res) => {
     const product = req.body
-    product.picture = req.file.filename;
+    if(req.file && req.file.filename){
+      product.picture = req.file.filename;
+    }
     db.Product.update(
-      body,
+      product,
       {
         where: { id: req.params.id }
       }

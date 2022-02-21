@@ -18,8 +18,10 @@ const {
   } = require('../controllers/userController');
 const guestMiddleware = require('../middleware/guestMiddleware');
 const authMiddleware = require('../middleware/authMiddleware');
+const adminMiddleware = require('../middleware/adminMiddleware');
 const multer = require('multer');
-const path = require('path')
+const path = require('path');
+const loggedUserMiddleware = require('../middleware/loggedUserMiddleware');
 
 const imagesPath = path.join(__dirname, '../public/images')
 
@@ -82,7 +84,7 @@ const createUserValidations = [
 
 //rutas
 router.route('/')
-  .get(getUsers)
+  .get(adminMiddleware, getUsers)
 
 router.route('/login')
   .get(guestMiddleware, account)
@@ -90,7 +92,7 @@ router.route('/login')
 
 router.route('/register')
   .get(guestMiddleware, register)
-  .post(authMiddleware, upload.single('profile_pic'), createUserValidations ,createUser)
+  .post(loggedUserMiddleware ,upload.single('profile_pic'), createUserValidations,createUser)
 
 router.get('/profile', authMiddleware, profile)
 
