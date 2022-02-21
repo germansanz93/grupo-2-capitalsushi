@@ -16,8 +16,12 @@
 }
 
 .sidebar__img {
-    display: flex;
     align-items: center;
+    width: 100%;
+}
+
+.sidebar__img img{ 
+    width: 100%;
 }
 
 .sidebar__title > div > img {

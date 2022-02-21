@@ -7,8 +7,7 @@ const Sidebar = () => {
         <div className={SidebarOpen ? "sidebar-responsive" : ""} id="sidebar">
             <div className="sidebar__title">
                 { <div className="sidebar__img">
-                    <img src={img} alt="" />
-                    <h1>Codersbite</h1>
+                    <img src={img} alt=""/>
                 </div> }
             {/*<i className="fa fa-times" id="sidebarIcon" onClick={() => closeSidebar()}></i> */}
             </div>
