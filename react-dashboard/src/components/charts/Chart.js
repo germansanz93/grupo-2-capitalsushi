@@ -1,36 +1,63 @@
 import "../../../node_modules/react-vis/dist/style.css"
-import { XYPlot, LineSeries, XAxis, YAxis, VerticalGridLines, HorizontalGridLines} from 'react-vis'
+import React, { Component } from 'react';
+import ChartRow from './ChartRow';
+import "./Chart.css";
 
 
-const Chart = () => {
+class Chart extends Component {
+    constructor(props) {
+        super(props); //ejecuta el constructor de component que es una clase de react
+        this.state = {
+            productList: []
+        };
+      }
+    
+      apiCall(url, consecuencia) {
+        fetch(url)
+          .then((response) => response.json())
+          .then((data) => consecuencia(data))
+          .catch((e) => console.log(e));
+      }
+    
+      componentDidMount() {
+        this.apiCall("http://localhost:3000/api/products", this.products);
+      }
 
-    const data = [
-        { x: 0, y: 8},
-        { x: 1, y: 5},
-        { x: 2, y: 4},
-        { x: 3, y: 9},
-        { x: 4, y: 1},
-        { x: 5, y: 7},
-        { x: 6, y: 6},
-        { x: 7, y: 3},
-        { x: 8, y: 2},
-        { x: 9, y: 0},
-    ]
+      products = (data) => {
+          this.setState({
+              productList: data.data
+          })
+      }
 
-    return(
-        <div style={{ marginTop: '15px' }}>
-
-            <XYPlot height={300} width={300}>
-                <VerticalGridLines />
-                <HorizontalGridLines />
-                <XAxis />
-                <YAxis />
-                <LineSeries data={data} color="red" />
-                <LineSeries data={data} color="purple" />
-                <LineSeries data={data} color="yellow" />
-            </XYPlot>
-        </div>
-    )
+      render() {
+          return(
+              <React.Fragment>
+                          {/*<!-- PRODUCTS LIST -->*/}
+                          <h1 className="h3 mb-2 text-gray-800">Lista de productos</h1>
+                          
+                          {/*<!-- DataTales Example -->*/}
+                          <div className="card shadow mb-4">
+                              <div className="card-body">
+                                  <div className="table-responsive">
+                                      <table className="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                          <thead>
+                                              <tr>
+                                                  <th>Id</th>
+                                                  <th>Nombre</th>
+                                                  <th>Descripción</th>
+                                                  <th>Precio</th>
+                                              </tr>
+                                          </thead>
+                                          <tbody>
+                                              {this.state.productList.map((producto) => {return <ChartRow item= {producto}/>})}
+                                          </tbody>
+                                      </table>
+                                  </div>
+                              </div>
+                          </div>            
+              </React.Fragment>
+          )
+      }
 }
 
 export default Chart;

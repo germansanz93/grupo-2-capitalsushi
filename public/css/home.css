@@ -69,13 +69,19 @@ main .icon i {
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  color: black;
+  font-size: 30px;
 }
 
 #conteItemsCarrusel {
   height: 300px;
   width: 100%;
   overflow: hidden;
+}
+
+.itemCarrusel .tarjetaCarrusel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 a{
@@ -85,6 +91,8 @@ a{
 #contePuntos {
   display: flex;
   justify-content: space-around;
+  text-align: center;
+  width: 40%;
 }
 
 #contePuntos > a{

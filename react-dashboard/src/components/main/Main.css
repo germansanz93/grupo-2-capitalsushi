@@ -80,6 +80,7 @@ main {
 }
 
 .charts__left__title > div > h1 {
+    width: 100%;
     font-size: 24px;
     color: #2e4a66;
     margin-bottom: 5px;

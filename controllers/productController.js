@@ -90,3 +90,39 @@ const productController = {
 }
 
 module.exports = productController;
+
+
+
+
+
+/* let idProduct = req.params.id;
+        let product= listProducts[idProduct - 1];
+
+        console.log(product)
+
+        let preference = {
+            items: [
+                {
+                    title: product.title,
+                    unit_price: product.price,
+                    quantity: 1,
+                }
+            ]
+        }; /
+
+        / mercadopago.preferences.create(preference)
+            .then(function (response) {
+                res.render('detalle', {
+                    post: {
+                        description: preference.items[0].title,
+                        quantity: preference.items[0].quantity,
+                        transactionAmount: preference.items[0].unit_price * preference.items[0].quantity,
+                        id: response.body.id,
+                        init_point: response.body.init_point,
+                    },
+                    product: product,
+                    listProducts: listProducts
+                });
+            }).catch(function (error) {
+                console.log(error);
+            }); */

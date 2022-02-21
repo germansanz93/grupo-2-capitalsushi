@@ -1,22 +1,24 @@
 import "./Sidebar.css"
+// import image from '../public/images/index.jpeg'
+
 const Sidebar = () => {
     const SidebarOpen = true
     return(
         <div className={SidebarOpen ? "sidebar-responsive" : ""} id="sidebar">
             <div className="sidebar__title">
-                {/* <div className="sidebar__img">
-                    <img src={logo} alt="logo" />
+                { <div className="sidebar__img">
+                    <img src="../public/images/index.jpeg" alt="" />
                     <h1>Codersbite</h1>
-                </div> */}
-            {/* <i className="fa fa-times" id="sidebarIcon" onClick={() => closeSidebar()}></i> */}
+                </div> }
+            {/*<i className="fa fa-times" id="sidebarIcon" onClick={() => closeSidebar()}></i> */}
             </div>
 
             <div className="sidebar__menu">
-                <div classname="sidebar__link active_menu_link">
+                <div classname="sidebar__link-active_menu_link">
                     <i className="fa fa-home"></i>
                     <a href="#">Dashboard- Capital Sushi</a>
                 </div>
-                <h2>CS</h2>
+                <h2>Actions</h2>
                 <div className="sidebar__link">
                     <i className="fa fa-user-secret"></i>
                     <a href="#">Pages</a>

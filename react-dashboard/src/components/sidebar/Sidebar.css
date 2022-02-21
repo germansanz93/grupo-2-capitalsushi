@@ -39,6 +39,11 @@
     font-weight: 700;
 }
 
+.sidebar__menu .sidebar__link-active_menu_link > a {
+    display: none;
+    text-decoration: none;
+}
+
 .sidebar__link {
     color: #f3f4f6;
     padding: 10px;
@@ -66,15 +71,11 @@
     font-size: 18px;
 }
 
-.sidebar__logout {
+.sidebar__logout > a {
     margin-top: 20px;
     padding: 10px;
-    color: #e65061;
-}
-
-.sidebar__logout > a {
     text-decoration: none;
-    color: #e65061;
+    color: blue;
     font-weight: 700;
     text-transform: uppercase;
 }

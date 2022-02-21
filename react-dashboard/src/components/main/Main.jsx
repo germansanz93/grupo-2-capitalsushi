@@ -7,9 +7,9 @@ const Main = () => {
         <main>
             <div className="main__container">
                 <div className="main__title">
-                    {/* <img src={hello} alt="hello"/> */}
+                    { <img src= "/imagesindex.jpeg" alt=""/> }
                     <div className="main__greeting">
-                        <h1>Hello Codersbite</h1>
+                        <h1>Dashboard Capital Sushi</h1>
                         <p>Welcome to your admin dashboard</p>
                     </div>
                 </div>
@@ -46,10 +46,10 @@ const Main = () => {
                     <div className="charts__left">
                         <div className="charts__left__title">
                             <div>
-                                <h1>Daily Reports</h1>
+                                <h1>Ultimo Producto Listado</h1>
                                 <p>Capital Federal, Argentina</p>
                             </div>
-                            <i className="fa fa-usd"></i>
+                            <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 30 +'rem'}} src="" alt=" Ultimo producto "/>
                         </div>
                         <Chart />
                     </div>
@@ -65,22 +65,22 @@ const Main = () => {
                         <div className="charts__right__cards">
                             <div className="card1">
                                 <h1>Income</h1>
-                                <p>$75,300</p>
+                                <p>$0</p>
                             </div>
 
                             <div className="card2">
                                 <h1>Sales</h1>
-                                <p>$135,300</p>
+                                <p>0</p>
                             </div>
 
                             <div className="card3">
                                 <h1>Users</h1>
-                                <p>3900</p>
+                                <p>0</p>
                             </div>
 
                             <div className="card4">
                                 <h1>Orders</h1>
-                                <p>1880</p>
+                                <p>0</p>
                             </div>
                         </div>
                     </div>
