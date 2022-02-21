@@ -20,12 +20,12 @@ class Chart extends Component {
       }
     
       componentDidMount() {
-        this.apiCall("http://localhost:3000/api/products", this.products);
+        this.apiCall("http://localhost:5000/api/products", this.products);
       }
 
       products = (data) => {
           this.setState({
-              productList: data.data
+              productList: data
           })
       }
 

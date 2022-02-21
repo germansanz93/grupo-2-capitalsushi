@@ -15,6 +15,7 @@ const productRouter = require('./routes/productRouter');
 const mainRouter =require('./routes/mainRouter');
 const userRouter = require('./routes/userRouter');
 const orderRouter = require('./routes/orderRouter');
+const apiRouter = require('./routes/apiRouter');
 const loggedUserMiddleware = require('./middleware/loggedUserMiddleware');
 
 //configs
@@ -44,7 +45,9 @@ app.set('view engine', 'ejs');
 app.use('/user', userRouter)
 app.use('/product', productRouter)
 app.use('/order', orderRouter)
+app.use('/api', apiRouter)
 app.use('/', mainRouter)
+
 
 //server escuchando
 app.listen(PORT, () => {
