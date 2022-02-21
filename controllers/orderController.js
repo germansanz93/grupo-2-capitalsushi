@@ -2,6 +2,7 @@
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
 const { validationResult } = require('express-validator');
+require('dotenv').config();
 let db = require("../database/models");
 
 const productsFilePath = path.join(__dirname, '../data/ProductsCapitalSushi.json');
@@ -19,6 +20,9 @@ const orderController = {
     const productsPromise = new Promise((resolve, reject) => {
       const productsResponse = []
       productsToAdd.forEach(function (productQty) {
+        if(!productQty){
+          return null
+        }
         const id = Object.keys(productQty)[0]
         const qty = Object.values(productQty)[0]
         db.Product.findOne({

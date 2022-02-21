@@ -21,19 +21,18 @@
     </div>
     <nav>
       <ul>
-        <% if (!locals.user || locals.user.role_id==2) {%>
+        <% if (!locals.user || locals.user.role_id != 1) {%>
           <li><a class=<%=view=='home' && 'active' %> href="/">Inicio</a></li>
           <li><a class=<%=view=='menu' && 'active' %> href="/menu">Menu</a></li>
           <li><a class=<%=view=='carrito' && 'active' %> href="/cart">Carrito</a></li>
           <li><a class=<%=(view=='mi_cuenta' || view=='profile' ) && 'active' %> href="/user/login">Mi cuenta</a></li>
           <li><a class=<%=view=='contacto' && 'active' %> href="/contact">Contacto</a></li>
           <% } %>
-          <% if (locals.user && user.role_id==1) {%>
+          <% if (locals.user && user.role_id == 1) {%>
               <li><a class=<%=view=='productForm' && 'active' %> href="/product/new">Crear Producto</a></li>
               <li><a class=<%=view=='#' && 'active' %> href="/product/">Productos</a></li>
               <li><a class=<%=view=='#' && 'active' %> href="/user/">Usuarios</a></li>
               <li><a class=<%=(view=='mi_cuenta' || view=='profile' ) && 'active' %> href="/user/login">Mi cuenta</a></li>
-          
           <% } %>
           <% if (locals.user) { %>
             <li><a href="/user/logout">Salir</a></li>

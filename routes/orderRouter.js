@@ -3,7 +3,8 @@ const express = require('express');
 const router = express.Router();
 const { 
   createOrder,
-  completeOrder
+  completeOrder,
+  payOrder
 } = require('../controllers/orderController');
 
 const guestMiddleware = require('../middleware/guestMiddleware');
@@ -13,7 +14,6 @@ router.route('/')
   .post(createOrder)
 
 router.route('/complete').post(completeOrder)
-
 
 //module export
 module.exports = router;

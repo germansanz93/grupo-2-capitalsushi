@@ -18,6 +18,17 @@ function addItem(id) {
     updateChartQty(id, 1)
   }
   localStorage.setItem('order', JSON.stringify(order))
+  if(location.href.includes('cart')){
+    const totalTag = document.querySelector('.total-number')
+    const total = totalTag.innerText.split('$')[1]
+    const subTag = document.getElementsByClassName(`${id}`)[0]
+    const sub = document.getElementsByClassName(`${id}`)[0].innerText.split('$')[1]
+    const actQty = document.getElementById(id).innerText
+    const toAdd = sub/(actQty - 1)
+    subTag.innerText = `$${+sub + toAdd}`
+    totalTag.innerText = `$${+total + toAdd}`
+    if(actQty == 0) location.reload()
+  }
 }
 
 function removeItem(id) {
@@ -40,6 +51,17 @@ function removeItem(id) {
     updateChartQty(id, 1)
   }
   localStorage.setItem('order', JSON.stringify(order))
+  if(location.href.includes('cart')){
+    const totalTag = document.querySelector('.total-number')
+    const total = totalTag.innerText.split('$')[1]
+    const subTag = document.getElementsByClassName(`${id}`)[0]
+    const sub = document.getElementsByClassName(`${id}`)[0].innerText.split('$')[1]
+    const actQty = document.getElementById(id).innerText
+    const toSubstract = +sub/(parseInt(actQty)+1)
+    subTag.innerText = `$${+sub - toSubstract}`
+    totalTag.innerText = `$${+total - toSubstract}`
+    if(actQty == 0) destroyItem(id)
+  }
 }
 
 function updateChartQty(id, number) {
@@ -84,9 +106,28 @@ function sendOrderToApi() {
   }
 }
 
+function payOrder() {
+  order = localStorage.getItem('order')
+  console.log(order)
+  if (order != null) {
+    fetch('http://localhost:5000/order/pay', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json',
+      },
+      redirect: 'follow',
+      body: JSON.stringify({ order })
+    }).then(function (response) {
+      if (response.ok) {
+        console.log('mercalibre')
+      }
+    })
+  }
+}
+
 function populateCart() {
   order = localStorage.getItem('order')
-  console.log()
   if (order != null) {
     fetch('http://localhost:5000/order/complete', {
       method: 'POST',
@@ -105,38 +146,52 @@ function populateCart() {
     }).then(function (data) {
       console.log(data);
       const cartList = document.querySelector('.list-container')
+      const cards = document.querySelectorAll(".main-card-content")
+      let total = 0;
+      cards.forEach(card => card.remove())
       data.forEach(product => {
+        total += product.price * product.qty
         const html = document.createElement('div')
         html.classList.add('card')
         html.innerHTML =
-            '<div class="main-card-content">'+
-              '<div class="img-container">'+
-                '<img src="/images/ensalada-3.jpg" alt="">'+
-              '</div>'+
-              '<div class="text-container">'+
-                '<div class="card-header">'+
-                  `<h3>${product.title}</h3>`+
-                  '<span><i class="fas fa-trash-alt"></i></span>'+
-                '</div>'+
-                `<p>${product.prod_description.substring(0, 20)}...</p>`+
-                '<div class="actions">'+
-                  '<div class="controls">'+
-                    `<span onclick=removeItem('${product.id}')><i class="fas fa-minus-circle"></i></span>`+
-                    `<span class="qty" id=${product.id}>${product.qty}</span>`+
-                    `<span onclick=addItem('${product.id}')><i class="fas fa-plus-circle"></i></span>`+
-                  '</div>'+
-                  `<p class="subtotal">$ ${product.qty*product.price}</p>`+
-                '</div>'+
-              '</div>'+
-            '</div>'
+          '<div class="main-card-content">' +
+          '<div class="img-container">' +
+          '<img src="/images/ensalada-3.jpg" alt="">' +
+          '</div>' +
+          '<div class="text-container">' +
+          '<div class="card-header">' +
+          `<h3>${product.title}</h3>` +
+          `<span onclick=destroyItem('${product.id}')><i class="fas fa-trash-alt"></i></span>` +
+          '</div>' +
+          `<p>${product.prod_description.substring(0, 20)}...</p>` +
+          '<div class="actions">' +
+          '<div class="controls">' +
+          `<span onclick=removeItem('${product.id}')><i class="fas fa-minus-circle"></i></span>` +
+          `<span class="qty" id=${product.id}>${product.qty}</span>` +
+          `<span onclick=addItem('${product.id}')><i class="fas fa-plus-circle"></i></span>` +
+          '</div>' +
+          `<p class="subtotal ${product.id}">$${product.qty * product.price}</p>` +
+          '</div>' +
+          '</div>' +
+          '</div>'
 
         cartList.prepend(
           html
         )
+        document.querySelector('.total-number').innerText = `$${total}`
       })
     }).catch(function (error) {
       console.log(error)
       alert('Algo salio mal..')
     })
+  }
+}
+
+function destroyItem(id) {
+  if (localStorage.getItem('order')) {
+    order = JSON.parse(localStorage.getItem('order'));
+    order = order.filter(productQty => Object.keys(productQty)[0] != id)
+    localStorage.setItem('order', JSON.stringify(order))
+    location.reload()
   }
 }

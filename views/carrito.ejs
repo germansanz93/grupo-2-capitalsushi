@@ -1,34 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('./partials/head', {stylesheet: 'carrito.css', title: 'Carrito'}) %> 
+<%- include('./partials/head', {stylesheet: 'carrito.css' , title: 'Carrito' }) %>
 
-<body onload="populateCart()">
-    <%- include('./partials/header', {view: 'carrito'}) %>
-        <main>
-            <div class="main-container">
-                <div class='background-container'>
-                    <img class="background" src="/images/60b8359cace20b124907467f.jpeg"
-                        alt="capital-sushi-background-image">
-                </div>
-                <div class="container">
-                    <h3>DETALLE DEL PEDIDO</h3>
-                    <div class="list-container"> 
-                        <div class="card">
-                            <div class="total">
-                                <span>total:</span><span>$ 4000</span>
-                            </div>
-                            <div class="btns-container">
-                                <a class="btn back" href="/chart">Menu</a>
-                                <a class="btn pay" href="">Pagar</a>
+    <body onload="populateCart()">
+        <%- include('./partials/header', {view: 'carrito' }) %>
+            <main>
+                <div class="main-container">
+                    <div class='background-container'>
+                        <img class="background" src="/images/60b8359cace20b124907467f.jpeg"
+                            alt="capital-sushi-background-image">
+                    </div>
+                    <div class="container">
+                        <h3>DETALLE DEL PEDIDO</h3>
+                        <div class="list-container">
+                            <div class="card">
+                                <div class="total">
+                                    <span>total:</span><span class="total-number">$ 0</span>
+                                </div>
+                                <div class="btns-container">
+                                    <a class="btn back" href="/chart">Menu</a>
+                                    <a class="btn pay" onclick="payOrder()">Pagar</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </main>
-        <%- include('./partials/footer') %>
-        <script src="/js/cartFunctions.js"></script>
-</body>
+            </main>
+            <%- include('./partials/footer') %>
+                <script src="/js/cartFunctions.js"></script>
+    </body>
 
 </html>

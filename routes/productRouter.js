@@ -55,7 +55,7 @@ const validations = [
 
 // rutas
 router.route('/')
-  .get(allProducts)
+  .get(isAdmin, allProducts)
   .post(isAdmin, upload.single('picture'), validations, createProduct);
 
 router.route('/new')

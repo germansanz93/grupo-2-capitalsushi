@@ -3,6 +3,9 @@ const { readFileSync, writeFileSync } = require('fs');
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
 const { validationResult } = require('express-validator');
+const dotenv = require('dotenv');
+dotenv.config();
+
 let db = require("../database/models");
 
 const productsFilePath = path.join(__dirname, '../data/ProductsCapitalSushi.json');
