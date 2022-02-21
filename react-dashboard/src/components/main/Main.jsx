@@ -53,9 +53,10 @@ const Main = () => {
                                 <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 30 +'rem'}} src="" alt=" Ultimo producto "/>
                             </div>                       
                         </div>
-                        <Chart />
                     </div>
+                    
                     <div className="charts__right">
+                    
                         <div className="charts__right__title">
                             <div>
                                 <h1>Stats Reports</h1>
@@ -85,6 +86,9 @@ const Main = () => {
                                 <p>0</p>
                             </div>
                         </div>
+                    </div>
+                    <div>
+                        <Chart />
                     </div>
                 </div>
             </div>

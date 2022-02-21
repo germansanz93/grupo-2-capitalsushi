@@ -105,10 +105,9 @@ main {
 }
 
 .imagen-product {
-    width: 100%;
-    justify-content: center;
-    display: flex;
-    align-items: center;
+    width: 30rem;
+    display: flex;   
+    margin-top: 120px;
 }
 
 .charts__right {
