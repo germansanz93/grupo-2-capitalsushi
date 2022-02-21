@@ -75,8 +75,9 @@ main {
 
 .charts__left__title {
     display: flex;
-    align-items: center;
+    align-items: left;
     justify-content: space-between;
+    flex-direction: column;
 }
 
 .charts__left__title > div > h1 {
@@ -101,6 +102,13 @@ main {
     -webkit-border-radius: 200px 0px 200px 200px;
     border: 0px solid #000000;
     padding: 15px;
+}
+
+.imagen-product {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
 }
 
 .charts__right {

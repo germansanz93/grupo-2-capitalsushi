@@ -93,6 +93,15 @@
     position: absolute;
 }
 
+.pie-foto {
+    margin-top: 10px;
+}
+
+.pie-foto a {
+    text-decoration: none;
+    color: #a5aaad;
+}
+
 @media only screen and (max-width: 978px) {
     #sidebar {
         display: none;

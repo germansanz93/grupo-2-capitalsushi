@@ -1,5 +1,5 @@
 import "./Sidebar.css"
-// import image from '../public/images/index.jpeg'
+import img from '../../img/index.jpeg'
 
 const Sidebar = () => {
     const SidebarOpen = true
@@ -7,7 +7,7 @@ const Sidebar = () => {
         <div className={SidebarOpen ? "sidebar-responsive" : ""} id="sidebar">
             <div className="sidebar__title">
                 { <div className="sidebar__img">
-                    <img src="../public/images/index.jpeg" alt="" />
+                    <img src={img} alt="" />
                     <h1>Codersbite</h1>
                 </div> }
             {/*<i className="fa fa-times" id="sidebarIcon" onClick={() => closeSidebar()}></i> */}
@@ -16,7 +16,9 @@ const Sidebar = () => {
             <div className="sidebar__menu">
                 <div classname="sidebar__link-active_menu_link">
                     <i className="fa fa-home"></i>
+                    <div className="pie-foto">
                     <a href="#">Dashboard- Capital Sushi</a>
+                    </div>
                 </div>
                 <h2>Actions</h2>
                 <div className="sidebar__link">
