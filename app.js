@@ -8,7 +8,10 @@ const session = require('express-session');
 const {secret} = require('./config/config');
 const cors = require('cors');
 const methodOverride = require("method-override");
-require('dotenv').config();
+
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
 
 //modulos propios
 const productRouter = require('./routes/productRouter');
