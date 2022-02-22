@@ -229,6 +229,7 @@ a{
     justify-content: space-around;
     text-align: center;
     width: 40%;
+    display: none;
 }
   
 #contePuntos > a{

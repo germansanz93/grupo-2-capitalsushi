@@ -11,7 +11,7 @@ main .main-table tr {
   height: 40px;
 }
 
-main .main-table tr:hover {
+main .main-table tr.content-rows:hover {
   cursor: pointer;
   background-color: var(--orange) !important;
 }

@@ -36,26 +36,24 @@ class Chart extends Component {
                           <h1 className="h3 mb-2 text-gray-800">Lista de productos</h1>
                           
                           {/*<!-- DataTales Example -->*/}
-                          <div className="container-lista-productos">
-                            <div className="card shadow mb-4">
-                                <div className="card-body">
-                                    <div className="table-responsive">
-                                        <table className="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                            <thead>
-                                                <tr>
-                                                    <th>Id</th>
-                                                    <th>Nombre</th>
-                                                    <th>Descripción</th>
-                                                    <th>Precio</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                {this.state.productList.map((producto) => {return <ChartRow item= {producto}/>})}
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
+                          <div className="card shadow mb-4">
+                              <div className="card-body">
+                                  <div className="table-responsive">
+                                      <table className="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                          <thead>
+                                              <tr>
+                                                  <th>Id</th>
+                                                  <th>Nombre</th>
+                                                  <th>Descripción</th>
+                                                  <th>Precio</th>
+                                              </tr>
+                                          </thead>
+                                          <tbody>
+                                              {this.state.productList.map((producto) => {return <ChartRow item= {producto}/>})}
+                                          </tbody>
+                                      </table>
+                                  </div>
+                              </div>
                           </div>            
               </React.Fragment>
           )
