@@ -23,7 +23,6 @@ const loggedUserMiddleware = require('./middleware/loggedUserMiddleware');
 
 //configs
 const app = express();
-const PORT = process.env.PORT | 5000;
 const publicPath = path.join(__dirname, 'public');
 app.use(express.static(publicPath));
 app.use(express.json());
@@ -53,6 +52,6 @@ app.use('/', mainRouter)
 
 
 //server escuchando
-app.listen(PORT, () => {
+app.listen(process.env.PORT || 5000, () => {
   console.log(`Server running at port ${PORT}`)
 })
