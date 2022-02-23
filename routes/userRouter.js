@@ -93,7 +93,7 @@ router.route('/login')
 
 router.route('/register')
   .get(guestMiddleware, register)
-  .post(loggedUserMiddleware, createUserValidations ,upload.single('profile_pic'), createUser)
+  .post(loggedUserMiddleware ,upload.single('profile_pic'), createUser)
 
 router.get('/profile', authMiddleware, profile)
 

@@ -40,7 +40,7 @@ module.exports = {
     if (!result.isEmpty()) {
       console.log(result.errors)
       return res.render('../views/registrarse.ejs', {
-        errors: result.errors,
+        // errors: result.errors,
         oldData: req.body
       })
     }
