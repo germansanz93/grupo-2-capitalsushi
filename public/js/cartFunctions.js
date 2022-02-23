@@ -198,7 +198,6 @@ function populateCart() {
       })
     }).catch(function (error) {
       console.log(error)
-      alert('Algo salio mal..')
     })
   }
 }
