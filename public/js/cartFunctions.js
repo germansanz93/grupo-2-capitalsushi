@@ -127,6 +127,19 @@ function payOrder() {
 }
 
 function populateCart() {
+
+    // Agrega credenciales de SDK
+    const mp = new MercadoPago('TEST-40c3fad5-4e41-42c8-b4aa-d4473302a229', {
+      locale: "es-AR",
+    });
+  
+    // Inicializa el checkout
+    mp.checkout({
+      preference: {
+        id: 1079130367,
+      },
+    });
+
   order = localStorage.getItem('order')
   if (order != null) {
     fetch('http://localhost:5000/order/complete', {
