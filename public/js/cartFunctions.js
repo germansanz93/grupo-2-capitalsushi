@@ -85,7 +85,7 @@ function sendOrderToApi() {
   order = localStorage.getItem('order')
   console.log(order)
   if (order != null) {
-    fetch('http://localhost:5000/order/', {
+    fetch('/order', {
       method: 'POST',
       headers: {
         'Accept': 'application/json, text/plain, */*',
@@ -110,7 +110,7 @@ function payOrder() {
   order = localStorage.getItem('order')
   console.log(order)
   if (order != null) {
-    fetch('http://localhost:5000/order/pay', {
+    fetch('/order/pay', {
       method: 'POST',
       headers: {
         'Accept': 'application/json, text/plain, */*',
@@ -145,7 +145,7 @@ function populateCart() {
 
   order = localStorage.getItem('order')
   if (order != null) {
-    fetch('http://localhost:5000/order/complete', {
+    fetch('/order/complete', {
       method: 'POST',
       headers: {
         'Accept': 'application/json, text/plain, */*',
