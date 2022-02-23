@@ -37,17 +37,22 @@ module.exports = {
   },
   createUser: (req, res) => {
     const result = validationResult(req);
-    console.log(result);
-    // const userInDB = User.getUserByEmail(req.body.email);
+    if (!result.isEmpty()) {
+      console.log(result.errors)
+      return res.render('../views/registrarse.ejs', {
+        errors: result.errors,
+        oldData: req.body
+      })
+    }
     const email = req.body.email;
     db.User.findOne({ where: { email } })
       .then(userInDB => {
         if (userInDB && userInDB != null) {
           console.log('el usuario ya existe', userInDB)
           return res.render('../views/registrarse.ejs', {
-            errors: {
-              email: 'El email ya esta registrado'
-            },
+            errors: [{
+              msg: 'El email ya esta registrado'
+            }],
             oldData: req.body
           })
         }
@@ -78,14 +83,20 @@ module.exports = {
     dbUser = db.User.findOne({ where: { id } })
       .then(dbUser => {
         if (bcrypt.compareSync(password, dbUser.password)) {
-          User.deleteUser(id);
+          db.User.destroy({where:{id}}).then(() => res.redirect('/user/login')).catch(function(err){ console.log(err)});
+          req.session.destroy();
           res.redirect('/');
         } else {
           delete dbUser.password;
           res.render('../views/editarUsuario.ejs', { errors: { credentialsError: "Invalid password" }, oldData: { ...dbUser } });
         }
-      })
-    res.send(User.deleteUser(id));
+      }).catch((err) =>
+        console.log(err)
+      )
+  },
+  adminDeleteUser: (req, res) => {
+    const {id} = req.params
+    db.User.destroy({where:{id}}).then(() => res.redirect('/user')).catch(function(err){ console.log(err)});
   },
   editUserForm: (req, res) => {
     res.render(path.join(__dirname, '../views/editarUsuario'));

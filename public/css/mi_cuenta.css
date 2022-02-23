@@ -151,6 +151,10 @@ main form .input-group {
   margin-top: 6px;
 }
 
+.errors {
+  color: var(--orange);
+}
+
 @media (min-width: 481px) {
   main .main-img {
     height: 200px;

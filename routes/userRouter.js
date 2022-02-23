@@ -14,7 +14,8 @@ const {
   profile, 
   logout, 
   editUserForm,
-  changePassword
+  changePassword,
+  adminDeleteUser
   } = require('../controllers/userController');
 const guestMiddleware = require('../middleware/guestMiddleware');
 const authMiddleware = require('../middleware/authMiddleware');
@@ -92,7 +93,7 @@ router.route('/login')
 
 router.route('/register')
   .get(guestMiddleware, register)
-  .post(loggedUserMiddleware ,upload.single('profile_pic'), createUserValidations,createUser)
+  .post(loggedUserMiddleware, createUserValidations ,upload.single('profile_pic'), createUser)
 
 router.get('/profile', authMiddleware, profile)
 
@@ -109,6 +110,8 @@ router.route('/:id')
   .get(getUserById)
   .put(editUser)
   .delete(deleteUser);
+
+router.route('/admin/:id').delete(adminDeleteUser)
 
 //module export
 module.exports = router;

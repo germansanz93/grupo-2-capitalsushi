@@ -65,8 +65,8 @@ const productController = {
       where: {id}
     }).then((product) => {
       // Remove old photo
-      const {picture} = product
-      if (picture) {
+      if (product && product.picture) {
+        const {picture} = product
         const picPath = path.join(__dirname, "..", "public", "images", picture);
         if (fs.existsSync(picPath)) {
           fs.unlink(picPath, (err) => {

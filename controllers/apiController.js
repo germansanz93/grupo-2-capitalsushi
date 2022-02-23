@@ -13,6 +13,12 @@ const apiController = {
         console.log(products)
         res.json(products)
       })
+  },
+  getCategories: (req, res) => {
+    db.Category.findAll().then((cats) => res.json(cats));
+  },
+  getUsers: (req, res) => {
+    db.User.findAll().then((usr) => res.json(usr));
   }
 }
 

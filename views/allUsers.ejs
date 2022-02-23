@@ -45,7 +45,9 @@
                     <%= user.role.name %>
                   </td>
                   <td>
-                    <span><i class="fas fa-trash-alt"></i></span>
+                    <form action="/user/admin/<%= user.id %>?_method=DELETE" method="POST">
+                      <button><i class="fas fa-trash-alt"></i></button>
+                    </form>
                     <span><i class="far fa-edit"></i></span>
                   </td>
                 </tr>

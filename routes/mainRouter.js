@@ -9,6 +9,7 @@ const {
   chart,
   notfound
 } = require('../controllers/mainController');
+const authMiddleware = require('../middleware/authMiddleware');
 
 const guestMiddleware = require('../middleware/guestMiddleware');
 
@@ -17,7 +18,7 @@ router.route('/')
   .get(index)
 router.get('/contact', contact)
 router.get('/menu', menu)
-router.get('/cart', cart)
+router.get('/cart', authMiddleware, cart)
 router.get('/chart', chart)
 router.get('*', notfound)
 
