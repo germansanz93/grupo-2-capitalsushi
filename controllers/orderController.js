@@ -86,7 +86,8 @@ const orderController = {
           console.log('ok')
           console.log(response)
           res.json({
-            id: response.body.id
+            id: response.body.id,
+            init_point: response.body.sandbox_init_point
           });
         }).catch(function (error) {
           console.log(error);

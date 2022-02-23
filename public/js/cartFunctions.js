@@ -120,8 +120,11 @@ function payOrder() {
       body: JSON.stringify({ order })
     }).then(function (response) {
       if (response.ok) {
-        console.log('mercalibre')
+        console.log(response)
+        return response.json()
       }
+    }).then(function(data){
+      window.location.replace(data.init_point)
     })
   }
 }
